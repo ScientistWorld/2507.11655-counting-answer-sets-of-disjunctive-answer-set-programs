@@ -29,5 +29,9 @@
 - Verified the scaled hybrid secondary claim: capped enumeration completed the two easy instances, then sharpASP-sR solved the four fallback instances exactly.
 - `python validate.py --compare` passes with both scored experiments aligned to the reusable scoring contract.
 
+### [2026-06-01 23:46] - secondary_claims
+- Added semantic regression checks comparing sharpASP-sR against brute-force answer-set enumeration on small disjunctive, cyclic, default-negation, and inconsistent programs.
+- Local `method/selftest.py` and `python validate.py --compare` both pass before the next CPU container verification job.
+
 ## Stop Justification
 - Completed at milestone `secondary_claims`.

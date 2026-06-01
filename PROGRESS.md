@@ -13,6 +13,7 @@ Implemented a scaled exact sharpASP-sR reproduction:
 - Method-agnostic evaluation pipeline writing `scoring/scores.json`.
 - Shared ASP parsing and answer-set semantics live in `data/asp.py`, so the baseline does not import the proposed method.
 - Regression self-tests for projected model counting and the paper's illustrative program.
+- Additional semantic self-tests compare sharpASP-sR against brute-force answer-set enumeration on small disjunctive, cyclic, default-negation, and inconsistent programs.
 
 ## Results
 
@@ -33,6 +34,7 @@ Compute verification:
 - Exit code: 0.
 - The verified post-fix scores remain: sharpASP-sR solves 6/6 scaled non-tight instances exactly, and the hybrid experiment solves 6/6 with two enumeration completions and four sharpASP-sR fallbacks.
 - The evaluator now emits all scaled target metrics named in `reference.json`, including large/small exact accuracy, log-count error, and structural report coverage. Existing artifacts validate with `python validate.py --compare`.
+- Local continuation audit added the semantic regression suite and verified it with `PYTHONPATH=/home/user:/home/user/method python method/selftest.py`.
 
 Paper headline reference:
 

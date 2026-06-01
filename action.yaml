@@ -1,5 +1,5 @@
-action: done
+action: submit
 gpus: 0
-test: false
+test: true
 milestone: secondary_claims
-notes: "Final verification passed after method-agnostic doc cleanup, reusable evaluator fix, and removal of wall-clock PAR2 scoring weight."
+notes: "CPU test job reruns the full reproduction after adding semantic self-tests against brute-force answer-set enumeration."

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from itertools import product
 
-from data.asp import parse_program
+from data.asp import enumerate_answer_sets, parse_program
 from sharpasp_sr.counter import projected_count
 from sharpasp_sr.reduction import sharpasp_sr_count
 
@@ -63,10 +63,47 @@ def test_copy_variables_are_fresh() -> None:
     assert result["answer_sets"] == 1, result
 
 
+def test_small_programs_match_answer_set_semantics() -> None:
+    cases = [
+        """
+        a | b.
+        """,
+        """
+        a | b.
+        a :- b.
+        b :- a.
+        """,
+        """
+        a | b :- c.
+        c :- a.
+        c :- b.
+        :- not c.
+        """,
+        """
+        a :- not b.
+        b :- not a.
+        c | d :- a.
+        c :- d.
+        d :- c.
+        """,
+        """
+        a :- not a.
+        """,
+    ]
+    for text in cases:
+        program = parse_program(text)
+        expected, complete = enumerate_answer_sets(program)
+        assert complete
+        result = sharpasp_sr_count(program)
+        assert result["answer_sets"] == expected, (text, expected, result)
+        assert result["overcount"] - result["surplus"] == expected, (text, expected, result)
+
+
 def main() -> None:
     test_projected_count_unconstrained_projection()
     test_paper_example_count()
     test_copy_variables_are_fresh()
+    test_small_programs_match_answer_set_semantics()
 
 
 if __name__ == "__main__":
