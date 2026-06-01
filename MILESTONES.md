@@ -1,6 +1,6 @@
 # Reproduction Milestones
 
-**Current: none**
+**Current: core_claim**
 
 <!-- Milestone levels (update "Current" above as you progress):
   none             — just started, no meaningful progress yet
@@ -15,7 +15,10 @@
 
 ## Progress Log
 
-<!-- Write your progress here -->
+### [2026-06-01 23:10] - core_claim
+- Implemented the paper's subtractive reduction: `#Comp(P) - #exists copy-vars phi2`.
+- Ran a scaled benchmark derived from the paper's non-tight example.
+- Reproduced the core claim at small scale: the exact reduction counts all instances through `2^14` answer sets, while capped enumeration completes only the smaller cases.
 
 ## Stop Justification
-- Completed at milestone `none`.
+- Not stopped; current submission will rerun the packaged pipeline in the compute environment.

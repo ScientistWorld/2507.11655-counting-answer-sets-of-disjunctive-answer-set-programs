@@ -1,17 +1,13 @@
 # Problem Definition
 
-What problem does this paper address? Write this so that someone with no knowledge of the paper can understand what needs to be solved and how success is measured.
-
-Do NOT describe the paper's method or solution here — only the problem itself. Think about if a future scientist agent try to solve this problem from scratch without knowing what approach the paper took. If you leak the solution, you compromise the benchmark.
-
 ## Research Question
 
-<!-- What problem or challenge does this paper tackle? What gap in existing work does it address? -->
+Count the number of answer sets of a finite ground disjunctive Answer Set Programming (ASP) program exactly. The challenge is to handle non-tight programs where stable-model minimality matters and where plain answer-set enumeration becomes infeasible when the number of answer sets is large.
 
 ## Why It Matters
 
-<!-- Why is this problem important? What would a good solution enable? Make it short -->
+Exact answer-set counts are used in probabilistic reasoning, network reliability, answer-set navigation, and other ASP applications. Disjunctive programs are more expressive than normal programs, but practical exact counters for them are limited.
 
 ## Success Criteria
 
-<!-- What would a successful solution look like? What properties should it have? This is about the goal, not the paper's specific approach. Make it short -->
+Successful systems must return exact counts, agree with enumeration on small instances, and scale to instances with many answer sets under fixed resource limits. Evaluation should also track structural difficulty, especially positive cycles, so improvements cannot be achieved by silently ignoring the hard non-tight cases.

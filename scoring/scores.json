@@ -1,0 +1,22 @@
+{
+  "experiments": {
+    "scaled_disjunctive_counting": {
+      "results": {
+        "enumeration_cap_1000": {
+          "avg_loop_atoms": 0.0,
+          "avg_phi2_to_phi1_clause_ratio": 0.0,
+          "exact_count_accuracy": 0.5,
+          "max_log2_count_solved": 8.0,
+          "solved_instances": 2
+        },
+        "sharpasp_sr": {
+          "avg_loop_atoms": 2.0,
+          "avg_phi2_to_phi1_clause_ratio": 1.3305979483092893,
+          "exact_count_accuracy": 1.0,
+          "max_log2_count_solved": 14.0,
+          "solved_instances": 4
+        }
+      }
+    }
+  }
+}

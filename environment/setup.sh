@@ -16,4 +16,5 @@
 
 set -e
 
-# uv pip install --system <packages>
+# No Python dependencies beyond the standard library are required for the
+# scaled exact reproduction.

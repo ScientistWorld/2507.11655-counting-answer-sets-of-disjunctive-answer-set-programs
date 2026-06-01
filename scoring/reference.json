@@ -1,0 +1,64 @@
+{
+  "experiments": {
+    "paper_main_benchmark": {
+      "description": "Paper headline benchmark on 1125 non-tight disjunctive ASP instances, 5000s timeout and 8 GB memory.",
+      "weight": 0.6,
+      "primary_metric": "solved_instances",
+      "metrics": {
+        "solved_instances": {"higher_is_better": true, "coefficient": 1.0},
+        "par2": {"higher_is_better": false, "coefficient": -0.5}
+      },
+      "results": {
+        "clingo": {"type": "baseline", "solved_instances": 708, "par2": 4118},
+        "DynASP": {"type": "baseline", "solved_instances": 89, "par2": 9212},
+        "Wasp": {"type": "baseline", "solved_instances": 432, "par2": 6204},
+        "sharpasp_sr": {"type": "proposed", "solved_instances": 825, "par2": 2939}
+      }
+    },
+    "paper_hybrid_benchmark": {
+      "description": "Paper hybrid benchmark using clingo enumeration up to 10000 answer sets followed by a counter fallback.",
+      "weight": 0.25,
+      "primary_metric": "solved_instances",
+      "metrics": {
+        "solved_instances": {"higher_is_better": true, "coefficient": 1.0},
+        "par2": {"higher_is_better": false, "coefficient": -0.5}
+      },
+      "results": {
+        "clingo": {"type": "baseline", "solved_instances": 708, "par2": 4118},
+        "clingo_DynASP": {"type": "baseline", "solved_instances": 377, "par2": 4790},
+        "clingo_Wasp": {"type": "baseline", "solved_instances": 442, "par2": 4404},
+        "clingo_sharpasp_sr": {"type": "proposed", "solved_instances": 918, "par2": 1600}
+      }
+    },
+    "scaled_disjunctive_counting": {
+      "description": "Scaled reproduction benchmark with exact counts on generated non-tight disjunctive programs derived from the paper example.",
+      "weight": 0.15,
+      "primary_metric": "exact_count_accuracy",
+      "metrics": {
+        "solved_instances": {"higher_is_better": true, "coefficient": 0.5},
+        "exact_count_accuracy": {"higher_is_better": true, "coefficient": 1.0},
+        "max_log2_count_solved": {"higher_is_better": true, "coefficient": 0.5},
+        "avg_loop_atoms": {"higher_is_better": false, "coefficient": -0.1},
+        "avg_phi2_to_phi1_clause_ratio": {"higher_is_better": false, "coefficient": -0.1}
+      },
+      "results": {
+        "enumeration_cap_1000": {
+          "type": "baseline",
+          "solved_instances": 2,
+          "exact_count_accuracy": 0.5,
+          "max_log2_count_solved": 8,
+          "avg_loop_atoms": 0,
+          "avg_phi2_to_phi1_clause_ratio": 0
+        },
+        "sharpasp_sr": {
+          "type": "proposed",
+          "solved_instances": 4,
+          "exact_count_accuracy": 1.0,
+          "max_log2_count_solved": 14,
+          "avg_loop_atoms": 2,
+          "avg_phi2_to_phi1_clause_ratio": 1.5
+        }
+      }
+    }
+  }
+}

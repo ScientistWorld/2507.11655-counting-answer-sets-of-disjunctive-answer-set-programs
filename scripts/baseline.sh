@@ -17,4 +17,11 @@ set -e
 
 cd /home/user
 
-# TODO: run baseline
+name="${1:-enumeration_cap_1000}"
+if [ "$name" != "enumeration_cap_1000" ]; then
+  echo "Unknown baseline: $name" >&2
+  exit 2
+fi
+
+python baseline/enumerate.py --limit 1000 --output checkpoints/enumeration/results.json
+bash scripts/evaluate.sh

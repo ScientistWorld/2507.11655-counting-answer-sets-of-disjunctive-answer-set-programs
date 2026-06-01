@@ -18,7 +18,7 @@ set -e
 
 cd /home/user
 
-# TODO: implement full reproduction pipeline
-# e.g.:
-#   bash scripts/baseline.sh
-#   bash scripts/method.sh
+python data/make_benchmarks.py
+python baseline/enumerate.py --limit 1000 --output checkpoints/enumeration/results.json
+python method/run_sharpasp_sr.py --output checkpoints/sharpasp_sr/results.json
+bash scripts/evaluate.sh
