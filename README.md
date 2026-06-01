@@ -129,7 +129,7 @@ Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enum
 
 # Reproduction Milestones
 
-**Current: secondary_claims**
+**Current: core_claim_plus**
 
 ## Stop Justification
-- Completed at milestone `secondary_claims`.
+- Completed at milestone `core_claim_plus`.
