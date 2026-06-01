@@ -11,6 +11,7 @@ Implemented a scaled exact sharpASP-sR reproduction:
 - Exact in-repo model and projected-model counters.
 - Capped enumeration baseline for the scaled benchmark.
 - Method-agnostic evaluation pipeline writing `scoring/scores.json`.
+- Shared ASP parsing and answer-set semantics live in `data/asp.py`, so the baseline does not import the proposed method.
 
 ## Results
 

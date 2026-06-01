@@ -4,12 +4,9 @@ from __future__ import annotations
 import argparse
 import json
 import math
-import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "method"))
-
-from sharpasp_sr.asp import enumerate_answer_sets, load_program
+from data.asp import enumerate_answer_sets, load_program
 
 
 def main() -> None:

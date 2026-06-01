@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .asp import Program, loop_atoms
+from data.asp import Program, loop_atoms
 from .cnf import CNF
 from .counter import count_models, projected_count
 

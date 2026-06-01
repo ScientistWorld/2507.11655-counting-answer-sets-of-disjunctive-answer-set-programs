@@ -6,7 +6,7 @@ import json
 import math
 from pathlib import Path
 
-from sharpasp_sr.asp import load_program
+from data.asp import load_program
 from sharpasp_sr.reduction import sharpasp_sr_count
 
 
