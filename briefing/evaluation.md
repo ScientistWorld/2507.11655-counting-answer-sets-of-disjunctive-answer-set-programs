@@ -12,6 +12,8 @@
 
 The paper compares exact counting against clingo, DynASP, and Wasp on 1125 non-tight disjunctive instances. The headline target is higher solved count than enumeration-based systems while preserving exactness. This workspace includes a scaled enumeration baseline with an answer-set cap, mirroring the paper's observation that enumeration degrades when counts grow.
 
+The paper also evaluates a hybrid strategy that enumerates answer sets up to a threshold and invokes sharpASP-sR only when enumeration exceeds that threshold. This workspace reproduces that secondary claim on the scaled benchmark with a cap of 1000.
+
 ## Evaluation Protocol
 
-Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enumeration baseline, run the proposed exact counter, and write `scoring/scores.json`. Future methods should write the same result artifact format under `checkpoints/<method>/results.json` and then call `scripts/evaluate.sh`. Evaluation code must not import from `method/`.
+Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enumeration baseline, run the proposed exact counter, and write `scoring/scores.json`. The scaled benchmark ranges from the paper's illustrative non-tight program through independent-choice extensions with up to `2^20` answer sets. Future methods should write the same result artifact format under `checkpoints/<method>/results.json` and then call `scripts/evaluate.sh`. Evaluation code must not import from `method/`.

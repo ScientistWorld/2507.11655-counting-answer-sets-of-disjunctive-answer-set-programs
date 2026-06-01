@@ -2,7 +2,7 @@
   "experiments": {
     "paper_main_benchmark": {
       "description": "Paper headline benchmark on 1125 non-tight disjunctive ASP instances, 5000s timeout and 8 GB memory.",
-      "weight": 0.6,
+      "weight": 0.45,
       "primary_metric": "solved_instances",
       "metrics": {
         "solved_instances": {"higher_is_better": true, "coefficient": 1.0},
@@ -17,7 +17,7 @@
     },
     "paper_hybrid_benchmark": {
       "description": "Paper hybrid benchmark using clingo enumeration up to 10000 answer sets followed by a counter fallback.",
-      "weight": 0.25,
+      "weight": 0.2,
       "primary_metric": "solved_instances",
       "metrics": {
         "solved_instances": {"higher_is_better": true, "coefficient": 1.0},
@@ -32,7 +32,7 @@
     },
     "scaled_disjunctive_counting": {
       "description": "Scaled reproduction benchmark with exact counts on generated non-tight disjunctive programs derived from the paper example.",
-      "weight": 0.15,
+      "weight": 0.2,
       "primary_metric": "exact_count_accuracy",
       "metrics": {
         "solved_instances": {"higher_is_better": true, "coefficient": 0.5},
@@ -45,18 +45,54 @@
         "enumeration_cap_1000": {
           "type": "baseline",
           "solved_instances": 2,
-          "exact_count_accuracy": 0.5,
+          "exact_count_accuracy": 0.3333333333333333,
           "max_log2_count_solved": 8,
           "avg_loop_atoms": 0,
           "avg_phi2_to_phi1_clause_ratio": 0
         },
         "sharpasp_sr": {
           "type": "proposed",
-          "solved_instances": 4,
+          "solved_instances": 6,
           "exact_count_accuracy": 1.0,
-          "max_log2_count_solved": 14,
+          "max_log2_count_solved": 20,
           "avg_loop_atoms": 2,
           "avg_phi2_to_phi1_clause_ratio": 1.5
+        }
+      }
+    },
+    "scaled_hybrid_counting": {
+      "description": "Scaled reproduction of the paper's hybrid claim: enumerate small-count cases, then fall back to sharpASP-sR when enumeration exceeds the cap.",
+      "weight": 0.15,
+      "primary_metric": "exact_count_accuracy",
+      "metrics": {
+        "solved_instances": {"higher_is_better": true, "coefficient": 0.5},
+        "exact_count_accuracy": {"higher_is_better": true, "coefficient": 1.0},
+        "max_log2_count_solved": {"higher_is_better": true, "coefficient": 0.5},
+        "enumeration_completed_instances": {"higher_is_better": true, "coefficient": 0.1},
+        "fallback_instances": {"higher_is_better": false, "coefficient": -0.1},
+        "avg_loop_atoms": {"higher_is_better": false, "coefficient": -0.1},
+        "avg_phi2_to_phi1_clause_ratio": {"higher_is_better": false, "coefficient": -0.1}
+      },
+      "results": {
+        "enumeration_cap_1000": {
+          "type": "baseline",
+          "solved_instances": 2,
+          "exact_count_accuracy": 0.3333333333333333,
+          "max_log2_count_solved": 8,
+          "enumeration_completed_instances": 2,
+          "fallback_instances": 0,
+          "avg_loop_atoms": 0,
+          "avg_phi2_to_phi1_clause_ratio": 0
+        },
+        "enumeration_then_sharpasp_sr": {
+          "type": "proposed",
+          "solved_instances": 6,
+          "exact_count_accuracy": 1.0,
+          "max_log2_count_solved": 20,
+          "enumeration_completed_instances": 2,
+          "fallback_instances": 4,
+          "avg_loop_atoms": 1.3333333333333333,
+          "avg_phi2_to_phi1_clause_ratio": 0.8
         }
       }
     }

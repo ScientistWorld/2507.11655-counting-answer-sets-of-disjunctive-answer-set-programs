@@ -21,4 +21,5 @@ cd /home/user
 python data/make_benchmarks.py
 python baseline/enumerate.py --limit 1000 --output checkpoints/enumeration/results.json
 python method/run_sharpasp_sr.py --output checkpoints/sharpasp_sr/results.json
+python method/run_hybrid.py --enumeration-limit 1000 --output checkpoints/hybrid/results.json
 bash scripts/evaluate.sh

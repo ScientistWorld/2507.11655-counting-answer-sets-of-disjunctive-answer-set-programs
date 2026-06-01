@@ -27,6 +27,20 @@
       "choice_pairs": 14,
       "expected_answer_sets": 16384,
       "source": "Paper Example 1 extended with independent disjunctive choice pairs."
+    },
+    {
+      "name": "choices_16",
+      "path": "data/instances/choices_16.lp",
+      "choice_pairs": 16,
+      "expected_answer_sets": 65536,
+      "source": "Paper Example 1 extended with independent disjunctive choice pairs."
+    },
+    {
+      "name": "choices_20",
+      "path": "data/instances/choices_20.lp",
+      "choice_pairs": 20,
+      "expected_answer_sets": 1048576,
+      "source": "Paper Example 1 extended with independent disjunctive choice pairs."
     }
   ]
 }

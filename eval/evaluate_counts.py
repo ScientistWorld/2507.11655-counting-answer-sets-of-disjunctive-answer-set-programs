@@ -45,23 +45,41 @@ def summarize_method(results: dict, manifest: dict) -> dict:
     }
 
 
+def summarize_hybrid(results: dict, manifest: dict) -> dict:
+    summary = summarize_method(results, manifest)
+    instances = results.get("instances", {})
+    summary["fallback_instances"] = sum(1 for item in instances.values() if item.get("used_fallback"))
+    summary["enumeration_completed_instances"] = sum(
+        1 for item in instances.values() if item.get("complete", True) and not item.get("used_fallback", False)
+    )
+    return summary
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", default="data/benchmarks.json")
     parser.add_argument("--method-results", default="checkpoints/sharpasp_sr/results.json")
     parser.add_argument("--baseline-results", default="checkpoints/enumeration/results.json")
+    parser.add_argument("--hybrid-results", default="checkpoints/hybrid/results.json")
     parser.add_argument("--output", default="scoring/scores.json")
     args = parser.parse_args()
 
     manifest = json.loads(Path(args.manifest).read_text())
     method = summarize_method(load_result(Path(args.method_results)), manifest)
     baseline = summarize_method(load_result(Path(args.baseline_results)), manifest)
+    hybrid = summarize_hybrid(load_result(Path(args.hybrid_results)), manifest)
     scores = {
         "experiments": {
             "scaled_disjunctive_counting": {
                 "results": {
                     "enumeration_cap_1000": baseline,
                     "sharpasp_sr": method,
+                }
+            },
+            "scaled_hybrid_counting": {
+                "results": {
+                    "enumeration_cap_1000": baseline,
+                    "enumeration_then_sharpasp_sr": hybrid,
                 }
             }
         }

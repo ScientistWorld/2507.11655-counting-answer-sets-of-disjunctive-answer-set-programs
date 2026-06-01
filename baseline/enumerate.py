@@ -2,11 +2,51 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import json
 import math
 from pathlib import Path
 
-from data.asp import enumerate_answer_sets, load_program
+from data.asp import Program, enumerate_answer_sets, load_program
+
+
+def split_independent_binary_choices(program: Program) -> tuple[Program, int]:
+    """Remove independent `a | b.` facts and return the residual program.
+
+    This models a capped answer-set enumerator on the scaled benchmark without
+    reading expected counts from the manifest: each removed binary fact doubles
+    every answer set of the residual program, provided its atoms occur nowhere
+    else in the program.
+    """
+    occurrences: Counter[str] = Counter()
+    for rule in program.rules:
+        occurrences.update(rule.head)
+        occurrences.update(rule.pos)
+        occurrences.update(rule.neg)
+
+    residual = []
+    choices = 0
+    for rule in program.rules:
+        independent_fact = (
+            len(rule.head) == 2
+            and not rule.pos
+            and not rule.neg
+            and all(occurrences[atom] == 1 for atom in rule.head)
+        )
+        if independent_fact:
+            choices += 1
+        else:
+            residual.append(rule)
+    return Program(residual), choices
+
+
+def capped_enumeration_count(program: Program, limit: int) -> tuple[int, bool]:
+    residual, independent_choices = split_independent_binary_choices(program)
+    core_count, core_complete = enumerate_answer_sets(residual, limit=limit)
+    if not core_complete:
+        return core_count, False
+    total = core_count * (2**independent_choices)
+    return min(total, limit), total <= limit
 
 
 def main() -> None:
@@ -19,21 +59,7 @@ def main() -> None:
     manifest = json.loads(Path(args.manifest).read_text())
     results = {}
     for item in manifest["instances"]:
-        # The paper baseline is solver enumeration. For this scaled benchmark,
-        # independent disjunctive choices are explicit in the manifest, so the
-        # enumerator can stop at the cap without materializing every model.
-        if "choice_pairs" in item:
-            expected = 2 ** item["choice_pairs"]
-            count = min(expected, args.limit)
-            complete = expected <= args.limit
-            results[item["name"]] = {
-                "answer_sets": count,
-                "complete": complete,
-                "limit": args.limit,
-                "log2_answer_sets": math.log2(count) if count > 0 else None,
-            }
-            continue
-        count, complete = enumerate_answer_sets(load_program(item["path"]), limit=args.limit)
+        count, complete = capped_enumeration_count(load_program(item["path"]), args.limit)
         results[item["name"]] = {
             "answer_sets": count,
             "complete": complete,

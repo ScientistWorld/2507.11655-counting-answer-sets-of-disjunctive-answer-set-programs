@@ -28,6 +28,8 @@ def main() -> None:
         ("choices_8", 8),
         ("choices_12", 12),
         ("choices_14", 14),
+        ("choices_16", 16),
+        ("choices_20", 20),
     ]
     instances = []
     for name, n in specs:
