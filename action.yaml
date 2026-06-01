@@ -1,4 +1,4 @@
-action: submit
+action: done
 gpus: 0
 test: false
-notes: "Run evaluate_train.sh and evaluate_test.sh over existing checkpoint result artifacts; populate split scores."
+notes: "Artifact-scoring split; 40 train metric values and 40 test metric values. Proposed methods are exact on both slices, with max_log2_count_solved 20 train vs 16 test; capped enumeration remains separated (exact 0.333 both, log2 MAE 12 train vs 10 test). Caveat: split is small and exact-count metrics saturate for the proposed artifacts, so scale/error/structural metrics carry the anti-shortcut signal."
