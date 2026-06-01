@@ -1,5 +1,5 @@
-action: done
+action: submit
 gpus: 0
-test: false
+test: true
 milestone: secondary_claims
-notes: "Packaged fresh-clone data setup: download.sh now resolves the repo root from its own location and regenerates synthetic benchmark data without external artifacts."
+notes: "CPU smoke job after evaluator tightening: rerun scripts/reproduce.sh and python validate.py --compare to verify full scoring metrics in-container."

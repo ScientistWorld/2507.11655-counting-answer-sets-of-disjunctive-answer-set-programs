@@ -3,40 +3,56 @@
     "scaled_disjunctive_counting": {
       "results": {
         "enumeration_cap_1000": {
+          "answer_set_log2_mae": 21.333333333333332,
           "avg_loop_atoms": 0.0,
           "avg_phi2_to_phi1_clause_ratio": 0.0,
           "exact_count_accuracy": 0.3333333333333333,
+          "large_exact_count_accuracy": 0.0,
           "max_log2_count_solved": 8.0,
-          "solved_instances": 2
+          "small_exact_count_accuracy": 1.0,
+          "solved_instances": 2,
+          "structural_report_fraction": 0.0
         },
         "sharpasp_sr": {
+          "answer_set_log2_mae": 0.0,
           "avg_loop_atoms": 2.0,
           "avg_phi2_to_phi1_clause_ratio": 1.2659313864132515,
           "exact_count_accuracy": 1.0,
+          "large_exact_count_accuracy": 1.0,
           "max_log2_count_solved": 20.0,
-          "solved_instances": 6
+          "small_exact_count_accuracy": 1.0,
+          "solved_instances": 6,
+          "structural_report_fraction": 1.0
         }
       }
     },
     "scaled_hybrid_counting": {
       "results": {
         "enumeration_cap_1000": {
+          "answer_set_log2_mae": 21.333333333333332,
           "avg_loop_atoms": 0.0,
           "avg_phi2_to_phi1_clause_ratio": 0.0,
           "enumeration_completed_instances": 2,
           "exact_count_accuracy": 0.3333333333333333,
           "fallback_instances": 0,
+          "large_exact_count_accuracy": 0.0,
           "max_log2_count_solved": 8.0,
-          "solved_instances": 2
+          "small_exact_count_accuracy": 1.0,
+          "solved_instances": 2,
+          "structural_report_fraction": 0.0
         },
         "enumeration_then_sharpasp_sr": {
-          "avg_loop_atoms": 1.3333333333333333,
-          "avg_phi2_to_phi1_clause_ratio": 0.7707319273192693,
+          "answer_set_log2_mae": 0.0,
+          "avg_loop_atoms": 2.0,
+          "avg_phi2_to_phi1_clause_ratio": 1.156097890978904,
           "enumeration_completed_instances": 2,
           "exact_count_accuracy": 1.0,
           "fallback_instances": 4,
+          "large_exact_count_accuracy": 1.0,
           "max_log2_count_solved": 20.0,
-          "solved_instances": 6
+          "small_exact_count_accuracy": 1.0,
+          "solved_instances": 6,
+          "structural_report_fraction": 0.6666666666666666
         }
       }
     }

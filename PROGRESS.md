@@ -32,6 +32,7 @@ Compute verification:
 - Job `82247c77-a43` reran `scripts/reproduce.sh` inside the container after those fixes.
 - Exit code: 0.
 - The verified post-fix scores remain: sharpASP-sR solves 6/6 scaled non-tight instances exactly, and the hybrid experiment solves 6/6 with two enumeration completions and four sharpASP-sR fallbacks.
+- The evaluator now emits all scaled target metrics named in `reference.json`, including large/small exact accuracy, log-count error, and structural report coverage. Existing artifacts validate with `python validate.py --compare`.
 
 Paper headline reference:
 
@@ -45,7 +46,7 @@ The current reproduction uses a scaled generated benchmark derived from the pape
 
 ## Issues
 
-No blocker for the scaled core claim or scaled hybrid claim. During continuation audit, the capped enumeration baseline was found to use manifest count metadata for generated choice instances; this was fixed so it now infers independent binary choice facts from the parsed program and counts extensions from executable ASP semantics. Job `da9a1309-c57` failed because the container did not resolve the workspace `data` module when running `baseline/enumerate.py`; the fix adds `data/__init__.py` and exports `/home/user` on `PYTHONPATH` in all entrypoint scripts. The retry job `42bdeff0-173` succeeded. A later local audit found that `projected_count` undercounted formulas with projected variables absent after simplification and that copy variables could collide with input atoms named like generated suffixes; both were fixed and covered by `method/selftest.py`. Job `82247c77-a43` verified these fixes in the container. The full paper benchmark was reported as supplementary material but is not present in the provided workspace.
+No blocker for the scaled core claim or scaled hybrid claim. During continuation audit, the capped enumeration baseline was found to use manifest count metadata for generated choice instances; this was fixed so it now infers independent binary choice facts from the parsed program and counts extensions from executable ASP semantics. Job `da9a1309-c57` failed because the container did not resolve the workspace `data` module when running `baseline/enumerate.py`; the fix adds `data/__init__.py` and exports `/home/user` on `PYTHONPATH` in all entrypoint scripts. The retry job `42bdeff0-173` succeeded. A later local audit found that `projected_count` undercounted formulas with projected variables absent after simplification and that copy variables could collide with input atoms named like generated suffixes; both were fixed and covered by `method/selftest.py`. Job `82247c77-a43` verified these fixes in the container. A subsequent scoring audit found that `scores.json` omitted several metrics declared in `reference.json`; `eval/evaluate_counts.py` now emits them from method artifacts. The full paper benchmark was reported as supplementary material but is not present in the provided workspace.
 
 ## Deviations from Paper
 
