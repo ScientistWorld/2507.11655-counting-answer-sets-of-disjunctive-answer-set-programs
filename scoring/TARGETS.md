@@ -1,7 +1,7 @@
 # Evaluation Targets
 
 ## Primary: scaled_disjunctive_counting
-Tests whether an exact disjunctive ASP counter returns correct counts on non-tight programs whose answer-set count grows from the paper example to `2^20`, beyond a small enumeration cap.
+Tests whether an exact disjunctive ASP counter returns correct counts on non-tight programs whose answer-set count grows from a small seed instance to `2^20`, beyond a small enumeration cap.
 - **Metric**: `exact_count_accuracy` (higher is better)
 - **Metric**: `solved_instances` (higher is better)
 - **Metric**: `max_log2_count_solved` (higher is better)
@@ -14,7 +14,7 @@ Tracks structural and encoding cost so an improvement cannot ignore the non-tigh
 - **Run**: `bash scripts/evaluate.sh` after producing result artifacts.
 
 ## Secondary: scaled_hybrid_counting
-Tests whether a hybrid exact counter preserves enumeration on easy instances and falls back to sharpASP-sR when the enumeration cap is exceeded.
+Tests whether a hybrid exact counter preserves enumeration on easy instances and falls back to an exact non-enumerative counter when the enumeration cap is exceeded.
 - **Metric**: `exact_count_accuracy` (higher is better)
 - **Metric**: `solved_instances` (higher is better)
 - **Metric**: `enumeration_completed_instances` (higher is better at equal accuracy)

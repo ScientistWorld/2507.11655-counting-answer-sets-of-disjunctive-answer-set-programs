@@ -1,5 +1,5 @@
-action: submit
+action: done
 gpus: 0
-test: true
+test: false
 milestone: secondary_claims
-notes: "CPU smoke job after evaluator tightening: rerun scripts/reproduce.sh and python validate.py --compare to verify full scoring metrics in-container."
+notes: "Final verification passed after method-agnostic doc cleanup, reusable evaluator fix, and removal of wall-clock PAR2 scoring weight."

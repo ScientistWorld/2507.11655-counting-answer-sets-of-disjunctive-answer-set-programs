@@ -4,13 +4,64 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from dataclasses import dataclass
 from pathlib import Path
 
 
-def load_result(path: Path) -> dict | None:
-    if not path.exists():
-        return None
-    return json.loads(path.read_text())
+@dataclass(frozen=True)
+class Artifact:
+    name: str
+    path: Path
+    results: dict
+
+
+def unique_result_paths(results_root: Path, explicit_paths: list[str]) -> list[Path]:
+    paths: list[Path] = []
+    if results_root.exists():
+        paths.extend(sorted(results_root.glob("*/results.json")))
+    paths.extend(Path(item) for item in explicit_paths)
+
+    unique: dict[Path, Path] = {}
+    for path in paths:
+        if path.exists():
+            unique[path.resolve()] = path
+    return list(unique.values())
+
+
+def artifact_name(path: Path, results: dict) -> str:
+    raw_name = str(results.get("method") or path.parent.name)
+    if raw_name == "enumeration":
+        limit = results.get("limit")
+        for item in results.get("instances", {}).values():
+            limit = item.get("limit", limit)
+            if limit is not None:
+                break
+        if limit is not None:
+            return f"enumeration_cap_{limit}"
+    return raw_name
+
+
+def load_artifacts(results_root: Path, explicit_paths: list[str]) -> dict[str, Artifact]:
+    artifacts: dict[str, Artifact] = {}
+    for path in unique_result_paths(results_root, explicit_paths):
+        results = json.loads(path.read_text())
+        name = artifact_name(path, results)
+        artifacts[name] = Artifact(name=name, path=path, results=results)
+    if not artifacts:
+        raise FileNotFoundError(
+            f"No result artifacts found under {results_root} and no explicit result paths existed."
+        )
+    return artifacts
+
+
+def has_hybrid_fields(results: dict) -> bool:
+    if "enumeration_limit" in results or "fallback_instances" in results:
+        return True
+    return any("used_fallback" in item for item in results.get("instances", {}).values())
+
+
+def is_enumeration_baseline(name: str) -> bool:
+    return name.startswith("enumeration_cap_")
 
 
 def summarize_method(results: dict, manifest: dict) -> dict:
@@ -92,29 +143,25 @@ def summarize_hybrid(results: dict, manifest: dict) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", default="data/benchmarks.json")
-    parser.add_argument("--method-results", default="checkpoints/sharpasp_sr/results.json")
-    parser.add_argument("--baseline-results", default="checkpoints/enumeration/results.json")
-    parser.add_argument("--hybrid-results", default="checkpoints/hybrid/results.json")
+    parser.add_argument("--results-root", default="checkpoints")
+    parser.add_argument("--method-results", action="append", default=[])
+    parser.add_argument("--baseline-results", action="append", default=[])
+    parser.add_argument("--hybrid-results", action="append", default=[])
     parser.add_argument("--output", default="scoring/scores.json")
     args = parser.parse_args()
 
     manifest = json.loads(Path(args.manifest).read_text())
-    method_result = load_result(Path(args.method_results))
-    baseline_result = load_result(Path(args.baseline_results))
-    hybrid_result = load_result(Path(args.hybrid_results))
+    explicit_paths = args.method_results + args.baseline_results + args.hybrid_results
+    artifacts = load_artifacts(Path(args.results_root), explicit_paths)
 
     counting_results = {}
     hybrid_results = {}
-    if baseline_result is not None:
-        baseline_counting = summarize_method(baseline_result, manifest)
-        counting_results["enumeration_cap_1000"] = baseline_counting
-        hybrid_results["enumeration_cap_1000"] = summarize_hybrid(baseline_result, manifest)
-    if method_result is not None:
-        counting_results["sharpasp_sr"] = summarize_method(method_result, manifest)
-    if hybrid_result is not None:
-        hybrid_results["enumeration_then_sharpasp_sr"] = summarize_hybrid(hybrid_result, manifest)
-    if not counting_results and not hybrid_results:
-        raise FileNotFoundError("No result artifacts found to evaluate.")
+    for name, artifact in sorted(artifacts.items()):
+        hybrid_like = has_hybrid_fields(artifact.results)
+        if not hybrid_like or is_enumeration_baseline(name):
+            counting_results[name] = summarize_method(artifact.results, manifest)
+        if hybrid_like or is_enumeration_baseline(name):
+            hybrid_results[name] = summarize_hybrid(artifact.results, manifest)
 
     scores = {
         "experiments": {
