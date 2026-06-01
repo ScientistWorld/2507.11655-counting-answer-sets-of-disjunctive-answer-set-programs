@@ -20,4 +20,4 @@
 - Hybrid solved all six scaled instances exactly, handled two by enumeration, and used sharpASP-sR fallback for four larger-count instances.
 
 ## Stop Justification
-- Completed at milestone `secondary_claims`. Higher milestones require the paper's full 1125-instance benchmark suite and an external projected model counter such as GANAK, which are not present in this workspace.
+- Completed at milestone `secondary_claims`.

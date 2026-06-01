@@ -1,8 +1,8 @@
 # IMPORTANT: Once you set action to 'submit' or 'done', STOP immediately.
 # Do NOT sleep, poll, or wait for jobs. The system reads this file
 # only after your turn ends. Sleeping blocks the entire pipeline.
-action: submit
+action: done
 gpus: 0
 test: true
-milestone: core_claim_plus
-notes: "Retry CPU test after adding data/__init__.py and PYTHONPATH exports; verifies expanded sharpASP-sR and hybrid reproduction inside the container."
+milestone: secondary_claims
+notes: "Verified sharpASP-sR core scaled benchmark and hybrid enumeration-then-sharpASP-sR secondary claim in successful container job 42bdeff0-173."

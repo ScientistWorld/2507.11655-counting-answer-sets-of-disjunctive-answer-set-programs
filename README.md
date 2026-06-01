@@ -69,9 +69,11 @@ Secondary claims: a hybrid strategy that enumerates only small-count cases and f
 
 The paper compares exact counting against clingo, DynASP, and Wasp on 1125 non-tight disjunctive instances. The headline target is higher solved count than enumeration-based systems while preserving exactness. This workspace includes a scaled enumeration baseline with an answer-set cap, mirroring the paper's observation that enumeration degrades when counts grow.
 
+The paper also evaluates a hybrid strategy that enumerates answer sets up to a threshold and invokes sharpASP-sR only when enumeration exceeds that threshold. This workspace reproduces that secondary claim on the scaled benchmark with a cap of 1000.
+
 ## Evaluation Protocol
 
-Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enumeration baseline, run the proposed exact counter, and write `scoring/scores.json`. Future methods should write the same result artifact format under `checkpoints/<method>/results.json` and then call `scripts/evaluate.sh`. Evaluation code must not import from `method/`.
+Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enumeration baseline, run the proposed exact counter, and write `scoring/scores.json`. The scaled benchmark ranges from the paper's illustrative non-tight program through independent-choice extensions with up to `2^20` answer sets. Future methods should write the same result artifact format under `checkpoints/<method>/results.json` and then call `scripts/evaluate.sh`. Evaluation code must not import from `method/`.
 
 ---
 
@@ -97,12 +99,37 @@ Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enum
 
 </details>
 
+### Iteration 2: gpt-5.5
+- **Milestone**: `secondary_claims` | **Status**: done
+- **Working time**: 7m | **GPU**: 0.0h
+- **Jobs**: 3 total (2 completed, 1 failed)
+
+<details>
+<summary>Progress Log</summary>
+
+### [2026-06-01 22:55] - core_claim
+- Implemented sharpASP-sR's subtractive reduction: Clark-completion overcount minus projected surplus over two loop-atom copy formulas.
+- Ran the scaled non-tight disjunctive benchmark end-to-end; sharpASP-sR exactly counted all four instances up to `2^14` answer sets while capped enumeration completed two.
+- Packaged method, baseline, evaluation, scoring, and scripts for a reusable CPU-only environment.
+
+### [2026-06-01 22:57] - core_claim_plus
+- Audited the workspace and confirmed the proposed method implements the paper's overcount-minus-projected-surplus reduction rather than a surrogate.
+- Fixed the capped enumeration baseline so it infers independent binary choices from parsed ASP rules instead of using manifest expected-count metadata.
+- Expanded the scaled benchmark to six settings, reaching `2^20` answer sets; sharpASP-sR solved all six exactly while capped enumeration completed two.
+
+### [2026-06-01 23:02] - secondary_claims
+- Added and compute-verified the paper's hybrid strategy on the scaled benchmark: enumerate up to 1000 answer sets, then fall back to sharpASP-sR.
+- Job `42bdeff0-173` completed successfully in the container and regenerated `scoring/scores.json`.
+- Hybrid solved all six scaled instances exactly, handled two by enumeration, and used sharpASP-sR fallback for four larger-count instances.
+
+</details>
+
 
 ---
 
 # Reproduction Milestones
 
-**Current: core_claim**
+**Current: secondary_claims**
 
 ## Stop Justification
-- Completed at milestone `core_claim`.
+- Completed at milestone `secondary_claims`.
