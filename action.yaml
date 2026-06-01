@@ -27,8 +27,8 @@
 #   milestone: core_claim
 #   notes: "Reproduced the core claim. Environment packaged."
 
-action: submit
+action: done
 gpus: 0
 test: true
-milestone: core_claim
-notes: "CPU smoke job: rerun scripts/reproduce.sh inside the packaged environment and regenerate scores.json for the scaled sharpASP-sR core-claim reproduction."
+milestone: core_claim_plus
+notes: "Verified scaled sharpASP-sR reproduction with compute job e3a1d58c-93c. The packaged pipeline runs end-to-end and demonstrates exact subtractive counting across four generated non-tight disjunctive ASP settings."

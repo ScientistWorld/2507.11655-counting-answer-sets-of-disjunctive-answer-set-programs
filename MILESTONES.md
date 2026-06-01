@@ -1,6 +1,6 @@
 # Reproduction Milestones
 
-**Current: core_claim**
+**Current: core_claim_plus**
 
 <!-- Milestone levels (update "Current" above as you progress):
   none             — just started, no meaningful progress yet
@@ -20,5 +20,10 @@
 - Ran a scaled benchmark derived from the paper's non-tight example.
 - Reproduced the core claim at small scale: the exact reduction counts all instances through `2^14` answer sets, while capped enumeration completes only the smaller cases.
 
+### [2026-06-01 23:52] - core_claim_plus
+- Verified the packaged pipeline with compute job `e3a1d58c-93c` on a CPU test node.
+- `scripts/run.sh` executed `scripts/reproduce.sh` successfully inside the container, exit code 0.
+- The scaled benchmark covers four count regimes (`2^0`, `2^8`, `2^12`, `2^14`), demonstrating the core claim beyond a single minimum instance.
+
 ## Stop Justification
-- Not stopped; current submission will rerun the packaged pipeline in the compute environment.
+- Stopped after verified scaled `core_claim_plus`. Full-paper reproduction would require the supplementary 1125-instance benchmark suite and GANAK integration, neither of which is present in the provided workspace.
