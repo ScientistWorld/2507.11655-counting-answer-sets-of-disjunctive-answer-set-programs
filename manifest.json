@@ -1,0 +1,127 @@
+{
+  "paper": {
+    "arxiv_id": "2507.11655",
+    "title": "Counting Answer Sets of Disjunctive Answer Set Programs",
+    "date": "",
+    "topics": [
+      "paper-type-metric-method",
+      "domain-theory",
+      "area-symbolic-ai",
+      "category-evaluation",
+      "method-projected-model-counting",
+      "secondary-domain-ai-ml",
+      "secondary-area-symbolic-ai",
+      "secondary-category-optimization",
+      "secondary-method-subtractive-reduction",
+      "selection-category-evaluation"
+    ]
+  },
+  "reproduction": {
+    "milestone": "core_claim_plus",
+    "status": "done",
+    "error": null,
+    "scaffold": "codex",
+    "model": "gpt-5.5",
+    "profile": "gpt-5.5-medium",
+    "effort": "medium",
+    "gpu_hours_used": 0.0,
+    "current_iteration_gpu_budget": 30,
+    "current_iteration_gpu_hours_used": 0.0,
+    "total_gpu_hours_used": 0.0,
+    "current_iteration_cpu_hours_used": 0.006,
+    "total_cpu_hours_used": 0.006,
+    "gpu_budget": 30,
+    "duration_sec": 598.0,
+    "cost_usd": null,
+    "input_tokens": 2902864,
+    "output_tokens": 26852,
+    "cached_input_tokens": 2724096,
+    "cache_creation_tokens": null,
+    "reasoning_tokens": 0,
+    "total_input_tokens": 2902864,
+    "num_turns": 52,
+    "duration_api_ms": null,
+    "num_runs": 1,
+    "iteration_count": 0,
+    "workflow": "standard",
+    "workflow_step": 0,
+    "total_gpu_jobs": 1,
+    "time_breakdown": {
+      "working": 467.926726102829,
+      "building": 0.0739128589630127,
+      "installing": 1.3799245357513428,
+      "waiting": 26.715784549713135
+    }
+  },
+  "agents": [
+    {
+      "scaffold": "codex",
+      "model": "gpt-5.5",
+      "profile": "gpt-5.5-medium",
+      "effort": "medium",
+      "role": "reproducer",
+      "is_iteration": false,
+      "iteration": 1,
+      "workflow": "standard",
+      "workflow_step": 0,
+      "started_at": 1780353803.8184564,
+      "finished_at": 1780354401.8556669,
+      "duration_sec": 598.0,
+      "blocked_sec": 0.0,
+      "status": "done",
+      "error": null,
+      "milestone": "core_claim_plus",
+      "gpu_budget": 30,
+      "gpu_hours_used": 0.0,
+      "total_gpu_hours_used": 0.0,
+      "cpu_hours_used": 0.006,
+      "time_breakdown": {
+        "working": 467.926726102829,
+        "building": 0.0739128589630127,
+        "installing": 1.3799245357513428,
+        "waiting": 26.715784549713135
+      },
+      "cost_usd": null,
+      "input_tokens": 2902864,
+      "output_tokens": 26852,
+      "cached_input_tokens": 2724096,
+      "cache_creation_tokens": null,
+      "reasoning_tokens": 0,
+      "total_input_tokens": 2902864,
+      "num_turns": 52,
+      "duration_api_ms": null,
+      "tool_uses": {
+        "shell": 43,
+        "file_edit": 9
+      },
+      "gpu_jobs": [
+        {
+          "run_id": "e3a1d58c-93c",
+          "command": "bash /home/user/scripts/run.sh",
+          "num_gpus": 0,
+          "num_cpus": 1,
+          "resource": "gpu-cpu",
+          "hive_job_id": "bb42736e",
+          "status": "completed",
+          "returncode": 0,
+          "duration_sec": 22.8,
+          "submitted_at": 1780354278.1037285,
+          "started_at": 1780354280.0159152,
+          "completed_at": 1780354302.8150842
+        }
+      ],
+      "progress_log": "### [2026-06-01 23:10] - core_claim\n- Implemented the paper's subtractive reduction: `#Comp(P) - #exists copy-vars phi2`.\n- Ran a scaled benchmark derived from the paper's non-tight example.\n- Reproduced the core claim at small scale: the exact reduction counts all instances through `2^14` answer sets, while capped enumeration completes only the smaller cases.\n\n### [2026-06-01 23:52] - core_claim_plus\n- Verified the packaged pipeline with compute job `e3a1d58c-93c` on a CPU test node.\n- `scripts/run.sh` executed `scripts/reproduce.sh` successfully inside the container, exit code 0.\n- The scaled benchmark covers four count regimes (`2^0`, `2^8`, `2^12`, `2^14`), demonstrating the core claim beyond a single minimum instance."
+    }
+  ],
+  "components": {
+    "has_container": true,
+    "has_method_code": true,
+    "has_evaluation": true,
+    "has_download_script": true,
+    "has_reproduce_script": true,
+    "has_method_script": true,
+    "has_baseline": true,
+    "has_reference": true,
+    "has_data": true
+  }
+}

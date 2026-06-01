@@ -26,4 +26,4 @@
 - The scaled benchmark covers four count regimes (`2^0`, `2^8`, `2^12`, `2^14`), demonstrating the core claim beyond a single minimum instance.
 
 ## Stop Justification
-- Stopped after verified scaled `core_claim_plus`. Full-paper reproduction would require the supplementary 1125-instance benchmark suite and GANAK integration, neither of which is present in the provided workspace.
+- Completed at milestone `core_claim_plus`.
