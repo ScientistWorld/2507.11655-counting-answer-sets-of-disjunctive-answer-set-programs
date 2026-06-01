@@ -7,9 +7,9 @@ import math
 from pathlib import Path
 
 
-def load_result(path: Path) -> dict:
+def load_result(path: Path) -> dict | None:
     if not path.exists():
-        return {"instances": {}}
+        return None
     return json.loads(path.read_text())
 
 
@@ -65,22 +65,30 @@ def main() -> None:
     args = parser.parse_args()
 
     manifest = json.loads(Path(args.manifest).read_text())
-    method = summarize_method(load_result(Path(args.method_results)), manifest)
-    baseline = summarize_method(load_result(Path(args.baseline_results)), manifest)
-    hybrid = summarize_hybrid(load_result(Path(args.hybrid_results)), manifest)
+    method_result = load_result(Path(args.method_results))
+    baseline_result = load_result(Path(args.baseline_results))
+    hybrid_result = load_result(Path(args.hybrid_results))
+
+    counting_results = {}
+    hybrid_results = {}
+    if baseline_result is not None:
+        baseline_counting = summarize_method(baseline_result, manifest)
+        counting_results["enumeration_cap_1000"] = baseline_counting
+        hybrid_results["enumeration_cap_1000"] = summarize_hybrid(baseline_result, manifest)
+    if method_result is not None:
+        counting_results["sharpasp_sr"] = summarize_method(method_result, manifest)
+    if hybrid_result is not None:
+        hybrid_results["enumeration_then_sharpasp_sr"] = summarize_hybrid(hybrid_result, manifest)
+    if not counting_results and not hybrid_results:
+        raise FileNotFoundError("No result artifacts found to evaluate.")
+
     scores = {
         "experiments": {
             "scaled_disjunctive_counting": {
-                "results": {
-                    "enumeration_cap_1000": baseline,
-                    "sharpasp_sr": method,
-                }
+                "results": counting_results
             },
             "scaled_hybrid_counting": {
-                "results": {
-                    "enumeration_cap_1000": baseline,
-                    "enumeration_then_sharpasp_sr": hybrid,
-                }
+                "results": hybrid_results
             }
         }
     }

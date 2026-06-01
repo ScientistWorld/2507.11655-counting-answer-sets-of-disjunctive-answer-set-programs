@@ -81,21 +81,31 @@ def projected_count(clauses: list[Clause], projection_vars: list[int]) -> int:
     base = tuple(tuple(sorted(c, key=abs)) for c in clauses)
 
     @lru_cache(maxsize=None)
-    def rec(state: tuple[Clause, ...]) -> int:
-        simplified, _assigned = _unit_propagate(state)
+    def rec(state: tuple[Clause, ...], remaining_project: frozenset[int]) -> int:
+        simplified, assigned = _unit_propagate(state)
         if simplified is None:
             return 0
+        remaining_project = frozenset(v for v in remaining_project if v not in assigned)
         if not simplified:
-            return 1
-        used_projected = sorted({abs(lit) for clause in simplified for lit in clause if abs(lit) in project})
+            return 2 ** len(remaining_project)
+        used_projected = sorted(
+            {
+                abs(lit)
+                for clause in simplified
+                for lit in clause
+                if abs(lit) in remaining_project
+            }
+        )
+        unconstrained = len(remaining_project) - len(used_projected)
         if not used_projected:
-            return 1 if is_sat(simplified) else 0
+            return (2 ** unconstrained) if is_sat(simplified) else 0
         var = min(used_projected, key=lambda v: sum(v == abs(l) for c in simplified for l in c))
+        rest = frozenset(v for v in remaining_project if v != var and v in used_projected)
         total = 0
         for lit in (var, -var):
             nxt = _simplify(simplified, lit)
             if nxt is not None:
-                total += rec(nxt)
-        return total
+                total += rec(nxt, rest)
+        return total * (2 ** unconstrained)
 
-    return rec(base)
+    return rec(base, project)

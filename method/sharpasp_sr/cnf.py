@@ -36,7 +36,12 @@ class CNF:
         self.clauses.append(tuple(uniq))
 
     def new_aux(self, prefix: str = "aux") -> int:
-        return self.var(f"__{prefix}_{len(self.var_ids) + 1}")
+        idx = len(self.var_ids) + 1
+        while True:
+            name = f"__{prefix}_{idx}"
+            if name not in self.var_ids:
+                return self.var(name)
+            idx += 1
 
     def add_implication(self, antecedent: list[int], consequent: list[int]) -> None:
         self.add_clause([-lit for lit in antecedent] + consequent)

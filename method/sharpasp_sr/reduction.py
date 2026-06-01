@@ -38,9 +38,10 @@ def add_completion(cnf: CNF, program: Program) -> None:
 
 
 def add_copy(cnf: CNF, program: Program, loops: set[str], suffix: str) -> dict[str, str]:
-    rename = {atom: f"{atom}{suffix}" for atom in loops}
+    rename = {}
     for atom in loops:
-        cnf.var(rename[atom])
+        copy_var = cnf.new_aux(f"copy{suffix}_{atom}")
+        rename[atom] = cnf.names[copy_var]
         cnf.add_implication([cnf.lit(rename[atom])], [cnf.lit(atom)])
     for rule in program.rules:
         if not set(rule.head).intersection(loops):
@@ -78,14 +79,18 @@ def build_phi2(program: Program) -> tuple[CNF, list[int], set[str]]:
         cnf.add_clause(diff_aux)
     else:
         cnf.add_clause([])
-    return cnf, [cnf.var(atom) for atom in program.atoms], loops
+    kept_projection_atoms = [cnf.var(atom) for atom in program.atoms]
+    return cnf, kept_projection_atoms, loops
 
 
 def sharpasp_sr_count(program: Program) -> dict:
     phi1, atoms, loops = build_phi1(program)
-    phi2, projection, _ = build_phi2(program)
+    phi2, kept_projection_atoms, _ = build_phi2(program)
     overcount = count_models(phi1.clauses, len(phi1.var_ids))
-    surplus = projected_count(phi2.clauses, projection)
+    # The paper writes #exists X phi2 for X = CV' union CV*, i.e. copies are
+    # disregarded. This in-repo counter takes the dual convention: variables
+    # listed here are the original atoms whose projected assignments are kept.
+    surplus = projected_count(phi2.clauses, kept_projection_atoms)
     return {
         "answer_sets": overcount - surplus,
         "overcount": overcount,

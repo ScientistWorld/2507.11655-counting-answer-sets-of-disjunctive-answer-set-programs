@@ -31,7 +31,7 @@
       }
     },
     "scaled_disjunctive_counting": {
-      "description": "Scaled reproduction benchmark with exact counts on generated non-tight disjunctive programs derived from the paper example.",
+      "description": "Scaled reproduction target with exact counts on generated non-tight disjunctive programs derived from the paper example.",
       "weight": 0.2,
       "primary_metric": "exact_count_accuracy",
       "metrics": {
@@ -61,7 +61,7 @@
       }
     },
     "scaled_hybrid_counting": {
-      "description": "Scaled reproduction of the paper's hybrid claim: enumerate small-count cases, then fall back to sharpASP-sR when enumeration exceeds the cap.",
+      "description": "Scaled reproduction target for the paper's hybrid claim: enumerate small-count cases, then fall back to sharpASP-sR when enumeration exceeds the cap.",
       "weight": 0.15,
       "primary_metric": "exact_count_accuracy",
       "metrics": {
