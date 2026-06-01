@@ -14,4 +14,5 @@ set -e
 cd /home/user
 export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
-bash scripts/reproduce.sh
+bash scripts/evaluate_train.sh --results-root /home/user/checkpoints
+bash scripts/evaluate_test.sh --results-root /home/user/checkpoints
