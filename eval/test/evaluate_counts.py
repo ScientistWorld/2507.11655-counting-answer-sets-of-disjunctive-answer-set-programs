@@ -86,33 +86,62 @@ def summarize_counts(results: dict, manifest: dict) -> dict[str, float]:
     expected = {item["name"]: item for item in manifest["instances"]}
     solved = 0
     exact = 0
+    large_exact = 0
+    large_total = 0
+    small_exact = 0
+    small_total = 0
     max_log = 0.0
     total_loop_atoms = 0.0
     total_phi2_ratio = 0.0
+    total_log_error = 0.0
+    structural_reports = 0
 
     for name, item in expected.items():
         got = results.get("instances", {}).get(name)
+        expected_count = item["expected_answer_sets"]
+        expected_log = math.log2(expected_count) if expected_count > 0 else 0.0
+        is_large = expected_count > 1000
+        if is_large:
+            large_total += 1
+        else:
+            small_total += 1
+
         if not got:
+            total_log_error += expected_log + 1.0
             continue
         complete = got.get("complete", True)
         if complete:
             solved += 1
-        if complete and got.get("answer_sets") == item["expected_answer_sets"]:
+        exact_match = complete and got.get("answer_sets") == expected_count
+        if exact_match:
             exact += 1
+            if is_large:
+                large_exact += 1
+            else:
+                small_exact += 1
         if complete and got.get("answer_sets", 0) > 0:
             max_log = max(max_log, math.log2(got["answer_sets"]))
+            total_log_error += abs(math.log2(got["answer_sets"]) - expected_log)
+        else:
+            total_log_error += expected_log + 1.0
         if "loop_atoms" in got:
             total_loop_atoms += got["loop_atoms"]
-        if got.get("phi1_clauses"):
+        if got.get("phi1_clauses") and "phi2_clauses" in got:
             total_phi2_ratio += got["phi2_clauses"] / got["phi1_clauses"]
+        if {"loop_atoms", "phi1_clauses", "phi2_clauses"}.issubset(got):
+            structural_reports += 1
 
     n = len(expected)
     return {
         "solved_instances": solved,
         "exact_count_accuracy": exact / n if n else 0.0,
+        "large_exact_count_accuracy": large_exact / large_total if large_total else 0.0,
+        "small_exact_count_accuracy": small_exact / small_total if small_total else 0.0,
+        "answer_set_log2_mae": total_log_error / n if n else 0.0,
         "max_log2_count_solved": max_log,
         "avg_loop_atoms": total_loop_atoms / n if n else 0.0,
         "avg_phi2_to_phi1_clause_ratio": total_phi2_ratio / n if n else 0.0,
+        "structural_report_fraction": structural_reports / n if n else 0.0,
     }
 
 
@@ -144,6 +173,7 @@ def build_scores(artifacts: dict[str, Artifact], manifest: dict) -> dict:
             hybrid_results[name] = summarize_hybrid(artifact.results, manifest)
 
     return {
+        "slice": SLICE,
         "experiments": {
             "scaled_disjunctive_counting": {"results": counting_results},
             "scaled_hybrid_counting": {"results": hybrid_results},
@@ -156,7 +186,7 @@ def filter_to_train_methods(scores: dict, train_scores_path: Path) -> dict:
         return scores
 
     train_scores = load_json(train_scores_path)
-    filtered = {"experiments": {}}
+    filtered = {"slice": SLICE, "experiments": {}}
     for exp_name, train_exp in train_scores.get("experiments", {}).items():
         required = set(train_exp.get("results", {}))
         available = scores.get("experiments", {}).get(exp_name, {}).get("results", {})

@@ -5,8 +5,8 @@
       "weight": 0.45,
       "primary_metric": "solved_instances",
       "metrics": {
-        "solved_instances": {"higher_is_better": true, "coefficient": 1.0},
-        "par2": {"higher_is_better": false, "coefficient": -0.5}
+        "solved_instances": {"higher_is_better": true, "coefficient": 1.0, "description": "Number of benchmark instances solved within the paper's resource limits."},
+        "par2": {"higher_is_better": false, "coefficient": -0.5, "description": "Penalized average runtime where timeouts count twice the timeout budget."}
       },
       "results": {
         "clingo": {"type": "baseline", "solved_instances": 708, "par2": 4118},
@@ -20,8 +20,8 @@
       "weight": 0.2,
       "primary_metric": "solved_instances",
       "metrics": {
-        "solved_instances": {"higher_is_better": true, "coefficient": 1.0},
-        "par2": {"higher_is_better": false, "coefficient": -0.5}
+        "solved_instances": {"higher_is_better": true, "coefficient": 1.0, "description": "Number of hybrid benchmark instances solved within the paper's resource limits."},
+        "par2": {"higher_is_better": false, "coefficient": -0.5, "description": "Penalized average runtime where timeouts count twice the timeout budget."}
       },
       "results": {
         "clingo": {"type": "baseline", "solved_instances": 708, "par2": 4118},
@@ -35,11 +35,15 @@
       "weight": 0.2,
       "primary_metric": "exact_count_accuracy",
       "metrics": {
-        "solved_instances": {"higher_is_better": true, "coefficient": 0.5},
-        "exact_count_accuracy": {"higher_is_better": true, "coefficient": 1.0},
-        "max_log2_count_solved": {"higher_is_better": true, "coefficient": 0.5},
-        "avg_loop_atoms": {"higher_is_better": false, "coefficient": -0.1},
-        "avg_phi2_to_phi1_clause_ratio": {"higher_is_better": false, "coefficient": -0.1}
+        "solved_instances": {"higher_is_better": true, "coefficient": 0.5, "description": "Number of split instances for which the artifact reports a complete count."},
+        "exact_count_accuracy": {"higher_is_better": true, "coefficient": 1.0, "description": "Fraction of split instances whose complete reported answer-set count exactly matches the known count."},
+        "large_exact_count_accuracy": {"higher_is_better": true, "coefficient": 0.8, "description": "Exact-count accuracy restricted to instances above the 1000-answer-set enumeration cap."},
+        "small_exact_count_accuracy": {"higher_is_better": true, "coefficient": 0.2, "description": "Exact-count accuracy on instances at or below the 1000-answer-set enumeration cap."},
+        "answer_set_log2_mae": {"higher_is_better": false, "coefficient": -0.4, "description": "Mean absolute log2 error of reported counts, with missing or incomplete results receiving a finite miss penalty."},
+        "max_log2_count_solved": {"higher_is_better": true, "coefficient": 0.5, "description": "Largest log2 answer-set count among split instances reported as complete."},
+        "avg_loop_atoms": {"higher_is_better": false, "coefficient": -0.05, "description": "Average reported loop-atom count, kept as a small encoding-cost signal rather than a primary objective."},
+        "avg_phi2_to_phi1_clause_ratio": {"higher_is_better": false, "coefficient": -0.05, "description": "Average reported ratio of second-reduction clauses to completion clauses, used as a lightweight formula-growth constraint."},
+        "structural_report_fraction": {"higher_is_better": true, "coefficient": 0.15, "description": "Fraction of split instances reporting loop and formula-size fields so missing structural data cannot look like zero cost."}
       },
       "results": {
         "enumeration_cap_1000": {
@@ -65,13 +69,17 @@
       "weight": 0.15,
       "primary_metric": "exact_count_accuracy",
       "metrics": {
-        "solved_instances": {"higher_is_better": true, "coefficient": 0.5},
-        "exact_count_accuracy": {"higher_is_better": true, "coefficient": 1.0},
-        "max_log2_count_solved": {"higher_is_better": true, "coefficient": 0.5},
-        "enumeration_completed_instances": {"higher_is_better": true, "coefficient": 0.1},
-        "fallback_instances": {"higher_is_better": false, "coefficient": -0.1},
-        "avg_loop_atoms": {"higher_is_better": false, "coefficient": -0.1},
-        "avg_phi2_to_phi1_clause_ratio": {"higher_is_better": false, "coefficient": -0.1}
+        "solved_instances": {"higher_is_better": true, "coefficient": 0.5, "description": "Number of split instances for which the hybrid artifact reports a complete count."},
+        "exact_count_accuracy": {"higher_is_better": true, "coefficient": 1.0, "description": "Fraction of split instances whose complete hybrid count exactly matches the known count."},
+        "large_exact_count_accuracy": {"higher_is_better": true, "coefficient": 0.8, "description": "Hybrid exact-count accuracy restricted to instances above the 1000-answer-set enumeration cap."},
+        "small_exact_count_accuracy": {"higher_is_better": true, "coefficient": 0.2, "description": "Hybrid exact-count accuracy on instances at or below the 1000-answer-set enumeration cap."},
+        "answer_set_log2_mae": {"higher_is_better": false, "coefficient": -0.4, "description": "Mean absolute log2 error of hybrid reported counts, with missing or incomplete results receiving a finite miss penalty."},
+        "max_log2_count_solved": {"higher_is_better": true, "coefficient": 0.5, "description": "Largest log2 answer-set count among split instances reported as complete by the hybrid artifact."},
+        "enumeration_completed_instances": {"higher_is_better": true, "coefficient": 0.1, "description": "Number of complete split instances handled without invoking the fallback counter."},
+        "fallback_instances": {"higher_is_better": false, "coefficient": -0.1, "description": "Number of split instances reported as requiring the fallback counter."},
+        "avg_loop_atoms": {"higher_is_better": false, "coefficient": -0.05, "description": "Average reported loop-atom count for fallback-style reductions, kept as a small encoding-cost signal."},
+        "avg_phi2_to_phi1_clause_ratio": {"higher_is_better": false, "coefficient": -0.05, "description": "Average reported ratio of second-reduction clauses to completion clauses, used as a lightweight formula-growth constraint."},
+        "structural_report_fraction": {"higher_is_better": true, "coefficient": 0.15, "description": "Fraction of split instances reporting loop and formula-size fields so missing structural data cannot look like zero cost."}
       },
       "results": {
         "enumeration_cap_1000": {
