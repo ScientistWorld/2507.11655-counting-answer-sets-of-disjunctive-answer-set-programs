@@ -62,18 +62,18 @@ Secondary claims: a hybrid strategy that enumerates only small-count cases and f
 - `solved_instances`: number of benchmark instances for which an exact count is returned.
 - `exact_count_accuracy`: fraction of scaled benchmark instances whose returned count equals the known exact count.
 - `max_log2_count_solved`: largest solved answer-set count, reported as base-2 logarithm.
-- `par2`: paper metric for timeout-penalized runtime; lower is better. It is retained in `reference.json` but not used as a reproduced score because wall-clock speed is hardware dependent.
+- `par2`: paper-reported timeout-penalized runtime. It is retained only as historical context in `reference.json`; it is not assigned scoring weight because wall-clock speed is hardware dependent.
 - Structural constraint diagnostics: average number of loop atoms and generated formula-size ratio.
 
 ## Baselines and Targets
 
-The paper compares exact counting against clingo, DynASP, and Wasp on 1125 non-tight disjunctive instances. The headline target is higher solved count than enumeration-based systems while preserving exactness. This workspace includes a scaled enumeration baseline with an answer-set cap, mirroring the paper's observation that enumeration degrades when counts grow.
+The paper compares exact counting systems on 1125 non-tight disjunctive instances. The headline target is higher solved count than enumeration-based systems while preserving exactness. This workspace includes a scaled enumeration baseline with an answer-set cap, mirroring the observation that enumeration degrades when counts grow.
 
-The paper also evaluates a hybrid strategy that enumerates answer sets up to a threshold and invokes sharpASP-sR only when enumeration exceeds that threshold. This workspace reproduces that secondary claim on the scaled benchmark with a cap of 1000.
+The paper also evaluates a hybrid strategy that enumerates answer sets up to a threshold and invokes an exact fallback counter only when enumeration exceeds that threshold. This workspace reproduces that secondary claim on the scaled benchmark with a cap of 1000.
 
 ## Evaluation Protocol
 
-Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enumeration baseline, run the proposed exact counter, and write `scoring/scores.json`. The scaled benchmark ranges from the paper's illustrative non-tight program through independent-choice extensions with up to `2^20` answer sets. Future methods should write the same result artifact format under `checkpoints/<method>/results.json` and then call `scripts/evaluate.sh`. Evaluation code must not import from `method/`.
+Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enumeration baseline, run an exact counter, and write `scoring/scores.json`. The scaled benchmark ranges from a small non-tight program through independent-choice extensions with up to `2^20` answer sets. Future methods should write the same result artifact format under `checkpoints/<method>/results.json` and then call `scripts/evaluate.sh`. Evaluation code must not import from `method/`.
 
 ---
 
@@ -271,6 +271,42 @@ Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enum
 ### Iteration 7: gpt-5.5 (packager)
 - **Milestone**: `secondary_claims` | **Status**: done
 - **Working time**: 1m | **GPU**: 0.0h
+- **Jobs**: 5 total (4 completed, 1 failed)
+
+<details>
+<summary>Progress Log</summary>
+
+### [2026-06-01 22:43] - none
+- Started from a partial workspace for the sharpASP-sR paper.
+- Identified the central claim: exact counting for non-tight disjunctive ASP via subtractive reduction to projected model counting.
+
+### [2026-06-01 22:58] - method_runs
+- Implemented and ran the paper's actual computation at scaled size: Clark completion overcount, loop-atom copy formulas, projected surplus counting, and subtraction.
+- Added a capped enumeration baseline using shared ASP semantics outside `method/`.
+
+### [2026-06-01 23:02] - core_claim
+- Verified the scaled generated benchmark end to end in the compute container.
+- sharpASP-sR counted all benchmark instances exactly while capped enumeration stopped after small-count cases.
+
+### [2026-06-01 23:02] - core_claim_plus
+- Added and verified the scaled hybrid experiment: enumerate easy instances first, then fall back to sharpASP-sR.
+- Scope note: this milestone is for the scaled generated benchmark derived from the paper example, not the full 1125-instance benchmark with GANAK.
+
+### [2026-06-01 23:18] - core_claim_plus
+- Fixed the in-repo projected model counter so unconstrained projected variables are counted correctly.
+- Fixed fresh-variable allocation for copy and auxiliary variables so program atoms cannot collide with `Copy(P)`.
+- Added `method/selftest.py` regression checks for projected counting, the paper example, and copy-variable freshness before the next container job.
+
+### [2026-06-01 23:19] - secondary_claims
+- Container job `82247c77-a43` reran `scripts/reproduce.sh` successfully after the projected-counting and fresh-variable fixes.
+- Verified the scaled hybrid secondary claim: capped enumeration completed the two easy instances, then sharpASP-sR solved the four fallback instances exactly.
+- `python validate.py --compare` passes with both scored experiments aligned to the reusable scoring contract.
+
+</details>
+
+### Iteration 8: gpt-5.5 (verifier)
+- **Milestone**: `secondary_claims` | **Status**: done
+- **Working time**: 5m | **GPU**: 0.0h
 - **Jobs**: 5 total (4 completed, 1 failed)
 
 <details>
