@@ -1,23 +1,24 @@
 # Verification Report
 
 ## Initial Assessment
-The workspace entered final verification at `secondary_claims`. The claimed milestone is justified: the implementation is identifiable as the paper's exact counting reduction, prior compute jobs verified the scaled reproduction, and current artifacts show the exact counter solving all six scaled instances while capped enumeration solves only the two small-count cases.
+The workspace entered final verification at `secondary_claims`. The claimed milestone is justified: the method implementation is identifiable as the paper's exact disjunctive ASP counting procedure, previous CPU container jobs verified the scaled reproduction, and current scores show the exact counter solving all six scaled instances while capped enumeration solves only the small-count cases.
 
 ## Issues Found
-- **Minor:** `briefing/evaluation.md` and `scoring/TARGETS.md` leaked the reproduced method name in files that should stay method-agnostic or method-safe.
-- **Minor:** `eval/evaluate_counts.py` scored default artifact paths under fixed method keys, which made `scripts/evaluate.sh` less reusable for future methods unless callers used the exact paper method names.
-- **Minor:** `reference.json` assigned nonzero coefficients to PAR2, a wall-clock runtime metric. The affected paper-only experiments are not present in `scores.json`, but nonzero runtime coefficients are still poor gym incentives.
+- **Minor:** The public scoring interface used the paper-specific metric name `avg_phi2_to_phi1_clause_ratio`. That leaked implementation terminology into method-safe scoring documentation and made the structural cost metric less reusable for from-scratch agents.
+- **Cosmetic:** Generated Python cache directories existed under the root/source tree.
 
 ## Fixes Applied
-- Reworded method-agnostic and method-safe documentation to describe exact counters and fallback counters without naming the paper implementation.
-- Updated `eval/evaluate_counts.py` to discover `checkpoints/*/results.json`, preserve each artifact's method name, and accept repeated explicit result paths.
-- Set PAR2 coefficients to `0.0` while retaining the paper-reported values as reference context.
-- Re-ran lightweight validation: `bash scripts/evaluate.sh`, `bash scripts/evaluate_train.sh`, `bash scripts/evaluate_test.sh`, `python validate.py --compare`, and `python method/selftest.py`.
+- Renamed the public structural metric to `avg_auxiliary_to_core_clause_ratio` in `reference.json`, `scores.json`, train/test score files, `TARGETS.md`, and evaluator outputs.
+- Updated evaluators to read method-agnostic artifact fields `core_clauses` and `auxiliary_clauses`, while retaining a compatibility fallback for the existing reproduced artifacts.
+- Added `core_clauses` and `auxiliary_clauses` aliases to the reproduced method output format.
+- Clarified `briefing/evaluation.md` to describe the structural metric without paper-specific encoding names.
+- Removed generated `__pycache__` directories.
+- Re-ran `bash scripts/evaluate.sh`, `bash scripts/evaluate_train.sh`, `bash scripts/evaluate_test.sh`, `python validate.py --compare`, and `python method/selftest.py`.
 
 ## Final Judgment
-The workspace is ready to serve as a scaled research gym. Improve-mode agents can build on the packaged method and baselines, while from-scratch agents can use the data and evaluator without importing method code. The main limitation is scale: this is a generated benchmark derived from the paper setting, not the full 1125-instance suite with the external projected model counter used in the paper.
+The workspace is ready to serve as a scaled research gym. Improve-mode agents can build on the packaged method, and from-scratch agents can use the data, scoring, and evaluator without importing method code. The scoring rewards exactness, solved scale, and a small method-agnostic encoding-size constraint while keeping wall-clock PAR2 at zero coefficient.
 
 - Milestone: secondary_claims
 - Ready for gym use: yes
 - Confidence: medium
-- Key limitation: scaled generated benchmark rather than the full paper benchmark suite
+- Key limitation: scaled generated benchmark rather than the full 1125-instance paper benchmark suite

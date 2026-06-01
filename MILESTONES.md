@@ -33,5 +33,9 @@
 - Added semantic regression checks comparing sharpASP-sR against brute-force answer-set enumeration on small disjunctive, cyclic, default-negation, and inconsistent programs.
 - Local `method/selftest.py` and `python validate.py --compare` both pass before the next CPU container verification job.
 
+### [2026-06-02 00:08] - secondary_claims
+- Final verification passed after renaming the public structural scoring metric to the method-agnostic `avg_auxiliary_to_core_clause_ratio`.
+- Revalidated top-level, train, and test evaluators plus method self-tests.
+
 ## Stop Justification
 - Completed at milestone `secondary_claims`.

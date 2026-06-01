@@ -35,6 +35,7 @@ Compute verification:
 - The verified post-fix scores remain: sharpASP-sR solves 6/6 scaled non-tight instances exactly, and the hybrid experiment solves 6/6 with two enumeration completions and four sharpASP-sR fallbacks.
 - The evaluator now emits all scaled target metrics named in `reference.json`, including large/small exact accuracy, log-count error, and structural report coverage. Existing artifacts validate with `python validate.py --compare`.
 - Local continuation audit added the semantic regression suite and verified it with `PYTHONPATH=/home/user:/home/user/method python method/selftest.py`.
+- Final verification renamed the public structural score from paper-specific `phi1`/`phi2` terminology to `avg_auxiliary_to_core_clause_ratio`; evaluators still accept legacy reproduced artifacts but expose the method-agnostic metric in scoring.
 
 Paper headline reference:
 

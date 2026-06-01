@@ -1,5 +1,5 @@
-action: submit
+action: done
 gpus: 0
-test: true
+test: false
 milestone: secondary_claims
-notes: "CPU test job reruns the full reproduction after adding semantic self-tests against brute-force answer-set enumeration."
+notes: "Final verification passed; scoring interface is method-agnostic and validation succeeds at secondary_claims."

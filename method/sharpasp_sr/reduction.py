@@ -97,6 +97,8 @@ def sharpasp_sr_count(program: Program) -> dict:
         "surplus": surplus,
         "atoms": len(atoms),
         "loop_atoms": len(loops),
+        "core_clauses": len(phi1.clauses),
+        "auxiliary_clauses": len(phi2.clauses),
         "phi1_vars": len(phi1.var_ids),
         "phi1_clauses": len(phi1.clauses),
         "phi2_vars": len(phi2.var_ids),

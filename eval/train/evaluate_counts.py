@@ -92,7 +92,7 @@ def summarize_counts(results: dict, manifest: dict) -> dict[str, float]:
     small_total = 0
     max_log = 0.0
     total_loop_atoms = 0.0
-    total_phi2_ratio = 0.0
+    total_aux_ratio = 0.0
     total_log_error = 0.0
     structural_reports = 0
 
@@ -126,9 +126,11 @@ def summarize_counts(results: dict, manifest: dict) -> dict[str, float]:
             total_log_error += expected_log + 1.0
         if "loop_atoms" in got:
             total_loop_atoms += got["loop_atoms"]
-        if got.get("phi1_clauses") and "phi2_clauses" in got:
-            total_phi2_ratio += got["phi2_clauses"] / got["phi1_clauses"]
-        if {"loop_atoms", "phi1_clauses", "phi2_clauses"}.issubset(got):
+        core_clauses = got.get("core_clauses", got.get("phi1_clauses"))
+        auxiliary_clauses = got.get("auxiliary_clauses", got.get("phi2_clauses"))
+        if core_clauses and auxiliary_clauses is not None:
+            total_aux_ratio += auxiliary_clauses / core_clauses
+        if "loop_atoms" in got and core_clauses is not None and auxiliary_clauses is not None:
             structural_reports += 1
 
     n = len(expected)
@@ -140,7 +142,7 @@ def summarize_counts(results: dict, manifest: dict) -> dict[str, float]:
         "answer_set_log2_mae": total_log_error / n if n else 0.0,
         "max_log2_count_solved": max_log,
         "avg_loop_atoms": total_loop_atoms / n if n else 0.0,
-        "avg_phi2_to_phi1_clause_ratio": total_phi2_ratio / n if n else 0.0,
+        "avg_auxiliary_to_core_clause_ratio": total_aux_ratio / n if n else 0.0,
         "structural_report_fraction": structural_reports / n if n else 0.0,
     }
 

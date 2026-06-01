@@ -6,7 +6,7 @@
 - `exact_count_accuracy`: fraction of scaled benchmark instances whose returned count equals the known exact count.
 - `max_log2_count_solved`: largest solved answer-set count, reported as base-2 logarithm.
 - `par2`: paper-reported timeout-penalized runtime. It is retained only as historical context in `reference.json`; it is not assigned scoring weight because wall-clock speed is hardware dependent.
-- Structural constraint diagnostics: average number of loop atoms and generated formula-size ratio.
+- Structural constraint diagnostics: average number of loop atoms and `avg_auxiliary_to_core_clause_ratio`, a method-agnostic encoding-size ratio for methods that report structural fields.
 
 ## Baselines and Targets
 

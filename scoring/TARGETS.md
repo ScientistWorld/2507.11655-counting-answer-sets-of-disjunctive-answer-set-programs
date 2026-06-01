@@ -10,7 +10,7 @@ Tests whether an exact disjunctive ASP counter returns correct counts on non-tig
 ## Constraint: scaled_disjunctive_counting
 Tracks structural and encoding cost so an improvement cannot ignore the non-tight cyclic part of the programs or hide unbounded formula growth.
 - **Metric**: `avg_loop_atoms` (lower is better at equal accuracy/count scale)
-- **Metric**: `avg_phi2_to_phi1_clause_ratio` (lower is better at equal accuracy/count scale)
+- **Metric**: `avg_auxiliary_to_core_clause_ratio` (lower is better at equal accuracy/count scale)
 - **Run**: `bash scripts/evaluate.sh` after producing result artifacts.
 
 ## Secondary: scaled_hybrid_counting
