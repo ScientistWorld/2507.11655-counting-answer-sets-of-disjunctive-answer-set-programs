@@ -2,4 +2,4 @@ action: done
 gpus: 0
 test: false
 milestone: secondary_claims
-notes: "Core claim reached on scaled generated non-tight ASP benchmark: sharpASP-sR runs the paper's reduction/count/subtract procedure and solves 6/6 exactly versus capped enumeration at 2/6. Secondary hybrid claim also verified: enumeration_then_sharpasp_sr solves 6/6 with 2 enumeration completions and 4 fallback reductions. validate.py --compare passes; scripts/run.sh restored to reproduce.sh plus validation."
+notes: "Packaged fresh-clone data setup: download.sh now resolves the repo root from its own location and regenerates synthetic benchmark data without external artifacts."

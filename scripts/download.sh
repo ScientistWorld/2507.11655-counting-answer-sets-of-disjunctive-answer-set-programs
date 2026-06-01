@@ -18,6 +18,6 @@
 
 set -e
 
-cd /home/user
+cd "$(dirname "$0")/.."
 
 python data/make_benchmarks.py
