@@ -1,5 +1,5 @@
 # Reproduction Milestones
-**Current: core_claim_plus**
+**Current: secondary_claims**
 
 ## Progress Log
 
@@ -24,5 +24,10 @@
 - Fixed fresh-variable allocation for copy and auxiliary variables so program atoms cannot collide with `Copy(P)`.
 - Added `method/selftest.py` regression checks for projected counting, the paper example, and copy-variable freshness before the next container job.
 
+### [2026-06-01 23:19] - secondary_claims
+- Container job `82247c77-a43` reran `scripts/reproduce.sh` successfully after the projected-counting and fresh-variable fixes.
+- Verified the scaled hybrid secondary claim: capped enumeration completed the two easy instances, then sharpASP-sR solved the four fallback instances exactly.
+- `python validate.py --compare` passes with both scored experiments aligned to the reusable scoring contract.
+
 ## Stop Justification
-- Not stopped. A CPU test job is being submitted to regenerate artifacts after the projected-counting fix.
+- Completed at milestone `secondary_claims`.

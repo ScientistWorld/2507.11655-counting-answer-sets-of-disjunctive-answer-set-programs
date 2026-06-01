@@ -28,7 +28,10 @@ Compute verification:
 - Exit code: 0.
 - Duration: 60.1 seconds on a CPU test node.
 - The job regenerated `scoring/scores.json` with both `scaled_disjunctive_counting` and `scaled_hybrid_counting`.
-- Two method-correctness edge cases were fixed after that job: unconstrained projected variables are now counted as distinct projected assignments, and copy/auxiliary variables are allocated freshly even when input atoms use suffix-like names. The next submitted CPU test job regenerates the artifacts with these fixes.
+- Two method-correctness edge cases were fixed after that job: unconstrained projected variables are now counted as distinct projected assignments, and copy/auxiliary variables are allocated freshly even when input atoms use suffix-like names.
+- Job `82247c77-a43` reran `scripts/reproduce.sh` inside the container after those fixes.
+- Exit code: 0.
+- The verified post-fix scores remain: sharpASP-sR solves 6/6 scaled non-tight instances exactly, and the hybrid experiment solves 6/6 with two enumeration completions and four sharpASP-sR fallbacks.
 
 Paper headline reference:
 
@@ -38,11 +41,11 @@ Paper headline reference:
 
 ## Remaining
 
-The current reproduction uses a scaled generated benchmark derived from the paper's illustrative non-tight program, not the full 1125-instance benchmark suite or GANAK. A higher milestone beyond `core_claim_plus` would require obtaining the supplementary benchmark set and integrating an external projected model counter such as GANAK.
+The current reproduction uses a scaled generated benchmark derived from the paper's illustrative non-tight program, not the full 1125-instance benchmark suite or GANAK. A higher milestone beyond `secondary_claims` would require obtaining the supplementary benchmark set and integrating an external projected model counter such as GANAK.
 
 ## Issues
 
-No blocker for the scaled core claim or scaled hybrid claim. During continuation audit, the capped enumeration baseline was found to use manifest count metadata for generated choice instances; this was fixed so it now infers independent binary choice facts from the parsed program and counts extensions from executable ASP semantics. Job `da9a1309-c57` failed because the container did not resolve the workspace `data` module when running `baseline/enumerate.py`; the fix adds `data/__init__.py` and exports `/home/user` on `PYTHONPATH` in all entrypoint scripts. The retry job `42bdeff0-173` succeeded. A later local audit found that `projected_count` undercounted formulas with projected variables absent after simplification and that copy variables could collide with input atoms named like generated suffixes; both were fixed and covered by `method/selftest.py`. The full paper benchmark was reported as supplementary material but is not present in the provided workspace.
+No blocker for the scaled core claim or scaled hybrid claim. During continuation audit, the capped enumeration baseline was found to use manifest count metadata for generated choice instances; this was fixed so it now infers independent binary choice facts from the parsed program and counts extensions from executable ASP semantics. Job `da9a1309-c57` failed because the container did not resolve the workspace `data` module when running `baseline/enumerate.py`; the fix adds `data/__init__.py` and exports `/home/user` on `PYTHONPATH` in all entrypoint scripts. The retry job `42bdeff0-173` succeeded. A later local audit found that `projected_count` undercounted formulas with projected variables absent after simplification and that copy variables could collide with input atoms named like generated suffixes; both were fixed and covered by `method/selftest.py`. Job `82247c77-a43` verified these fixes in the container. The full paper benchmark was reported as supplementary material but is not present in the provided workspace.
 
 ## Deviations from Paper
 

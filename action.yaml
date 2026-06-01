@@ -1,8 +1,6 @@
 # IMPORTANT: Once you set action to 'submit' or 'done', STOP immediately.
 # Do NOT sleep, poll, or wait for jobs. The system reads this file
 # only after your turn ends. Sleeping blocks the entire pipeline.
-action: submit
-gpus: 0
-test: true
-milestone: core_claim_plus
-notes: "Container verification for commit 71a163f: rerun scripts/reproduce.sh after projected-counting and fresh-variable fixes. If successful, restore secondary_claims."
+action: done
+milestone: secondary_claims
+notes: "Post-fix container job 82247c77-a43 completed successfully. Scaled core and hybrid sharpASP-sR claims are verified and packaged."
