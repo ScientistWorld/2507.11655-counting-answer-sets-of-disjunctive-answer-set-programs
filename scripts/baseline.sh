@@ -16,6 +16,7 @@
 set -e
 
 cd /home/user
+export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
 name="${1:-enumeration_cap_1000}"
 if [ "$name" != "enumeration_cap_1000" ]; then

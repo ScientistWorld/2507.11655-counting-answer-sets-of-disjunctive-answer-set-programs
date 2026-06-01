@@ -40,7 +40,7 @@ The current reproduction uses a scaled synthetic benchmark derived from the pape
 
 ## Issues
 
-No blocker for the scaled core claim. During continuation audit, the capped enumeration baseline was found to use manifest count metadata for generated choice instances; this was fixed so it now infers independent binary choice facts from the parsed program and counts extensions from executable ASP semantics. The full paper benchmark was reported as supplementary material but is not present in the provided workspace. The job logs contain Hive metadata only because the scripts run quietly on success; the result artifact and zero exit code verify completion.
+No blocker for the scaled core claim. During continuation audit, the capped enumeration baseline was found to use manifest count metadata for generated choice instances; this was fixed so it now infers independent binary choice facts from the parsed program and counts extensions from executable ASP semantics. Job `da9a1309-c57` failed because the container did not resolve the workspace `data` module when running `baseline/enumerate.py`; the fix adds `data/__init__.py` and exports `/home/user` on `PYTHONPATH` in all entrypoint scripts. The full paper benchmark was reported as supplementary material but is not present in the provided workspace. The job logs contain Hive metadata only because the scripts run quietly on success; the result artifact and zero exit code verify completion.
 
 ## Deviations from Paper
 

@@ -9,6 +9,7 @@
 set -e
 
 cd /home/user
+export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
 python method/run_sharpasp_sr.py --output checkpoints/sharpasp_sr/results.json
 python method/run_hybrid.py --enumeration-limit 1000 --output checkpoints/hybrid/results.json

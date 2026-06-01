@@ -17,6 +17,7 @@
 set -e
 
 cd /home/user
+export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
 python data/make_benchmarks.py
 python baseline/enumerate.py --limit 1000 --output checkpoints/enumeration/results.json
