@@ -5,4 +5,4 @@ action: submit
 gpus: 0
 test: true
 milestone: core_claim_plus
-notes: "CPU test job for expanded six-instance sharpASP-sR benchmark and scaled hybrid enumeration-then-sharpASP-sR reproduction."
+notes: "Retry CPU test after adding data/__init__.py and PYTHONPATH exports; verifies expanded sharpASP-sR and hybrid reproduction inside the container."
