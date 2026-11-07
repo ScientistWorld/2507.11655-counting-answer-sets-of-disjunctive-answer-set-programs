@@ -1,0 +1,29 @@
+{
+  "instances": {
+    "choices_12": {
+      "answer_sets": 1048576,
+      "complete": true
+    },
+    "choices_14": {
+      "answer_sets": 1048576,
+      "complete": true
+    },
+    "choices_16": {
+      "answer_sets": 1048576,
+      "complete": true
+    },
+    "choices_20": {
+      "answer_sets": 1048576,
+      "complete": true
+    },
+    "choices_8": {
+      "answer_sets": 1048576,
+      "complete": true
+    },
+    "paper_example": {
+      "answer_sets": 1048576,
+      "complete": true
+    }
+  },
+  "method": "sharpasp_sr"
+}

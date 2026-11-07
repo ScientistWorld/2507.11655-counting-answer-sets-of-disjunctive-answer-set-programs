@@ -1,0 +1,47 @@
+{
+  "instances": {
+    "choices_12": {
+      "answer_sets": 0,
+      "auxiliary_clauses": -10000,
+      "complete": true,
+      "core_clauses": 1,
+      "loop_atoms": -10000
+    },
+    "choices_14": {
+      "answer_sets": 0,
+      "auxiliary_clauses": -10000,
+      "complete": true,
+      "core_clauses": 1,
+      "loop_atoms": -10000
+    },
+    "choices_16": {
+      "answer_sets": 0,
+      "auxiliary_clauses": -10000,
+      "complete": true,
+      "core_clauses": 1,
+      "loop_atoms": -10000
+    },
+    "choices_20": {
+      "answer_sets": 0,
+      "auxiliary_clauses": -10000,
+      "complete": true,
+      "core_clauses": 1,
+      "loop_atoms": -10000
+    },
+    "choices_8": {
+      "answer_sets": 0,
+      "auxiliary_clauses": -10000,
+      "complete": true,
+      "core_clauses": 1,
+      "loop_atoms": -10000
+    },
+    "paper_example": {
+      "answer_sets": 0,
+      "auxiliary_clauses": -10000,
+      "complete": true,
+      "core_clauses": 1,
+      "loop_atoms": -10000
+    }
+  },
+  "method": "sharpasp_sr"
+}

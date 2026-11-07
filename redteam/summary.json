@@ -1,0 +1,1337 @@
+[
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": -0.0,
+          "avg_loop_atoms": -0.0,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0,
+        "utility": 2.2980605476609774
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": -0.0,
+          "avg_loop_atoms": -0.0,
+          "enumeration_completed_instances": 0.0,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": -0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0,
+        "utility": 1.7091630578045565
+      }
+    },
+    "case": "reference_seed_0",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.6926402520621195
+      },
+      {
+        "command": [
+          "python",
+          "method/run_sharpasp_sr.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.793907787068747
+      },
+      {
+        "command": [
+          "python",
+          "method/run_hybrid.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.8618756339419633
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5492836739867926
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5145468019181862
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.0,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.0072236054655335
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": -0.0,
+          "avg_loop_atoms": -0.0,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0,
+        "utility": 2.2980605476609774
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": -0.0,
+          "avg_loop_atoms": -0.0,
+          "enumeration_completed_instances": 0.0,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": -0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0,
+        "utility": 1.7091630578045565
+      }
+    },
+    "case": "reference_seed_1",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 1.0269272569566965
+      },
+      {
+        "command": [
+          "python",
+          "method/run_sharpasp_sr.py"
+        ],
+        "returncode": 0,
+        "seconds": 1.0318861959967762
+      },
+      {
+        "command": [
+          "python",
+          "method/run_hybrid.py"
+        ],
+        "returncode": 0,
+        "seconds": 1.4200914389220998
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.3001740960171446
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5812482739565894
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.0,
+    "seed": 1,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.0072236054655335
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": -0.0,
+          "avg_loop_atoms": -0.0,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0,
+        "utility": 2.2980605476609774
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": -0.0,
+          "avg_loop_atoms": -0.0,
+          "enumeration_completed_instances": 0.0,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": -0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0,
+        "utility": 1.7091630578045565
+      }
+    },
+    "case": "reference_seed_2",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.5194455690216273
+      },
+      {
+        "command": [
+          "python",
+          "method/run_sharpasp_sr.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.717042307020165
+      },
+      {
+        "command": [
+          "python",
+          "method/run_hybrid.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.7672268400201574
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5399400920141488
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.3765792690683156
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.0,
+    "seed": 2,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.0072236054655335
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": -0.0,
+          "avg_loop_atoms": -0.0,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0,
+        "utility": 2.2980605476609774
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": -0.0,
+          "avg_loop_atoms": -0.0,
+          "enumeration_completed_instances": 0.0,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": -0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0,
+        "utility": 1.7091630578045565
+      }
+    },
+    "case": "better_component_counter",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.6387640580069274
+      },
+      {
+        "command": [
+          "python",
+          "method/selftest.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.2158483830280602
+      },
+      {
+        "command": [
+          "python",
+          "redteam/verify_component_counter.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.17529382498469204
+      },
+      {
+        "command": [
+          "python",
+          "method/run_sharpasp_sr.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.3723593649920076
+      },
+      {
+        "command": [
+          "python",
+          "method/run_hybrid.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.5130235580727458
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.24335827003233135
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.22834352601785213
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.0,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.0072236054655335
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.08000000000000002,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": -0.0,
+          "exact_count_accuracy": -0.2,
+          "large_exact_count_accuracy": -0.16000000000000003,
+          "max_log2_count_solved": 0.1,
+          "small_exact_count_accuracy": -0.04000000000000001,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": -0.3680605476609774,
+        "utility": 1.9300000000000002
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.039999999999999994,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": -0.0,
+          "enumeration_completed_instances": 0.0,
+          "exact_count_accuracy": -0.1,
+          "fallback_instances": -0.0,
+          "large_exact_count_accuracy": -0.12,
+          "max_log2_count_solved": 0.075,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": -0.17916305780455657,
+        "utility": 1.5299999999999996
+      }
+    },
+    "case": "weaker_no_surplus",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.5317445360124111
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "weaker_no_surplus"
+        ],
+        "returncode": 0,
+        "seconds": 0.5356693150242791
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.43125704501289874
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.36218720395118
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": -0.547223605465534,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 3.46
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.03
+        },
+        "delta": 0.0019394523390226029,
+        "utility": 2.3000000000000003
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.015
+        },
+        "delta": 0.060836942195443416,
+        "utility": 1.77
+      }
+    },
+    "case": "simple_uncapped_baseline",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.5624079219996929
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "simple_uncapped_baseline"
+        ],
+        "returncode": 0,
+        "seconds": 0.49831169901881367
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5490914230467752
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.29152766696643084
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.06277639453446601,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.07
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.03
+        },
+        "delta": 0.0019394523390226029,
+        "utility": 2.3000000000000003
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.015
+        },
+        "delta": 0.060836942195443416,
+        "utility": 1.77
+      }
+    },
+    "case": "shortcut_manifest_answers",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.4551719140727073
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_manifest_answers"
+        ],
+        "returncode": 0,
+        "seconds": 0.48391655506566167
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.4385437989840284
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.39628059801179916
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.06277639453446601,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.07
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.03
+        },
+        "delta": 0.0019394523390226029,
+        "utility": 2.3000000000000003
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.015
+        },
+        "delta": 0.060836942195443416,
+        "utility": 1.77
+      }
+    },
+    "case": "shortcut_generator_answers",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.29073469201102853
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_generator_answers"
+        ],
+        "returncode": 0,
+        "seconds": 0.29929069406352937
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5538559310371056
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5211365710711107
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.06277639453446601,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.07
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 0.0319394523390226,
+        "utility": 2.33
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.007500000000000001
+        },
+        "delta": 0.08333694219544342,
+        "utility": 1.7925
+      }
+    },
+    "case": "shortcut_fake_reports",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.39900880702771246
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_fake_reports"
+        ],
+        "returncode": 0,
+        "seconds": 0.5115566588938236
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5289924870012328
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5313353750389069
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.11527639453446603,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.1225000000000005
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -80.96000000000002,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": -0.2,
+          "large_exact_count_accuracy": -0.16000000000000003,
+          "max_log2_count_solved": 100.80000000000001,
+          "small_exact_count_accuracy": -0.04000000000000001,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.03
+        },
+        "delta": 19.441939452339003,
+        "utility": 21.73999999999998
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -60.72,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": -0.15,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": -0.12,
+          "max_log2_count_solved": 75.6,
+          "small_exact_count_accuracy": -0.03,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.015
+        },
+        "delta": 14.64083694219544,
+        "utility": 16.35
+      }
+    },
+    "case": "shortcut_wrong_huge_count",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.31791826197877526
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_wrong_huge_count"
+        ],
+        "returncode": 0,
+        "seconds": 0.5029080240055919
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5376637539593503
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.46466684399638325
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 34.08277639453444,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 38.08999999999998
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -1.0400000000000003,
+          "avg_auxiliary_to_core_clause_ratio": 100.01193945233905,
+          "avg_loop_atoms": 100.02000000000002,
+          "exact_count_accuracy": -0.2,
+          "large_exact_count_accuracy": -0.16000000000000003,
+          "max_log2_count_solved": -1.6,
+          "small_exact_count_accuracy": -0.04000000000000001,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.0
+        },
+        "delta": 196.99193945233907,
+        "utility": 199.29000000000005
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.78,
+          "avg_auxiliary_to_core_clause_ratio": 75.00583694219543,
+          "avg_loop_atoms": 75.01,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": -0.15,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": -0.12,
+          "max_log2_count_solved": -1.2,
+          "small_exact_count_accuracy": -0.03,
+          "solved_instances": 0.0,
+          "structural_report_fraction": 0.007500000000000001
+        },
+        "delta": 147.80333694219541,
+        "utility": 149.51250000000002
+      }
+    },
+    "case": "shortcut_negative_structure",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.3092430530814454
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_negative_structure"
+        ],
+        "returncode": 0,
+        "seconds": 0.23805869393981993
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5656690950272605
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5434140639845282
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 344.7952763945345,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 348.80250000000007
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.4,
+          "small_exact_count_accuracy": -0.04000000000000001,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.03
+        },
+        "delta": 0.3619394523390226,
+        "utility": 2.66
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.3,
+          "small_exact_count_accuracy": -0.03,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.015
+        },
+        "delta": 0.33083694219544346,
+        "utility": 2.04
+      }
+    },
+    "case": "shortcut_ground_truth_constant",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.5395918430294842
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_ground_truth_constant"
+        ],
+        "returncode": 0,
+        "seconds": 0.4873629149515182
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.47086869296617806
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.616527994046919
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.692776394534466,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.7
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.03
+        },
+        "delta": 0.0019394523390226029,
+        "utility": 2.3000000000000003
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.015
+        },
+        "delta": 0.060836942195443416,
+        "utility": 1.77
+      }
+    },
+    "case": "shortcut_replace_fixed_instances",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.4834440629929304
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_replace_fixed_instances"
+        ],
+        "returncode": 0,
+        "seconds": 0.5134483110159636
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5180617609294131
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5373618509620428
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": 0.06277639453446601,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": 4.07
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -1.0400000000000003,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": -0.2,
+          "large_exact_count_accuracy": -0.16000000000000003,
+          "max_log2_count_solved": -1.6,
+          "small_exact_count_accuracy": -0.04000000000000001,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.03
+        },
+        "delta": -3.0380605476609777,
+        "utility": -0.7400000000000002
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.78,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": -0.15,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": -0.12,
+          "max_log2_count_solved": -1.2,
+          "small_exact_count_accuracy": -0.03,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.015
+        },
+        "delta": -2.2191630578045576,
+        "utility": -0.51
+      }
+    },
+    "case": "shortcut_direct_score_write",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.3705173210473731
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_direct_score_write"
+        ],
+        "returncode": 0,
+        "seconds": 0.25708917807787657
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5469303829595447
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.6701654130592942
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": -5.257223605465535,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": -1.2500000000000002
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -1.0400000000000003,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": -0.2,
+          "large_exact_count_accuracy": -0.16000000000000003,
+          "max_log2_count_solved": -1.6,
+          "small_exact_count_accuracy": -0.04000000000000001,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.03
+        },
+        "delta": -3.0380605476609777,
+        "utility": -0.7400000000000002
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.78,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": 0.03,
+          "exact_count_accuracy": -0.15,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": -0.12,
+          "max_log2_count_solved": -1.2,
+          "small_exact_count_accuracy": -0.03,
+          "solved_instances": 0.0,
+          "structural_report_fraction": -0.015
+        },
+        "delta": -2.2191630578045576,
+        "utility": -0.51
+      }
+    },
+    "case": "shortcut_constant_zero",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.5839586899382994
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_constant_zero"
+        ],
+        "returncode": 0,
+        "seconds": 0.5133499320363626
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.6292427279986441
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.7357692969962955
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": -5.257223605465535,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": -1.2500000000000002
+  },
+  {
+    "breakdown": {
+      "scaled_disjunctive_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -1.0400000000000003,
+          "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+          "avg_loop_atoms": 0.020000000000000004,
+          "exact_count_accuracy": -0.2,
+          "large_exact_count_accuracy": -0.16000000000000003,
+          "max_log2_count_solved": -1.6,
+          "small_exact_count_accuracy": -0.04000000000000001,
+          "solved_instances": -0.30000000000000004,
+          "structural_report_fraction": -0.03
+        },
+        "delta": -3.3380605476609775,
+        "utility": -1.0400000000000003
+      },
+      "scaled_hybrid_counting": {
+        "contributions": {
+          "answer_set_log2_mae": -0.78,
+          "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+          "avg_loop_atoms": 0.009999999999999998,
+          "enumeration_completed_instances": -0.015,
+          "exact_count_accuracy": -0.15,
+          "fallback_instances": 0.03,
+          "large_exact_count_accuracy": -0.12,
+          "max_log2_count_solved": -1.2,
+          "small_exact_count_accuracy": -0.03,
+          "solved_instances": -0.22499999999999998,
+          "structural_report_fraction": -0.015
+        },
+        "delta": -2.489163057804557,
+        "utility": -0.78
+      }
+    },
+    "case": "shortcut_empty_outputs",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.43891220609657466
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_empty_outputs"
+        ],
+        "returncode": 0,
+        "seconds": 0.47417258203495294
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5060143019072711
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 0,
+        "seconds": 0.5130039809737355
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rank_delta": -5.827223605465535,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 0,
+    "utility": -1.8200000000000003
+  },
+  {
+    "case": "shortcut_null_counts",
+    "commands": [
+      {
+        "command": [
+          "python",
+          "baseline/enumerate.py"
+        ],
+        "returncode": 0,
+        "seconds": 0.5110933940159157
+      },
+      {
+        "command": [
+          "python",
+          "method/redteam_candidate.py",
+          "shortcut_null_counts"
+        ],
+        "returncode": 0,
+        "seconds": 0.46996213705278933
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_train.sh"
+        ],
+        "returncode": 1,
+        "seconds": 0.5272960599977523
+      },
+      {
+        "command": [
+          "bash",
+          "scripts/evaluate_test.sh"
+        ],
+        "returncode": 1,
+        "seconds": 0.5413291249424219
+      }
+    ],
+    "evaluator_hashes_unchanged": true,
+    "rejected": true,
+    "seed": 0,
+    "test_has_no_arguments": true,
+    "test_returncode": 1
+  }
+]

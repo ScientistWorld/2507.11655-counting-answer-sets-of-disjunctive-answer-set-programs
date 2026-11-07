@@ -1,0 +1,85 @@
+{
+  "breakdown": {
+    "scaled_disjunctive_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -0.0,
+        "avg_auxiliary_to_core_clause_ratio": -0.0,
+        "avg_loop_atoms": -0.0,
+        "exact_count_accuracy": 0.0,
+        "large_exact_count_accuracy": 0.0,
+        "max_log2_count_solved": 0.0,
+        "small_exact_count_accuracy": 0.0,
+        "solved_instances": 0.0,
+        "structural_report_fraction": 0.0
+      },
+      "delta": 0.0,
+      "utility": 2.2980605476609774
+    },
+    "scaled_hybrid_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -0.0,
+        "avg_auxiliary_to_core_clause_ratio": -0.0,
+        "avg_loop_atoms": -0.0,
+        "enumeration_completed_instances": 0.0,
+        "exact_count_accuracy": 0.0,
+        "fallback_instances": -0.0,
+        "large_exact_count_accuracy": 0.0,
+        "max_log2_count_solved": 0.0,
+        "small_exact_count_accuracy": 0.0,
+        "solved_instances": 0.0,
+        "structural_report_fraction": 0.0
+      },
+      "delta": 0.0,
+      "utility": 1.7091630578045565
+    }
+  },
+  "case": "reference_seed_0",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "baseline/enumerate.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.6926402520621195
+    },
+    {
+      "command": [
+        "python",
+        "method/run_sharpasp_sr.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.793907787068747
+    },
+    {
+      "command": [
+        "python",
+        "method/run_hybrid.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.8618756339419633
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/evaluate_train.sh"
+      ],
+      "returncode": 0,
+      "seconds": 0.5492836739867926
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "returncode": 0,
+      "seconds": 0.5145468019181862
+    }
+  ],
+  "evaluator_hashes_unchanged": true,
+  "rank_delta": 0.0,
+  "seed": 0,
+  "test_has_no_arguments": true,
+  "test_returncode": 0,
+  "utility": 4.0072236054655335
+}

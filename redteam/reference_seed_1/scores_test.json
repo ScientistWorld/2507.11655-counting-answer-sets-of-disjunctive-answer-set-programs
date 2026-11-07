@@ -1,0 +1,61 @@
+{
+  "experiments": {
+    "scaled_disjunctive_counting": {
+      "results": {
+        "enumeration_cap_1000": {
+          "answer_set_log2_mae": 10.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0,
+          "avg_loop_atoms": 0.0,
+          "exact_count_accuracy": 0.3333333333333333,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 8.0,
+          "small_exact_count_accuracy": 1.0,
+          "solved_instances": 1,
+          "structural_report_fraction": 0.0
+        },
+        "sharpasp_sr": {
+          "answer_set_log2_mae": 0.0,
+          "avg_auxiliary_to_core_clause_ratio": 1.1939452339022598,
+          "avg_loop_atoms": 2.0,
+          "exact_count_accuracy": 1.0,
+          "large_exact_count_accuracy": 1.0,
+          "max_log2_count_solved": 16.0,
+          "small_exact_count_accuracy": 1.0,
+          "solved_instances": 3,
+          "structural_report_fraction": 1.0
+        }
+      }
+    },
+    "scaled_hybrid_counting": {
+      "results": {
+        "enumeration_cap_1000": {
+          "answer_set_log2_mae": 10.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0,
+          "avg_loop_atoms": 0.0,
+          "enumeration_completed_instances": 1,
+          "exact_count_accuracy": 0.3333333333333333,
+          "fallback_instances": 0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 8.0,
+          "small_exact_count_accuracy": 1.0,
+          "solved_instances": 1,
+          "structural_report_fraction": 0.0
+        },
+        "enumeration_then_sharpasp_sr": {
+          "answer_set_log2_mae": 0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.7782589593924559,
+          "avg_loop_atoms": 1.3333333333333333,
+          "enumeration_completed_instances": 1,
+          "exact_count_accuracy": 1.0,
+          "fallback_instances": 2,
+          "large_exact_count_accuracy": 1.0,
+          "max_log2_count_solved": 16.0,
+          "small_exact_count_accuracy": 1.0,
+          "solved_instances": 3,
+          "structural_report_fraction": 0.6666666666666666
+        }
+      }
+    }
+  },
+  "slice": "test"
+}

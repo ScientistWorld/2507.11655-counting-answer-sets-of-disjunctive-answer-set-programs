@@ -1,0 +1,89 @@
+{
+  "instances": {
+    "choices_12": {
+      "answer_sets": 4096,
+      "atoms": 29,
+      "auxiliary_clauses": 134,
+      "core_clauses": 113,
+      "log2_answer_sets": 12.0,
+      "loop_atoms": 2,
+      "overcount": 8192,
+      "phi1_clauses": 113,
+      "phi1_vars": 61,
+      "phi2_clauses": 134,
+      "phi2_vars": 67,
+      "surplus": 4096
+    },
+    "choices_14": {
+      "answer_sets": 16384,
+      "atoms": 33,
+      "auxiliary_clauses": 148,
+      "core_clauses": 127,
+      "log2_answer_sets": 14.0,
+      "loop_atoms": 2,
+      "overcount": 32768,
+      "phi1_clauses": 127,
+      "phi1_vars": 69,
+      "phi2_clauses": 148,
+      "phi2_vars": 75,
+      "surplus": 16384
+    },
+    "choices_16": {
+      "answer_sets": 65536,
+      "atoms": 37,
+      "auxiliary_clauses": 162,
+      "core_clauses": 141,
+      "log2_answer_sets": 16.0,
+      "loop_atoms": 2,
+      "overcount": 131072,
+      "phi1_clauses": 141,
+      "phi1_vars": 77,
+      "phi2_clauses": 162,
+      "phi2_vars": 83,
+      "surplus": 65536
+    },
+    "choices_20": {
+      "answer_sets": 1048576,
+      "atoms": 45,
+      "auxiliary_clauses": 190,
+      "core_clauses": 169,
+      "log2_answer_sets": 20.0,
+      "loop_atoms": 2,
+      "overcount": 2097152,
+      "phi1_clauses": 169,
+      "phi1_vars": 93,
+      "phi2_clauses": 190,
+      "phi2_vars": 99,
+      "surplus": 1048576
+    },
+    "choices_8": {
+      "answer_sets": 256,
+      "atoms": 21,
+      "auxiliary_clauses": 106,
+      "core_clauses": 85,
+      "log2_answer_sets": 8.0,
+      "loop_atoms": 2,
+      "overcount": 512,
+      "phi1_clauses": 85,
+      "phi1_vars": 45,
+      "phi2_clauses": 106,
+      "phi2_vars": 51,
+      "surplus": 256
+    },
+    "paper_example": {
+      "answer_sets": 1,
+      "atoms": 5,
+      "auxiliary_clauses": 50,
+      "core_clauses": 29,
+      "log2_answer_sets": 0.0,
+      "loop_atoms": 2,
+      "overcount": 2,
+      "phi1_clauses": 29,
+      "phi1_vars": 13,
+      "phi2_clauses": 50,
+      "phi2_vars": 19,
+      "surplus": 1
+    }
+  },
+  "method": "sharpasp_sr"
+}

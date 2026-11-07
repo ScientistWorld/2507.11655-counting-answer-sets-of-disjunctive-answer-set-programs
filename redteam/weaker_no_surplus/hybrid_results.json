@@ -1,0 +1,48 @@
+{
+  "enumeration_limit": 1000,
+  "instances": {
+    "choices_12": {
+      "answer_sets": 8192,
+      "auxiliary_clauses": 0,
+      "complete": true,
+      "core_clauses": 113,
+      "loop_atoms": 2,
+      "used_fallback": true
+    },
+    "choices_14": {
+      "answer_sets": 32768,
+      "auxiliary_clauses": 0,
+      "complete": true,
+      "core_clauses": 127,
+      "loop_atoms": 2,
+      "used_fallback": true
+    },
+    "choices_16": {
+      "answer_sets": 131072,
+      "auxiliary_clauses": 0,
+      "complete": true,
+      "core_clauses": 141,
+      "loop_atoms": 2,
+      "used_fallback": true
+    },
+    "choices_20": {
+      "answer_sets": 2097152,
+      "auxiliary_clauses": 0,
+      "complete": true,
+      "core_clauses": 169,
+      "loop_atoms": 2,
+      "used_fallback": true
+    },
+    "choices_8": {
+      "answer_sets": 256,
+      "complete": true,
+      "used_fallback": false
+    },
+    "paper_example": {
+      "answer_sets": 1,
+      "complete": true,
+      "used_fallback": false
+    }
+  },
+  "method": "enumeration_then_sharpasp_sr"
+}

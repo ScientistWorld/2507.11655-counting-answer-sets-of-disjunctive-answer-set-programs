@@ -1,0 +1,41 @@
+{
+  "instances": {
+    "choices_12": {
+      "answer_sets": 1000,
+      "complete": false,
+      "limit": 1000,
+      "log2_answer_sets": 9.965784284662087
+    },
+    "choices_14": {
+      "answer_sets": 1000,
+      "complete": false,
+      "limit": 1000,
+      "log2_answer_sets": 9.965784284662087
+    },
+    "choices_16": {
+      "answer_sets": 1000,
+      "complete": false,
+      "limit": 1000,
+      "log2_answer_sets": 9.965784284662087
+    },
+    "choices_20": {
+      "answer_sets": 1000,
+      "complete": false,
+      "limit": 1000,
+      "log2_answer_sets": 9.965784284662087
+    },
+    "choices_8": {
+      "answer_sets": 256,
+      "complete": true,
+      "limit": 1000,
+      "log2_answer_sets": 8.0
+    },
+    "paper_example": {
+      "answer_sets": 1,
+      "complete": true,
+      "limit": 1000,
+      "log2_answer_sets": 0.0
+    }
+  },
+  "method": "enumeration"
+}

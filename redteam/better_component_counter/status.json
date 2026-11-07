@@ -1,0 +1,101 @@
+{
+  "breakdown": {
+    "scaled_disjunctive_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -0.0,
+        "avg_auxiliary_to_core_clause_ratio": -0.0,
+        "avg_loop_atoms": -0.0,
+        "exact_count_accuracy": 0.0,
+        "large_exact_count_accuracy": 0.0,
+        "max_log2_count_solved": 0.0,
+        "small_exact_count_accuracy": 0.0,
+        "solved_instances": 0.0,
+        "structural_report_fraction": 0.0
+      },
+      "delta": 0.0,
+      "utility": 2.2980605476609774
+    },
+    "scaled_hybrid_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -0.0,
+        "avg_auxiliary_to_core_clause_ratio": -0.0,
+        "avg_loop_atoms": -0.0,
+        "enumeration_completed_instances": 0.0,
+        "exact_count_accuracy": 0.0,
+        "fallback_instances": -0.0,
+        "large_exact_count_accuracy": 0.0,
+        "max_log2_count_solved": 0.0,
+        "small_exact_count_accuracy": 0.0,
+        "solved_instances": 0.0,
+        "structural_report_fraction": 0.0
+      },
+      "delta": 0.0,
+      "utility": 1.7091630578045565
+    }
+  },
+  "case": "better_component_counter",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "baseline/enumerate.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.6387640580069274
+    },
+    {
+      "command": [
+        "python",
+        "method/selftest.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.2158483830280602
+    },
+    {
+      "command": [
+        "python",
+        "redteam/verify_component_counter.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.17529382498469204
+    },
+    {
+      "command": [
+        "python",
+        "method/run_sharpasp_sr.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.3723593649920076
+    },
+    {
+      "command": [
+        "python",
+        "method/run_hybrid.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.5130235580727458
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/evaluate_train.sh"
+      ],
+      "returncode": 0,
+      "seconds": 0.24335827003233135
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "returncode": 0,
+      "seconds": 0.22834352601785213
+    }
+  ],
+  "evaluator_hashes_unchanged": true,
+  "rank_delta": 0.0,
+  "seed": 0,
+  "test_has_no_arguments": true,
+  "test_returncode": 0,
+  "utility": 4.0072236054655335
+}

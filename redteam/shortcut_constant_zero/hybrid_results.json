@@ -1,0 +1,36 @@
+{
+  "enumeration_limit": 1000,
+  "instances": {
+    "choices_12": {
+      "answer_sets": 0,
+      "complete": true,
+      "used_fallback": false
+    },
+    "choices_14": {
+      "answer_sets": 0,
+      "complete": true,
+      "used_fallback": false
+    },
+    "choices_16": {
+      "answer_sets": 0,
+      "complete": true,
+      "used_fallback": false
+    },
+    "choices_20": {
+      "answer_sets": 0,
+      "complete": true,
+      "used_fallback": false
+    },
+    "choices_8": {
+      "answer_sets": 0,
+      "complete": true,
+      "used_fallback": false
+    },
+    "paper_example": {
+      "answer_sets": 0,
+      "complete": true,
+      "used_fallback": false
+    }
+  },
+  "method": "enumeration_then_sharpasp_sr"
+}

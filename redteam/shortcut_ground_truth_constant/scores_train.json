@@ -1,0 +1,61 @@
+{
+  "experiments": {
+    "scaled_disjunctive_counting": {
+      "results": {
+        "enumeration_cap_1000": {
+          "answer_set_log2_mae": 20.666666666666668,
+          "avg_auxiliary_to_core_clause_ratio": 0.0,
+          "avg_loop_atoms": 0.0,
+          "exact_count_accuracy": 0.0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 1,
+          "structural_report_fraction": 0.0
+        },
+        "sharpasp_sr": {
+          "answer_set_log2_mae": 0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0,
+          "avg_loop_atoms": 0.0,
+          "exact_count_accuracy": 1.0,
+          "large_exact_count_accuracy": 1.0,
+          "max_log2_count_solved": 20.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 3,
+          "structural_report_fraction": 0.0
+        }
+      }
+    },
+    "scaled_hybrid_counting": {
+      "results": {
+        "enumeration_cap_1000": {
+          "answer_set_log2_mae": 20.666666666666668,
+          "avg_auxiliary_to_core_clause_ratio": 0.0,
+          "avg_loop_atoms": 0.0,
+          "enumeration_completed_instances": 1,
+          "exact_count_accuracy": 0.0,
+          "fallback_instances": 0,
+          "large_exact_count_accuracy": 0.0,
+          "max_log2_count_solved": 0.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 1,
+          "structural_report_fraction": 0.0
+        },
+        "enumeration_then_sharpasp_sr": {
+          "answer_set_log2_mae": 0.0,
+          "avg_auxiliary_to_core_clause_ratio": 0.0,
+          "avg_loop_atoms": 0.0,
+          "enumeration_completed_instances": 3,
+          "exact_count_accuracy": 1.0,
+          "fallback_instances": 0,
+          "large_exact_count_accuracy": 1.0,
+          "max_log2_count_solved": 20.0,
+          "small_exact_count_accuracy": 0.0,
+          "solved_instances": 3,
+          "structural_report_fraction": 0.0
+        }
+      }
+    }
+  },
+  "slice": "train"
+}

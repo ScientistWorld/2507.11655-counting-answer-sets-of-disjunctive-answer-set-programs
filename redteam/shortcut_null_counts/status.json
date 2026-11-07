@@ -1,0 +1,43 @@
+{
+  "case": "shortcut_null_counts",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "baseline/enumerate.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.5110933940159157
+    },
+    {
+      "command": [
+        "python",
+        "method/redteam_candidate.py",
+        "shortcut_null_counts"
+      ],
+      "returncode": 0,
+      "seconds": 0.46996213705278933
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/evaluate_train.sh"
+      ],
+      "returncode": 1,
+      "seconds": 0.5272960599977523
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "returncode": 1,
+      "seconds": 0.5413291249424219
+    }
+  ],
+  "evaluator_hashes_unchanged": true,
+  "rejected": true,
+  "seed": 0,
+  "test_has_no_arguments": true,
+  "test_returncode": 1
+}

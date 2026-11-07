@@ -1,0 +1,78 @@
+{
+  "breakdown": {
+    "scaled_disjunctive_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -80.96000000000002,
+        "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+        "avg_loop_atoms": 0.020000000000000004,
+        "exact_count_accuracy": -0.2,
+        "large_exact_count_accuracy": -0.16000000000000003,
+        "max_log2_count_solved": 100.80000000000001,
+        "small_exact_count_accuracy": -0.04000000000000001,
+        "solved_instances": 0.0,
+        "structural_report_fraction": -0.03
+      },
+      "delta": 19.441939452339003,
+      "utility": 21.73999999999998
+    },
+    "scaled_hybrid_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -60.72,
+        "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+        "avg_loop_atoms": 0.009999999999999998,
+        "enumeration_completed_instances": 0.03,
+        "exact_count_accuracy": -0.15,
+        "fallback_instances": 0.03,
+        "large_exact_count_accuracy": -0.12,
+        "max_log2_count_solved": 75.6,
+        "small_exact_count_accuracy": -0.03,
+        "solved_instances": 0.0,
+        "structural_report_fraction": -0.015
+      },
+      "delta": 14.64083694219544,
+      "utility": 16.35
+    }
+  },
+  "case": "shortcut_wrong_huge_count",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "baseline/enumerate.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.31791826197877526
+    },
+    {
+      "command": [
+        "python",
+        "method/redteam_candidate.py",
+        "shortcut_wrong_huge_count"
+      ],
+      "returncode": 0,
+      "seconds": 0.5029080240055919
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/evaluate_train.sh"
+      ],
+      "returncode": 0,
+      "seconds": 0.5376637539593503
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "returncode": 0,
+      "seconds": 0.46466684399638325
+    }
+  ],
+  "evaluator_hashes_unchanged": true,
+  "rank_delta": 34.08277639453444,
+  "seed": 0,
+  "test_has_no_arguments": true,
+  "test_returncode": 0,
+  "utility": 38.08999999999998
+}

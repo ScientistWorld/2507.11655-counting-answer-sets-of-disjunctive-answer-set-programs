@@ -1,0 +1,38 @@
+{
+  "breakdown": {
+    "scaled_disjunctive_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -1.0400000000000003,
+        "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+        "avg_loop_atoms": 0.020000000000000004,
+        "exact_count_accuracy": -0.2,
+        "large_exact_count_accuracy": -0.16000000000000003,
+        "max_log2_count_solved": -1.6,
+        "small_exact_count_accuracy": -0.04000000000000001,
+        "solved_instances": 0.0,
+        "structural_report_fraction": -0.03
+      },
+      "delta": -3.0380605476609777,
+      "utility": -0.7400000000000002
+    },
+    "scaled_hybrid_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -0.78,
+        "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+        "avg_loop_atoms": 0.009999999999999998,
+        "enumeration_completed_instances": 0.03,
+        "exact_count_accuracy": -0.15,
+        "fallback_instances": 0.03,
+        "large_exact_count_accuracy": -0.12,
+        "max_log2_count_solved": -1.2,
+        "small_exact_count_accuracy": -0.03,
+        "solved_instances": 0.0,
+        "structural_report_fraction": -0.015
+      },
+      "delta": -2.2191630578045576,
+      "utility": -0.51
+    }
+  },
+  "rank_delta": -5.257223605465535,
+  "utility": -1.2500000000000002
+}

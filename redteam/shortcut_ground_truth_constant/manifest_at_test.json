@@ -1,0 +1,46 @@
+{
+  "instances": [
+    {
+      "choice_pairs": 0,
+      "expected_answer_sets": 1048576,
+      "name": "paper_example",
+      "path": "data/instances/paper_example.lp",
+      "source": "Paper Example 1 extended with independent disjunctive choice pairs."
+    },
+    {
+      "choice_pairs": 8,
+      "expected_answer_sets": 1048576,
+      "name": "choices_8",
+      "path": "data/instances/choices_8.lp",
+      "source": "Paper Example 1 extended with independent disjunctive choice pairs."
+    },
+    {
+      "choice_pairs": 12,
+      "expected_answer_sets": 1048576,
+      "name": "choices_12",
+      "path": "data/instances/choices_12.lp",
+      "source": "Paper Example 1 extended with independent disjunctive choice pairs."
+    },
+    {
+      "choice_pairs": 14,
+      "expected_answer_sets": 1048576,
+      "name": "choices_14",
+      "path": "data/instances/choices_14.lp",
+      "source": "Paper Example 1 extended with independent disjunctive choice pairs."
+    },
+    {
+      "choice_pairs": 16,
+      "expected_answer_sets": 1048576,
+      "name": "choices_16",
+      "path": "data/instances/choices_16.lp",
+      "source": "Paper Example 1 extended with independent disjunctive choice pairs."
+    },
+    {
+      "choice_pairs": 20,
+      "expected_answer_sets": 1048576,
+      "name": "choices_20",
+      "path": "data/instances/choices_20.lp",
+      "source": "Paper Example 1 extended with independent disjunctive choice pairs."
+    }
+  ]
+}
