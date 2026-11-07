@@ -14,5 +14,5 @@ set -e
 cd /home/user
 export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
-python redteam/replay_fresh.py
-python redteam/time_genuine_counters.py
+bash scripts/reproduce.sh
+python validate.py --compare

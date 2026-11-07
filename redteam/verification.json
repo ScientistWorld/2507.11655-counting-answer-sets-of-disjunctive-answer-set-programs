@@ -1,0 +1,95 @@
+{
+  "accepted_cases": 16,
+  "case_count": 17,
+  "cases": [
+    {
+      "case": "reference_seed_0",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.0
+    },
+    {
+      "case": "reference_seed_1",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.0
+    },
+    {
+      "case": "reference_seed_2",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.0
+    },
+    {
+      "case": "better_component_counter",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.0
+    },
+    {
+      "case": "weaker_no_surplus",
+      "fresh_scores_identical": true,
+      "rank_delta": -0.5472236054655341
+    },
+    {
+      "case": "simple_uncapped_baseline",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.06277639453446603
+    },
+    {
+      "case": "shortcut_manifest_answers",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.06277639453446603
+    },
+    {
+      "case": "shortcut_generator_answers",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.06277639453446603
+    },
+    {
+      "case": "shortcut_fake_reports",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.11527639453446603
+    },
+    {
+      "case": "shortcut_wrong_huge_count",
+      "fresh_scores_identical": true,
+      "rank_delta": 34.08277639453445
+    },
+    {
+      "case": "shortcut_negative_structure",
+      "fresh_scores_identical": true,
+      "rank_delta": 344.79527639453454
+    },
+    {
+      "case": "shortcut_ground_truth_constant",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.692776394534466
+    },
+    {
+      "case": "shortcut_replace_fixed_instances",
+      "fresh_scores_identical": true,
+      "rank_delta": 0.06277639453446603
+    },
+    {
+      "case": "shortcut_direct_score_write",
+      "fresh_scores_identical": true,
+      "rank_delta": -5.257223605465534
+    },
+    {
+      "case": "shortcut_constant_zero",
+      "fresh_scores_identical": true,
+      "rank_delta": -5.257223605465534
+    },
+    {
+      "case": "shortcut_empty_outputs",
+      "fresh_scores_identical": true,
+      "rank_delta": -5.827223605465535
+    },
+    {
+      "case": "shortcut_null_counts",
+      "rejected_in_both_jobs": true
+    }
+  ],
+  "failed_shortcut_checks": 4,
+  "original_tracked_scientific_files_restored": true,
+  "reference_seed_score_spread": 0,
+  "restoration_commit": "13d731b",
+  "working_shortcuts": 7
+}
