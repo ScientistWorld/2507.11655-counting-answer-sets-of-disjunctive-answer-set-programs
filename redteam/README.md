@@ -19,6 +19,11 @@ weighted contribution of every metric in its own directory. A rejected null
 artifact has a status and error log instead of fictitious scores. Logs and the
 temporary checkpoint backup are ignored; small scores and evidence are tracked.
 
+`replay_fresh.py` runs in a second scheduler job, reconstitutes each attempt's
+persistent artifacts and data, and calls the hidden evaluator without executing
+any candidate method. Its scores must be byte-identical to the first job. This
+checks the fresh-container requirement across an actual job boundary.
+
 Rank deltas use signed coefficients from `scoring/reference.json` and the original
 split reference from `scoring/scores_test.json`. They include both proposed-method
 rows, weighted 0.20 and 0.15; baseline rows stay unchanged. The two historical paper

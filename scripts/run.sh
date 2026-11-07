@@ -14,4 +14,5 @@ set -e
 cd /home/user
 export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
-python redteam/audit.py all
+python redteam/replay_fresh.py
+python redteam/time_genuine_counters.py
