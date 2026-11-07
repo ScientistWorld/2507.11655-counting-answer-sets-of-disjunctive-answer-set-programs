@@ -68,7 +68,7 @@ CPU_BUDGET = 10.0          # must equal the evaluators' CPU_BUDGET_SECONDS
 MARGIN = 2.5               # calibration margin factor
 GT_ENUM_CAP = 120.0        # CPU seconds for exhaustive clingo ground truth
 GT_QBF_CAP = 60.0          # CPU seconds for the independent 2QBF ground truth
-MAX_LONG_ENUM_GT = 12      # at most this many long clingo ground-truth runs per split
+MAX_LONG_ENUM_GT = 16      # at most this many long clingo ground-truth runs per split
 SMALL_MAX = 10_000         # count bands: small <= 10^4 < mid < 2^23 <= large
 LARGE_MIN = 2 ** 23
 ENUM_HOPELESS = 2 ** 26    # enumeration cannot finish this many answer sets in MARGIN*CPU_BUDGET
@@ -84,6 +84,8 @@ QBF_GRID = [
     (25, 5, 42, 4, 2), (26, 6, 50, 4, 2), (28, 6, 50, 4, 2), (29, 6, 56, 4, 2),
     (31, 6, 54, 4, 2), (33, 7, 64, 4, 2), (36, 7, 66, 4, 2),
     (28, 6, 42, 3, 2), (32, 6, 48, 3, 2), (36, 7, 56, 3, 2),
+    (23, 5, 35, 3, 2), (24, 5, 36, 3, 2), (25, 5, 37, 3, 2), (26, 6, 40, 3, 2),
+    (27, 6, 41, 3, 2), (29, 6, 43, 3, 2), (30, 6, 45, 3, 2),
 ]
 QBF_SEEDS = 3
 # (atoms, rules/atom, p_disjunctive, max_pos, max_neg, p_constraint), seeds per entry
@@ -92,14 +94,18 @@ RANDOM_GRID = [
     (90, 2.2, 0.5, 2, 1, 0.0), (120, 2.0, 0.5, 2, 1, 0.0), (120, 2.4, 0.5, 2, 1, 0.0),
     (150, 2.2, 0.5, 2, 1, 0.0), (180, 2.4, 0.5, 2, 1, 0.0),
     (60, 1.6, 0.6, 2, 0, 0.05), (100, 1.7, 0.6, 2, 0, 0.03), (140, 1.6, 0.6, 2, 0, 0.02),
+    (150, 1.6, 0.6, 2, 0, 0.02),
 ]
 RANDOM_SEEDS = 3
 # per-slice quotas: (band, direct reference solves?) -> number of programs
 QUOTAS = {
     "hybrid_full_spectrum": {("small", True): 2, ("small", False): 3, ("mid", True): 3, ("mid", False): 3,
-                             ("large", True): 5, ("large", False): 2},
+                             ("large", True): 4, ("large", False): 2},
     "large_count_counting": {("large", True): 7, ("large", False): 7},
 }
+# allocation order: the primary slice gets the large band before the hybrid slice
+ALLOCATION_ORDER = [("hybrid_full_spectrum", "small"), ("hybrid_full_spectrum", "mid"),
+                    ("large_count_counting", "large"), ("hybrid_full_spectrum", "large")]
 PREFERRED_FAMILY = {"hybrid_full_spectrum": "random", "large_count_counting": "qbf"}
 
 # ---------------------------------------------------------------- generators
@@ -414,14 +420,12 @@ def select(eligible: list[dict]) -> dict[str, list[dict]]:
     rng.shuffle(pool)
     used: set[str] = set()
     picks: dict[str, list[dict]] = {exp: [] for exp in QUOTAS}
-    for exp in ("hybrid_full_spectrum", "large_count_counting"):
-        for (band, solved), n in QUOTAS[exp].items():
+    for exp, band in ALLOCATION_ORDER:
+        for solved in (True, False):
+            n = QUOTAS[exp].get((band, solved), 0)
             group = [e for e in pool if e["key"] not in used and e["band"] == band and e["direct_solved"] == solved]
             group.sort(key=lambda e: e["family"] != PREFERRED_FAMILY[exp])  # stable: preferred family first
-            chosen = group[:n]
-            if len(chosen) < n:  # top up from the same band with the other outcome
-                extra = [e for e in pool if e["key"] not in used and e["band"] == band and e not in chosen]
-                chosen += extra[: n - len(chosen)]
+            chosen = group[:n]  # no top-up across outcomes: keeps the solved / unsolved balance
             for e in chosen:
                 used.add(e["key"])
                 picks[exp].append(e)
