@@ -1,7 +1,13 @@
 #!/bin/bash
 # Run the paper's proposed method.
 #
-# This script trains/runs the paper's method using code in method/.
+# sharpASP-sR needs no training: "running" it means self-testing the counter and
+# registering it under the counter interface so the evaluators can invoke it on
+# benchmark programs:
+#   checkpoints/sharpasp_sr/counter.json         direct subtractive-reduction counter (GANAK)
+#   checkpoints/hybrid_sharpasp_sr/counter.json  clingo enumeration up to 10^4 answer sets, then sharpASP-sR
+# Then scores every registered counter on the train programs (scripts/evaluate.sh).
+# Set SKIP_EVAL=1 to only self-test and register.
 #
 # Usage:
 #   bash scripts/method.sh
@@ -12,6 +18,7 @@ cd /home/user
 export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
 python method/selftest.py
-python method/run_sharpasp_sr.py --output checkpoints/sharpasp_sr/results.json
-python method/run_hybrid.py --enumeration-limit 1000 --output checkpoints/hybrid/results.json
-bash scripts/evaluate.sh
+python method/register_counters.py --registry checkpoints
+if [ "${SKIP_EVAL:-0}" != "1" ]; then
+  bash scripts/evaluate.sh
+fi

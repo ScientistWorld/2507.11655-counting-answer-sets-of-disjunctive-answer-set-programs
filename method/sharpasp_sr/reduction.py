@@ -83,14 +83,28 @@ def build_phi2(program: Program) -> tuple[CNF, list[int], set[str]]:
     return cnf, kept_projection_atoms, loops
 
 
-def sharpasp_sr_count(program: Program) -> dict:
+def sharpasp_sr_count(program: Program, backend: str = "python") -> dict:
+    """|AS(P)| = #phi1 - #exists(CV' u CV*) phi2  (Theorem 1).
+
+    backend="ganak" uses the GANAK exact projected model counter, as in the
+    paper's prototype; backend="python" uses the small in-repo counter (only
+    usable on tiny programs, kept for self-tests).
+    """
     phi1, atoms, loops = build_phi1(program)
     phi2, kept_projection_atoms, _ = build_phi2(program)
-    overcount = count_models(phi1.clauses, len(phi1.var_ids))
-    # The paper writes #exists X phi2 for X = CV' union CV*, i.e. copies are
-    # disregarded. This in-repo counter takes the dual convention: variables
-    # listed here are the original atoms whose projected assignments are kept.
-    surplus = projected_count(phi2.clauses, kept_projection_atoms)
+    if backend == "ganak":
+        from .ganak import ganak_count
+
+        overcount = ganak_count(len(phi1.var_ids), phi1.clauses)
+        # Tight programs: Copy(P) is empty and Comp(P) models are exactly the
+        # answer sets, so the surplus is 0 (phi2 would contain the empty clause).
+        surplus = ganak_count(len(phi2.var_ids), phi2.clauses, kept_projection_atoms) if loops else 0
+    else:
+        overcount = count_models(phi1.clauses, len(phi1.var_ids))
+        # The paper writes #exists X phi2 for X = CV' union CV*, i.e. copies are
+        # disregarded. The projection set passed here is the dual: the original
+        # atoms whose projected assignments are kept.
+        surplus = projected_count(phi2.clauses, kept_projection_atoms)
     return {
         "answer_sets": overcount - surplus,
         "overcount": overcount,

@@ -1,8 +1,7 @@
 #!/bin/bash
-# Evaluate the held-out test slice of the gym scoring harness.
-#
-# Mirrors scripts/evaluate.sh: scores existing result artifacts, does not run
-# method code, and writes a scores JSON file for downstream comparison.
+# Evaluate the hidden test slice: runs every counter registered under
+# checkpoints/*/counter.json on the hidden programs in eval/test/ and writes
+# scoring/scores_test.json. Uses only eval/test/. No arguments needed.
 
 set -e
 
@@ -11,4 +10,4 @@ export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
 mkdir -p scoring
 
-python eval/test/evaluate_counts.py --output scoring/scores_test.json "$@"
+python eval/test/evaluate.py --output scoring/scores_test.json "$@"

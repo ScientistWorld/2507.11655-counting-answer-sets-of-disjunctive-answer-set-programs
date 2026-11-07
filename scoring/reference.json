@@ -1,108 +1,170 @@
 {
   "experiments": {
-    "paper_main_benchmark": {
-      "description": "Paper headline benchmark on 1125 non-tight disjunctive ASP instances, 5000s timeout and 8 GB memory.",
+    "large_count_counting": {
+      "description": "Scaled analog of the paper's headline claim (Table 1, Figure 3): exact counting on hidden non-tight disjunctive programs with at least 2^23 answer sets, beyond what answer-set enumeration reaches under the fixed budget.",
       "weight": 0.45,
       "primary_metric": "solved_instances",
       "metrics": {
-        "solved_instances": {"higher_is_better": true, "coefficient": 1.0, "description": "Number of benchmark instances solved within the paper's resource limits."},
-        "par2": {"higher_is_better": false, "coefficient": 0.0, "description": "Paper-reported penalized average runtime, retained as reference context only because wall-clock metrics are hardware dependent."}
+        "solved_instances": {
+          "higher_is_better": true,
+          "coefficient": 1.0,
+          "description": "Number of large-count programs whose exact answer-set count the counter printed within the fixed per-program CPU budget (verified against independently computed ground truth). Set to 0 if the run violated exactness anywhere."
+        },
+        "max_log2_count_solved": {
+          "higher_is_better": true,
+          "coefficient": 0.02,
+          "description": "log2 of the largest exact count among solved large-count programs (count scale reached; only verified-exact answers count). Set to 0 if the run violated exactness anywhere."
+        },
+        "wrong_count_instances": {
+          "higher_is_better": false,
+          "coefficient": -1.0,
+          "description": "Exactness constraint: number of large-count programs answered within budget with a wrong or impossible (negative / non-integer) count. Any nonzero value on the test split fails the whole run."
+        }
       },
       "results": {
-        "clingo": {"type": "baseline", "solved_instances": 708, "par2": 4118},
-        "DynASP": {"type": "baseline", "solved_instances": 89, "par2": 9212},
-        "Wasp": {"type": "baseline", "solved_instances": 432, "par2": 6204},
-        "sharpasp_sr": {"type": "proposed", "solved_instances": 825, "par2": 2939}
-      }
-    },
-    "paper_hybrid_benchmark": {
-      "description": "Paper hybrid benchmark using clingo enumeration up to 10000 answer sets followed by a counter fallback.",
-      "weight": 0.2,
-      "primary_metric": "solved_instances",
-      "metrics": {
-        "solved_instances": {"higher_is_better": true, "coefficient": 1.0, "description": "Number of hybrid benchmark instances solved within the paper's resource limits."},
-        "par2": {"higher_is_better": false, "coefficient": 0.0, "description": "Paper-reported penalized average runtime, retained as reference context only because wall-clock metrics are hardware dependent."}
-      },
-      "results": {
-        "clingo": {"type": "baseline", "solved_instances": 708, "par2": 4118},
-        "clingo_DynASP": {"type": "baseline", "solved_instances": 377, "par2": 4790},
-        "clingo_Wasp": {"type": "baseline", "solved_instances": 442, "par2": 4404},
-        "clingo_sharpasp_sr": {"type": "proposed", "solved_instances": 918, "par2": 1600}
-      }
-    },
-    "scaled_disjunctive_counting": {
-      "description": "Scaled reproduction target with exact counts on generated non-tight disjunctive programs derived from the paper example.",
-      "weight": 0.2,
-      "primary_metric": "max_log2_count_solved",
-      "metrics": {
-        "solved_instances": {"higher_is_better": true, "coefficient": 0.5, "description": "Number of split instances for which the artifact reports a complete count."},
-        "exact_count_accuracy": {"higher_is_better": true, "coefficient": 1.0, "description": "Fraction of split instances whose complete reported answer-set count exactly matches the known count."},
-        "large_exact_count_accuracy": {"higher_is_better": true, "coefficient": 0.8, "description": "Exact-count accuracy restricted to instances above the 1000-answer-set enumeration cap."},
-        "small_exact_count_accuracy": {"higher_is_better": true, "coefficient": 0.2, "description": "Exact-count accuracy on instances at or below the 1000-answer-set enumeration cap."},
-        "answer_set_log2_mae": {"higher_is_better": false, "coefficient": -0.4, "description": "Mean absolute log2 error of reported counts, with missing or incomplete results receiving a finite miss penalty."},
-        "max_log2_count_solved": {"higher_is_better": true, "coefficient": 0.5, "description": "Largest log2 answer-set count among split instances reported as complete."},
-        "avg_loop_atoms": {"higher_is_better": false, "coefficient": -0.05, "description": "Average reported loop-atom count, kept as a small encoding-cost signal rather than a primary objective."},
-        "avg_auxiliary_to_core_clause_ratio": {"higher_is_better": false, "coefficient": -0.05, "description": "Average reported ratio of auxiliary encoding clauses to core encoding clauses, used as a lightweight formula-growth constraint."},
-        "structural_report_fraction": {"higher_is_better": true, "coefficient": 0.15, "description": "Fraction of split instances reporting loop and formula-size fields so missing structural data cannot look like zero cost."}
-      },
-      "results": {
-        "enumeration_cap_1000": {
+        "clingo_enumeration": {
           "type": "baseline",
-          "solved_instances": 2,
-          "exact_count_accuracy": 0.3333333333333333,
-          "max_log2_count_solved": 8,
-          "avg_loop_atoms": 0,
-          "avg_auxiliary_to_core_clause_ratio": 0
+          "solved_instances": 0,
+          "max_log2_count_solved": 0.0,
+          "wrong_count_instances": 0
         },
         "sharpasp_sr": {
           "type": "proposed",
-          "solved_instances": 6,
-          "exact_count_accuracy": 1.0,
-          "max_log2_count_solved": 20,
-          "avg_loop_atoms": 2,
-          "avg_auxiliary_to_core_clause_ratio": 1.5
+          "solved_instances": 7,
+          "max_log2_count_solved": 30.0,
+          "wrong_count_instances": 0
+        },
+        "hybrid_sharpasp_sr": {
+          "type": "baseline",
+          "solved_instances": 7,
+          "max_log2_count_solved": 30.0,
+          "wrong_count_instances": 0
         }
-      }
+      },
+      "note": "Scaled setup (not the paper's numbers): hidden ground disjunctive programs from two families modelled on the paper's benchmark suite (2QBF saturation encodings; random non-tight disjunctive programs), a fixed budget of 10 CPU seconds per program for every counter (paper: 5000 s, 8 GB, 1125 instances), GANAK v2.8.0 as projected counter, clingo 5.8.3 for enumeration. Results rows are this reproduction's hidden-test values; the paper's reported numbers are kept unchanged in paper_main_benchmark and paper_hybrid_benchmark."
     },
-    "scaled_hybrid_counting": {
-      "description": "Scaled reproduction target for the hybrid claim: enumerate small-count cases, then fall back to an exact counter when enumeration exceeds the cap.",
-      "weight": 0.15,
-      "primary_metric": "max_log2_count_solved",
+    "hybrid_full_spectrum": {
+      "description": "Scaled analog of the paper's hybrid claim (Tables 2-3): hidden non-tight disjunctive programs spanning small, mid and large answer-set counts, mostly with many loop atoms, where enumeration and subtractive counting each fail on part of the set.",
+      "weight": 0.35,
+      "primary_metric": "solved_instances",
       "metrics": {
-        "solved_instances": {"higher_is_better": true, "coefficient": 0.5, "description": "Number of split instances for which the hybrid artifact reports a complete count."},
-        "exact_count_accuracy": {"higher_is_better": true, "coefficient": 1.0, "description": "Fraction of split instances whose complete hybrid count exactly matches the known count."},
-        "large_exact_count_accuracy": {"higher_is_better": true, "coefficient": 0.8, "description": "Hybrid exact-count accuracy restricted to instances above the 1000-answer-set enumeration cap."},
-        "small_exact_count_accuracy": {"higher_is_better": true, "coefficient": 0.2, "description": "Hybrid exact-count accuracy on instances at or below the 1000-answer-set enumeration cap."},
-        "answer_set_log2_mae": {"higher_is_better": false, "coefficient": -0.4, "description": "Mean absolute log2 error of hybrid reported counts, with missing or incomplete results receiving a finite miss penalty."},
-        "max_log2_count_solved": {"higher_is_better": true, "coefficient": 0.5, "description": "Largest log2 answer-set count among split instances reported as complete by the hybrid artifact."},
-        "enumeration_completed_instances": {"higher_is_better": true, "coefficient": 0.1, "description": "Number of complete split instances handled without invoking the fallback counter."},
-        "fallback_instances": {"higher_is_better": false, "coefficient": -0.1, "description": "Number of split instances reported as requiring the fallback counter."},
-        "avg_loop_atoms": {"higher_is_better": false, "coefficient": -0.05, "description": "Average reported loop-atom count for fallback-style encodings, kept as a small encoding-cost signal."},
-        "avg_auxiliary_to_core_clause_ratio": {"higher_is_better": false, "coefficient": -0.05, "description": "Average reported ratio of auxiliary encoding clauses to core encoding clauses, used as a lightweight formula-growth constraint."},
-        "structural_report_fraction": {"higher_is_better": true, "coefficient": 0.15, "description": "Fraction of split instances reporting loop and formula-size fields so missing structural data cannot look like zero cost."}
+        "solved_instances": {
+          "higher_is_better": true,
+          "coefficient": 1.0,
+          "description": "Number of full-spectrum programs whose exact answer-set count the counter printed within the fixed per-program CPU budget (verified against independently computed ground truth). Set to 0 if the run violated exactness anywhere."
+        },
+        "max_log2_count_solved": {
+          "higher_is_better": true,
+          "coefficient": 0.02,
+          "description": "log2 of the largest exact count among solved full-spectrum programs (count scale reached; only verified-exact answers count). Set to 0 if the run violated exactness anywhere."
+        },
+        "wrong_count_instances": {
+          "higher_is_better": false,
+          "coefficient": -1.0,
+          "description": "Exactness constraint: number of full-spectrum programs answered within budget with a wrong or impossible (negative / non-integer) count. Any nonzero value on the test split fails the whole run."
+        }
       },
       "results": {
-        "enumeration_cap_1000": {
+        "clingo_enumeration": {
           "type": "baseline",
-          "solved_instances": 2,
-          "exact_count_accuracy": 0.3333333333333333,
-          "max_log2_count_solved": 8,
-          "enumeration_completed_instances": 2,
-          "fallback_instances": 0,
-          "avg_loop_atoms": 0,
-          "avg_auxiliary_to_core_clause_ratio": 0
+          "solved_instances": 9,
+          "max_log2_count_solved": 20.0,
+          "wrong_count_instances": 0
         },
-        "enumeration_then_sharpasp_sr": {
+        "sharpasp_sr": {
+          "type": "baseline",
+          "solved_instances": 10,
+          "max_log2_count_solved": 30.0,
+          "wrong_count_instances": 0
+        },
+        "hybrid_sharpasp_sr": {
           "type": "proposed",
-          "solved_instances": 6,
-          "exact_count_accuracy": 1.0,
-          "max_log2_count_solved": 20,
-          "enumeration_completed_instances": 2,
-          "fallback_instances": 4,
-          "avg_loop_atoms": 1.3333333333333333,
-          "avg_auxiliary_to_core_clause_ratio": 0.8
+          "solved_instances": 12,
+          "max_log2_count_solved": 30.0,
+          "wrong_count_instances": 0
         }
-      }
+      },
+      "note": "Scaled setup (not the paper's numbers): hidden ground disjunctive programs from two families modelled on the paper's benchmark suite (2QBF saturation encodings; random non-tight disjunctive programs), a fixed budget of 10 CPU seconds per program for every counter (paper: 5000 s, 8 GB, 1125 instances), GANAK v2.8.0 as projected counter, clingo 5.8.3 for enumeration. Results rows are this reproduction's hidden-test values; the paper's reported numbers are kept unchanged in paper_main_benchmark and paper_hybrid_benchmark."
+    },
+    "paper_main_benchmark": {
+      "description": "Paper headline benchmark on 1125 non-tight disjunctive ASP instances, 5000s timeout and 8 GB memory.",
+      "weight": 0.1,
+      "primary_metric": "solved_instances",
+      "metrics": {
+        "solved_instances": {
+          "higher_is_better": true,
+          "coefficient": 1.0,
+          "description": "Number of benchmark instances solved within the paper's resource limits."
+        },
+        "par2": {
+          "higher_is_better": false,
+          "coefficient": 0.0,
+          "description": "Paper-reported penalized average runtime, retained as reference context only because wall-clock metrics are hardware dependent."
+        }
+      },
+      "results": {
+        "clingo": {
+          "type": "baseline",
+          "solved_instances": 708,
+          "par2": 4118
+        },
+        "DynASP": {
+          "type": "baseline",
+          "solved_instances": 89,
+          "par2": 9212
+        },
+        "Wasp": {
+          "type": "baseline",
+          "solved_instances": 432,
+          "par2": 6204
+        },
+        "sharpasp_sr": {
+          "type": "proposed",
+          "solved_instances": 825,
+          "par2": 2939
+        }
+      },
+      "note": "Paper-reported numbers (Table 1), unchanged. Historical context: no scaled outputs are scored under this experiment; its scaled analog is large_count_counting."
+    },
+    "paper_hybrid_benchmark": {
+      "description": "Paper hybrid benchmark using clingo enumeration up to 10000 answer sets followed by a counter fallback.",
+      "weight": 0.1,
+      "primary_metric": "solved_instances",
+      "metrics": {
+        "solved_instances": {
+          "higher_is_better": true,
+          "coefficient": 1.0,
+          "description": "Number of hybrid benchmark instances solved within the paper's resource limits."
+        },
+        "par2": {
+          "higher_is_better": false,
+          "coefficient": 0.0,
+          "description": "Paper-reported penalized average runtime, retained as reference context only because wall-clock metrics are hardware dependent."
+        }
+      },
+      "results": {
+        "clingo": {
+          "type": "baseline",
+          "solved_instances": 708,
+          "par2": 4118
+        },
+        "clingo_DynASP": {
+          "type": "baseline",
+          "solved_instances": 377,
+          "par2": 4790
+        },
+        "clingo_Wasp": {
+          "type": "baseline",
+          "solved_instances": 442,
+          "par2": 4404
+        },
+        "clingo_sharpasp_sr": {
+          "type": "proposed",
+          "solved_instances": 918,
+          "par2": 1600
+        }
+      },
+      "note": "Paper-reported numbers (Table 2), unchanged. Historical context: no scaled outputs are scored under this experiment; its scaled analog is hybrid_full_spectrum."
     }
   }
 }

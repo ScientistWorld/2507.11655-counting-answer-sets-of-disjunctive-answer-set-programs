@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "redteam/hardening/variant_counter.py",
+    "--mode",
+    "hybrid",
+    "--enum-limit",
+    "300000"
+  ]
+}

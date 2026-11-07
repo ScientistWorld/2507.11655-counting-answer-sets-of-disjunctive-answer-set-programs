@@ -88,6 +88,7 @@ def positive_dependency_graph(program: Program) -> dict[str, set[str]]:
 
 
 def loop_atoms(program: Program) -> set[str]:
+    """Atoms on a cycle of the positive dependency graph (iterative Tarjan SCC)."""
     graph = positive_dependency_graph(program)
     index = 0
     stack: list[str] = []
@@ -96,35 +97,44 @@ def loop_atoms(program: Program) -> set[str]:
     on_stack: set[str] = set()
     loops: set[str] = set()
 
-    def strongconnect(v: str) -> None:
-        nonlocal index
-        indices[v] = index
-        low[v] = index
+    for root in sorted(graph):
+        if root in indices:
+            continue
+        work: list[tuple[str, list[str]]] = []
+        indices[root] = low[root] = index
         index += 1
-        stack.append(v)
-        on_stack.add(v)
-        for w in graph.get(v, ()):
-            if w not in indices:
-                strongconnect(w)
-                low[v] = min(low[v], low[w])
-            elif w in on_stack:
-                low[v] = min(low[v], indices[w])
-        if low[v] == indices[v]:
-            comp = []
-            while True:
-                w = stack.pop()
-                on_stack.remove(w)
-                comp.append(w)
-                if w == v:
-                    break
-            if len(comp) > 1:
-                loops.update(comp)
-            elif comp[0] in graph.get(comp[0], set()):
-                loops.add(comp[0])
-
-    for atom in graph:
-        if atom not in indices:
-            strongconnect(atom)
+        stack.append(root)
+        on_stack.add(root)
+        work.append((root, sorted(graph.get(root, ()))))
+        while work:
+            v, succ = work[-1]
+            if succ:
+                w = succ.pop()
+                if w not in indices:
+                    indices[w] = low[w] = index
+                    index += 1
+                    stack.append(w)
+                    on_stack.add(w)
+                    work.append((w, sorted(graph.get(w, ()))))
+                elif w in on_stack:
+                    low[v] = min(low[v], indices[w])
+                continue
+            work.pop()
+            if work:
+                parent = work[-1][0]
+                low[parent] = min(low[parent], low[v])
+            if low[v] == indices[v]:
+                comp = []
+                while True:
+                    w = stack.pop()
+                    on_stack.remove(w)
+                    comp.append(w)
+                    if w == v:
+                        break
+                if len(comp) > 1:
+                    loops.update(comp)
+                elif comp[0] in graph.get(comp[0], set()):
+                    loops.add(comp[0])
     return loops
 
 

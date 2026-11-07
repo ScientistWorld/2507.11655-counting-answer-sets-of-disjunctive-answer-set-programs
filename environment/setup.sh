@@ -9,12 +9,13 @@
 # Only use container.def for the base Docker image and apt-get packages.
 #
 # IMPORTANT: Install into the SYSTEM Python, not a virtual environment.
-# The overlay may be recreated on container rebuilds — a venv inside
-# it will be lost and all subsequent jobs will fail.
 # Use: uv pip install --system <packages>
-# Do NOT create a venv (python -m venv, virtualenv, etc.).
 
 set -e
 
-# No Python dependencies beyond the standard library are required for the
-# scaled exact reproduction.
+# clingo: answer-set enumeration (the paper's enumeration baseline and the
+# enumeration stage of the paper's hybrid counter).
+uv pip install --system "clingo==5.8.3"
+
+# The GANAK model counter is a static binary fetched by scripts/download.sh into
+# data/downloads/ganak (inside the bind-mounted workspace).

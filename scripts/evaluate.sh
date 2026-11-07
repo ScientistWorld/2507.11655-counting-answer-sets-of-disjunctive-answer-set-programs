@@ -1,23 +1,19 @@
 #!/bin/bash
-# Evaluation script — the standard way to evaluate work in this environment.
+# Evaluation script -- the standard way to evaluate work in this environment.
 #
-# This script must be SELF-CONTAINED using only code in eval/.
-# Do NOT import from method/ — evaluate.sh must work even when the
-# paper's method code is hidden from a scientist agent.
+# SELF-CONTAINED: uses only code in eval/ (never imports method/).
 #
-# Design it so that anyone following the same output format can run
-# this script to evaluate their results.
+# Runs every counter registered as checkpoints/<name>/counter.json on the visible
+# train programs (data/train/) under the fixed per-program budget and writes
+# scoring/scores.json:  experiments -> experiment -> results -> counter -> metrics.
 #
-# OUTPUT CONTRACT: this script writes scoring/scores.json with:
-#   experiments -> experiment name -> results -> method name -> metrics.
-# It scores existing result artifacts and omits methods whose artifacts are
-# absent, so future agents can evaluate any compatible method output.
+# Counter contract: counter.json = {"command": [...]}; the evaluator appends the
+# path of one ground ASP program, runs the command from /home/user, and reads the
+# exact answer-set count from the last stdout line. See briefing/evaluation.md.
 #
-# Example usage:
-#   bash scripts/evaluate.sh
-#   bash scripts/evaluate.sh --method-results checkpoints/new_method/results.json
-#
-# Called from run.sh after training, or independently.
+# Usage:
+#   bash scripts/evaluate.sh                         # all registered counters
+#   bash scripts/evaluate.sh --registry other_dir    # counters registered elsewhere
 
 set -e
 
@@ -26,4 +22,4 @@ export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
 mkdir -p scoring
 
-python eval/evaluate_counts.py "$@"
+python eval/train/evaluate.py --output scoring/scores.json "$@"

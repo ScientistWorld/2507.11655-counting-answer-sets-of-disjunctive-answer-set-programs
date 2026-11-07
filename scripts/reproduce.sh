@@ -1,27 +1,28 @@
 #!/bin/bash
-# Reproduce the paper's results end-to-end.
+# Reproduce the paper's results end-to-end (scaled; see briefing/evaluation.md).
 #
-# This script runs inside the compute container and should call
-# scripts/baseline.sh and scripts/method.sh to run baselines and
-# the paper's method, each of which calls scripts/evaluate.sh.
-#
-# Assumes:
-#   - Container is built (environment/container.sif)
-#   - Data and models are downloaded (via scripts/download.sh)
+# Runs inside the compute container. Assumes:
+#   - environment/setup.sh has installed clingo
+#   - scripts/download.sh has fetched data/downloads/ganak (compute nodes have no internet)
 #   - Working directory is /home/user
 #
-# This is the "gold standard" reproduction — 
-# You do not need to run this, but keep this in good shape
-# so other agents can easily run a full loop of reproduction and get the paper's numbers.
+# The benchmark programs are tracked in git. Regenerating them (expensive, about
+# an hour per split) is NOT part of reproduction:
+#   python data/make_benchmarks.py        # train split (data/train/)
+#   python eval/test/build_hidden.py      # hidden test split (eval/test/)
 
 set -e
 
 cd /home/user
 export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
-python data/make_benchmarks.py
-python method/selftest.py
-python baseline/enumerate.py --limit 1000 --output checkpoints/enumeration/results.json
-python method/run_sharpasp_sr.py --output checkpoints/sharpasp_sr/results.json
-python method/run_hybrid.py --enumeration-limit 1000 --output checkpoints/hybrid/results.json
-bash scripts/evaluate.sh
+test -x data/downloads/ganak || bash scripts/download.sh
+
+SKIP_EVAL=1 bash scripts/baseline.sh      # registers clingo_enumeration
+SKIP_EVAL=1 bash scripts/method.sh        # self-test, registers sharpasp_sr and hybrid_sharpasp_sr
+
+bash scripts/evaluate_train.sh            # scoring/scores_train.json
+cp scoring/scores_train.json scoring/scores.json   # same content as scripts/evaluate.sh would write
+if [ -f eval/test/answers.json ]; then
+  bash scripts/evaluate_test.sh           # scoring/scores_test.json
+fi

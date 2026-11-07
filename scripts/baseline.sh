@@ -1,28 +1,24 @@
 #!/bin/bash
-# Run a baseline method from the paper.
-#
-# Baselines are simple reference methods the paper compares against. 
-# Implement this only if applicable, i.e. the paper has baselines.
-# You do not need to implement all baselines to begin — 
-# just enough to validate that the evaluation pipeline works 
-# and provide a reference point. You can decide to expand more baselines later.
-# Each baseline must be actually run and scored through evaluate.sh
-# so the numbers are verified, not self-reported.
-# You can decide what this baseline script should do yourself.
+# Run the paper's baseline: answer-set enumeration with clingo (the paper's
+# strongest enumeration baseline). Registers checkpoints/clingo_enumeration/counter.json
+# and scores every registered counter on the train programs (scripts/evaluate.sh).
+# Set SKIP_EVAL=1 to only register.
 #
 # Usage:
-#   bash scripts/baseline.sh <name>
+#   bash scripts/baseline.sh [clingo_enumeration]
 
 set -e
 
 cd /home/user
 export PYTHONPATH=/home/user:${PYTHONPATH:-}
 
-name="${1:-enumeration_cap_1000}"
-if [ "$name" != "enumeration_cap_1000" ]; then
+name="${1:-clingo_enumeration}"
+if [ "$name" != "clingo_enumeration" ]; then
   echo "Unknown baseline: $name" >&2
   exit 2
 fi
 
-python baseline/enumerate.py --limit 1000 --output checkpoints/enumeration/results.json
-bash scripts/evaluate.sh
+python baseline/enumerate.py --register --registry checkpoints
+if [ "${SKIP_EVAL:-0}" != "1" ]; then
+  bash scripts/evaluate.sh
+fi
