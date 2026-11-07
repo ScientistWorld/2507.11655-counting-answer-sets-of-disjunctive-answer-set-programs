@@ -1,0 +1,16 @@
+{
+  "candidate_process_started": false,
+  "case": "shortcut_null_counts",
+  "command": {
+    "command": [
+      "bash",
+      "scripts/evaluate_test.sh"
+    ],
+    "returncode": 1,
+    "seconds": 0.3986348189646378
+  },
+  "error_last_line": "TypeError: '>' not supported between instances of 'NoneType' and 'int'",
+  "evaluator_hashes_unchanged": true,
+  "fresh_job": true,
+  "rejected": true
+}

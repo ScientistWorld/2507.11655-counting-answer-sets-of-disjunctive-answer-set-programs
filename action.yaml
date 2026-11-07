@@ -1,4 +1,4 @@
 action: submit
 gpus: 0
 test: true
-notes: "Audit scoring: 3 reference seeds, better/weaker exact-counting variants, uncapped baseline, and 11 artifact/degenerate shortcuts in one CPU job."
+notes: "Replay all saved audit attempts in a fresh container with no candidate processes, and measure paired timings of the genuine exact-counter optimization."

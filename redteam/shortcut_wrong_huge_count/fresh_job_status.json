@@ -1,0 +1,51 @@
+{
+  "breakdown": {
+    "scaled_disjunctive_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -80.96000000000002,
+        "avg_auxiliary_to_core_clause_ratio": 0.0119394523390226,
+        "avg_loop_atoms": 0.020000000000000004,
+        "exact_count_accuracy": -0.2,
+        "large_exact_count_accuracy": -0.16000000000000003,
+        "max_log2_count_solved": 100.80000000000001,
+        "small_exact_count_accuracy": -0.04000000000000001,
+        "solved_instances": 0.0,
+        "structural_report_fraction": -0.03
+      },
+      "delta": 19.441939452339003,
+      "utility": 21.73999999999998
+    },
+    "scaled_hybrid_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -60.72,
+        "avg_auxiliary_to_core_clause_ratio": 0.00583694219544342,
+        "avg_loop_atoms": 0.009999999999999998,
+        "enumeration_completed_instances": 0.03,
+        "exact_count_accuracy": -0.15,
+        "fallback_instances": 0.03,
+        "large_exact_count_accuracy": -0.12,
+        "max_log2_count_solved": 75.6,
+        "small_exact_count_accuracy": -0.03,
+        "solved_instances": 0.0,
+        "structural_report_fraction": -0.015
+      },
+      "delta": 14.64083694219544,
+      "utility": 16.35
+    }
+  },
+  "byte_identical_scores": true,
+  "candidate_process_started": false,
+  "case": "shortcut_wrong_huge_count",
+  "command": {
+    "command": [
+      "bash",
+      "scripts/evaluate_test.sh"
+    ],
+    "returncode": 0,
+    "seconds": 0.2961819570045918
+  },
+  "evaluator_hashes_unchanged": true,
+  "fresh_job": true,
+  "rank_delta": 34.08277639453444,
+  "utility": 38.08999999999998
+}

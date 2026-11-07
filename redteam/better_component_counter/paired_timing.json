@@ -1,0 +1,88 @@
+{
+  "better": {
+    "max_seconds": 0.020797334844246507,
+    "median_seconds": 0.020553083042614162,
+    "min_seconds": 0.01988504105247557
+  },
+  "cache_policy": "clear optimization caches before each instance; original caches are local to each call",
+  "median_speedup": 5.671733211530384,
+  "reference": {
+    "max_seconds": 0.12661239109002054,
+    "median_seconds": 0.1165716036921367,
+    "min_seconds": 0.11455048411153257
+  },
+  "repeats": 7,
+  "runs": [
+    {
+      "method": "reference",
+      "seconds_all_six": 0.12661239109002054,
+      "seed": 0
+    },
+    {
+      "method": "better",
+      "seconds_all_six": 0.020553083042614162,
+      "seed": 0
+    },
+    {
+      "method": "better",
+      "seconds_all_six": 0.0206001311307773,
+      "seed": 1
+    },
+    {
+      "method": "reference",
+      "seconds_all_six": 0.1165716036921367,
+      "seed": 1
+    },
+    {
+      "method": "better",
+      "seconds_all_six": 0.02066319901496172,
+      "seed": 2
+    },
+    {
+      "method": "reference",
+      "seconds_all_six": 0.11662132292985916,
+      "seed": 2
+    },
+    {
+      "method": "better",
+      "seconds_all_six": 0.020797334844246507,
+      "seed": 3
+    },
+    {
+      "method": "reference",
+      "seconds_all_six": 0.11754611495416611,
+      "seed": 3
+    },
+    {
+      "method": "better",
+      "seconds_all_six": 0.02011496783234179,
+      "seed": 4
+    },
+    {
+      "method": "reference",
+      "seconds_all_six": 0.11578713718336076,
+      "seed": 4
+    },
+    {
+      "method": "reference",
+      "seconds_all_six": 0.11455048411153257,
+      "seed": 5
+    },
+    {
+      "method": "better",
+      "seconds_all_six": 0.020349318045191467,
+      "seed": 5
+    },
+    {
+      "method": "better",
+      "seconds_all_six": 0.01988504105247557,
+      "seed": 6
+    },
+    {
+      "method": "reference",
+      "seconds_all_six": 0.11501435900572687,
+      "seed": 6
+    }
+  ],
+  "timings_include": "program reduction plus ordinary and projected counting on all six unchanged programs"
+}

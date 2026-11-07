@@ -1,0 +1,51 @@
+{
+  "breakdown": {
+    "scaled_disjunctive_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -0.0,
+        "avg_auxiliary_to_core_clause_ratio": -0.0,
+        "avg_loop_atoms": -0.0,
+        "exact_count_accuracy": 0.0,
+        "large_exact_count_accuracy": 0.0,
+        "max_log2_count_solved": 0.0,
+        "small_exact_count_accuracy": 0.0,
+        "solved_instances": 0.0,
+        "structural_report_fraction": 0.0
+      },
+      "delta": 0.0,
+      "utility": 2.2980605476609774
+    },
+    "scaled_hybrid_counting": {
+      "contributions": {
+        "answer_set_log2_mae": -0.0,
+        "avg_auxiliary_to_core_clause_ratio": -0.0,
+        "avg_loop_atoms": -0.0,
+        "enumeration_completed_instances": 0.0,
+        "exact_count_accuracy": 0.0,
+        "fallback_instances": -0.0,
+        "large_exact_count_accuracy": 0.0,
+        "max_log2_count_solved": 0.0,
+        "small_exact_count_accuracy": 0.0,
+        "solved_instances": 0.0,
+        "structural_report_fraction": 0.0
+      },
+      "delta": 0.0,
+      "utility": 1.7091630578045565
+    }
+  },
+  "byte_identical_scores": true,
+  "candidate_process_started": false,
+  "case": "reference_seed_1",
+  "command": {
+    "command": [
+      "bash",
+      "scripts/evaluate_test.sh"
+    ],
+    "returncode": 0,
+    "seconds": 0.5428486539749429
+  },
+  "evaluator_hashes_unchanged": true,
+  "fresh_job": true,
+  "rank_delta": 0.0,
+  "utility": 4.0072236054655335
+}
