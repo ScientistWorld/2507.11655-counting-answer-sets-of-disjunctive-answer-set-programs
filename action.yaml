@@ -5,4 +5,4 @@ action: submit
 gpus: 0
 test: false
 milestone: secondary_claims
-notes: "Hardening job (resubmit, resumes cached calibration): fixed slice allocation + extended grids; builds train/hidden-test benchmarks, scores reference, variants, shortcuts."
+notes: "Resume hardening job after SLURM preemption: benchmarks frozen, reference test done; runs reference train, variants, shortcuts, reference repeat (resumable phases)."
