@@ -11,7 +11,7 @@ Exact counting on programs with at least 2^23 answer sets (paper Table 1 / Figur
 - **Run**: `bash scripts/reproduce.sh` (or `bash scripts/evaluate_test.sh` with counters registered)
 
 ## Secondary: hybrid_full_spectrum
-Exact counting across small, mid and large counts, mostly with many loop atoms (paper Tables 2-3, scaled).
+Exact counting across small, mid and large counts; about half of the programs have many loop atoms (paper Tables 2-3, scaled).
 - **Metric**: `solved_instances` (higher is better; primary, coefficient 1.0)
 - **Metric**: `max_log2_count_solved` (higher is better; coefficient 0.02)
 - **Constraint**: `wrong_count_instances` (must be 0; coefficient -1.0; any nonzero value fails the run)

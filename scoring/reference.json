@@ -44,7 +44,7 @@
       "note": "Scaled setup (not the paper's numbers): hidden ground disjunctive programs from two families modelled on the paper's benchmark suite (2QBF saturation encodings; random non-tight disjunctive programs), a fixed budget of 10 CPU seconds per program for every counter (paper: 5000 s, 8 GB, 1125 instances), GANAK v2.8.0 as projected counter, clingo 5.8.3 for enumeration. Results rows are this reproduction's hidden-test values; the paper's reported numbers are kept unchanged in paper_main_benchmark and paper_hybrid_benchmark."
     },
     "hybrid_full_spectrum": {
-      "description": "Scaled analog of the paper's hybrid claim (Tables 2-3): hidden non-tight disjunctive programs spanning small, mid and large answer-set counts, mostly with many loop atoms, where enumeration and subtractive counting each fail on part of the set.",
+      "description": "Scaled analog of the paper's hybrid claim (Tables 2-3): hidden non-tight disjunctive programs spanning small, mid and large answer-set counts (about half with many loop atoms), where enumeration and subtractive counting each fail on part of the set.",
       "weight": 0.35,
       "primary_metric": "solved_instances",
       "metrics": {

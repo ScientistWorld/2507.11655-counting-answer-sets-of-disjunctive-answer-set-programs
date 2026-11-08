@@ -70,7 +70,7 @@ Counters are evaluated by **running them** on ground disjunctive ASP programs. E
 | Experiment | Programs | What it probes |
 |---|---|---|
 | `large_count_counting` | at least 2^23 answer sets | counting far beyond what enumeration reaches under the budget |
-| `hybrid_full_spectrum` | small, mid and large counts, mostly many loop atoms | a counter that must work across the whole count spectrum |
+| `hybrid_full_spectrum` | small, mid and large counts; about half are programs with many (30-120) loop atoms | a counter that must work across the whole count spectrum |
 
 Metrics per experiment (all computed by the evaluator from the printed counts):
 
