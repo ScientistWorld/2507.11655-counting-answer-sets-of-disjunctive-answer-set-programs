@@ -7,33 +7,33 @@
     "hybrid_full_spectrum": {
       "results": {
         "better_hybrid_adaptive": {
-          "max_log2_count_solved": 28.916895,
-          "solved_instances": 13,
+          "max_log2_count_solved": 26.85443,
+          "solved_instances": 16,
           "wrong_count_instances": 0
         },
         "better_hybrid_adaptive_onecopy": {
-          "max_log2_count_solved": 28.916895,
-          "solved_instances": 14,
+          "max_log2_count_solved": 35.934078,
+          "solved_instances": 19,
           "wrong_count_instances": 0
         },
         "better_hybrid_onecopy": {
-          "max_log2_count_solved": 28.916895,
-          "solved_instances": 13,
+          "max_log2_count_solved": 35.934078,
+          "solved_instances": 17,
           "wrong_count_instances": 0
         },
         "better_sharpasp_sr_onecopy": {
-          "max_log2_count_solved": 28.916895,
-          "solved_instances": 11,
+          "max_log2_count_solved": 35.934078,
+          "solved_instances": 15,
           "wrong_count_instances": 0
         },
         "weaker_no_surplus": {
           "max_log2_count_solved": 0.0,
           "solved_instances": 0,
-          "wrong_count_instances": 9
+          "wrong_count_instances": 12
         },
         "weaker_python_backend": {
           "max_log2_count_solved": 13.811375,
-          "solved_instances": 2,
+          "solved_instances": 3,
           "wrong_count_instances": 0
         }
       }
@@ -41,29 +41,29 @@
     "large_count_counting": {
       "results": {
         "better_hybrid_adaptive": {
-          "max_log2_count_solved": 28.895333,
-          "solved_instances": 7,
+          "max_log2_count_solved": 28.916895,
+          "solved_instances": 9,
           "wrong_count_instances": 0
         },
         "better_hybrid_adaptive_onecopy": {
           "max_log2_count_solved": 31.929475,
-          "solved_instances": 12,
+          "solved_instances": 15,
           "wrong_count_instances": 0
         },
         "better_hybrid_onecopy": {
           "max_log2_count_solved": 31.929475,
-          "solved_instances": 12,
+          "solved_instances": 15,
           "wrong_count_instances": 0
         },
         "better_sharpasp_sr_onecopy": {
           "max_log2_count_solved": 31.929475,
-          "solved_instances": 12,
+          "solved_instances": 15,
           "wrong_count_instances": 0
         },
         "weaker_no_surplus": {
           "max_log2_count_solved": 0.0,
           "solved_instances": 0,
-          "wrong_count_instances": 14
+          "wrong_count_instances": 17
         },
         "weaker_python_backend": {
           "max_log2_count_solved": 0.0,
@@ -74,8 +74,8 @@
     }
   },
   "instances_per_experiment": {
-    "hybrid_full_spectrum": 16,
-    "large_count_counting": 14
+    "hybrid_full_spectrum": 20,
+    "large_count_counting": 17
   },
   "slice": "train"
 }

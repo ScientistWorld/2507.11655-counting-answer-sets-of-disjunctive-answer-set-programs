@@ -4,224 +4,224 @@
     "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.836,
-    "wall": 11.738,
-    "loop_atoms": 13
+    "cpu": 10.662,
+    "wall": 13.446,
+    "loop_atoms": 77
   },
   {
     "id": "tr001",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.843,
-    "wall": 11.648,
-    "loop_atoms": 13
+    "cpu": 10.729,
+    "wall": 13.45,
+    "loop_atoms": 117
   },
   {
     "id": "tr002",
     "slice": "hybrid_full_spectrum",
-    "status": "no_answer",
+    "status": "over_budget",
     "log2_count": null,
-    "cpu": 10.842,
-    "wall": 11.493,
-    "loop_atoms": 82
+    "cpu": 10.439,
+    "wall": 11.777,
+    "loop_atoms": 54
   },
   {
     "id": "tr003",
     "slice": "hybrid_full_spectrum",
-    "status": "no_answer",
-    "log2_count": null,
-    "cpu": 10.797,
-    "wall": 11.557,
-    "loop_atoms": 62
+    "status": "solved",
+    "log2_count": 7.774787059601174,
+    "cpu": 0.429,
+    "wall": 1.013,
+    "loop_atoms": 30
   },
   {
     "id": "tr004",
     "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.825,
-    "wall": 11.412,
+    "cpu": 10.64,
+    "wall": 12.078,
     "loop_atoms": 13
   },
   {
     "id": "tr005",
-    "slice": "hybrid_full_spectrum",
+    "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.785,
-    "wall": 11.589,
-    "loop_atoms": 117
+    "cpu": 10.724,
+    "wall": 13.108,
+    "loop_atoms": 11
   },
   {
     "id": "tr006",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.883,
-    "wall": 11.324,
-    "loop_atoms": 15
+    "cpu": 10.743,
+    "wall": 12.261,
+    "loop_atoms": 13
   },
   {
     "id": "tr007",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.843,
-    "wall": 11.308,
-    "loop_atoms": 13
+    "cpu": 10.767,
+    "wall": 12.124,
+    "loop_atoms": 71
   },
   {
     "id": "tr008",
     "slice": "hybrid_full_spectrum",
-    "status": "solved",
-    "log2_count": 6.339850002884624,
-    "cpu": 0.383,
-    "wall": 0.449,
-    "loop_atoms": 19
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.639,
+    "wall": 13.099,
+    "loop_atoms": 87
   },
   {
     "id": "tr009",
     "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.963,
-    "wall": 11.192,
-    "loop_atoms": 13
+    "cpu": 10.716,
+    "wall": 12.524,
+    "loop_atoms": 15
   },
   {
     "id": "tr010",
-    "slice": "large_count_counting",
-    "status": "no_answer",
-    "log2_count": null,
-    "cpu": 11.0,
-    "wall": 11.122,
-    "loop_atoms": 11
-  },
-  {
-    "id": "tr011",
     "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.947,
-    "wall": 11.142,
+    "cpu": 10.659,
+    "wall": 13.466,
+    "loop_atoms": 13
+  },
+  {
+    "id": "tr011",
+    "slice": "large_count_counting",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.793,
+    "wall": 13.478,
     "loop_atoms": 11
   },
   {
     "id": "tr012",
-    "slice": "hybrid_full_spectrum",
+    "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.982,
-    "wall": 11.112,
-    "loop_atoms": 111
+    "cpu": 10.74,
+    "wall": 12.585,
+    "loop_atoms": 13
   },
   {
     "id": "tr013",
     "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.997,
-    "wall": 11.114,
-    "loop_atoms": 13
+    "cpu": 10.706,
+    "wall": 15.434,
+    "loop_atoms": 11
   },
   {
     "id": "tr014",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.993,
-    "wall": 11.091,
+    "cpu": 10.686,
+    "wall": 14.09,
     "loop_atoms": 13
   },
   {
     "id": "tr015",
-    "slice": "large_count_counting",
-    "status": "no_answer",
-    "log2_count": null,
-    "cpu": 10.993,
-    "wall": 11.115,
-    "loop_atoms": 13
+    "slice": "hybrid_full_spectrum",
+    "status": "solved",
+    "log2_count": 13.811374693509942,
+    "cpu": 4.404,
+    "wall": 4.992,
+    "loop_atoms": 60
   },
   {
     "id": "tr016",
     "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.776,
-    "wall": 11.562,
+    "cpu": 10.654,
+    "wall": 12.536,
     "loop_atoms": 153
   },
   {
     "id": "tr017",
-    "slice": "hybrid_full_spectrum",
-    "status": "no_answer",
-    "log2_count": null,
-    "cpu": 10.96,
-    "wall": 11.143,
-    "loop_atoms": 77
-  },
-  {
-    "id": "tr018",
-    "slice": "hybrid_full_spectrum",
-    "status": "solved",
-    "log2_count": 13.811374693509942,
-    "cpu": 4.643,
-    "wall": 5.231,
-    "loop_atoms": 60
-  },
-  {
-    "id": "tr019",
     "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.988,
-    "wall": 11.119,
+    "cpu": 10.597,
+    "wall": 14.521,
+    "loop_atoms": 11
+  },
+  {
+    "id": "tr018",
+    "slice": "large_count_counting",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.643,
+    "wall": 16.347,
     "loop_atoms": 13
   },
   {
-    "id": "tr020",
+    "id": "tr019",
     "slice": "hybrid_full_spectrum",
+    "status": "solved",
+    "log2_count": 6.339850002884624,
+    "cpu": 0.367,
+    "wall": 0.488,
+    "loop_atoms": 19
+  },
+  {
+    "id": "tr020",
+    "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.803,
-    "wall": 11.378,
+    "cpu": 10.762,
+    "wall": 14.278,
     "loop_atoms": 13
   },
   {
     "id": "tr021",
     "slice": "hybrid_full_spectrum",
-    "status": "over_budget",
+    "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.552,
-    "wall": 11.556,
-    "loop_atoms": 54
+    "cpu": 10.821,
+    "wall": 11.616,
+    "loop_atoms": 82
   },
   {
     "id": "tr022",
-    "slice": "hybrid_full_spectrum",
+    "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.99,
-    "wall": 11.09,
-    "loop_atoms": 87
+    "cpu": 10.675,
+    "wall": 17.712,
+    "loop_atoms": 13
   },
   {
     "id": "tr023",
     "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 11.001,
-    "wall": 11.08,
+    "cpu": 10.555,
+    "wall": 15.863,
     "loop_atoms": 11
   },
   {
     "id": "tr024",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.775,
-    "wall": 11.377,
+    "cpu": 10.656,
+    "wall": 12.645,
     "loop_atoms": 11
   },
   {
@@ -229,44 +229,107 @@
     "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.819,
-    "wall": 11.321,
+    "cpu": 10.537,
+    "wall": 14.995,
     "loop_atoms": 13
   },
   {
     "id": "tr026",
-    "slice": "hybrid_full_spectrum",
+    "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 10.956,
-    "wall": 11.165,
-    "loop_atoms": 95
+    "cpu": 10.682,
+    "wall": 14.459,
+    "loop_atoms": 13
   },
   {
     "id": "tr027",
     "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 11.003,
-    "wall": 11.077,
-    "loop_atoms": 13
+    "cpu": 10.763,
+    "wall": 12.349,
+    "loop_atoms": 15
   },
   {
     "id": "tr028",
     "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 11.002,
-    "wall": 11.09,
-    "loop_atoms": 11
+    "cpu": 10.687,
+    "wall": 13.179,
+    "loop_atoms": 13
   },
   {
     "id": "tr029",
     "slice": "large_count_counting",
     "status": "no_answer",
     "log2_count": null,
-    "cpu": 11.002,
-    "wall": 11.081,
+    "cpu": 10.693,
+    "wall": 12.555,
+    "loop_atoms": 13
+  },
+  {
+    "id": "tr030",
+    "slice": "large_count_counting",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.975,
+    "wall": 11.197,
+    "loop_atoms": 13
+  },
+  {
+    "id": "tr031",
+    "slice": "hybrid_full_spectrum",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.806,
+    "wall": 12.915,
+    "loop_atoms": 111
+  },
+  {
+    "id": "tr032",
+    "slice": "large_count_counting",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.871,
+    "wall": 11.434,
+    "loop_atoms": 13
+  },
+  {
+    "id": "tr033",
+    "slice": "hybrid_full_spectrum",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.618,
+    "wall": 12.471,
+    "loop_atoms": 95
+  },
+  {
+    "id": "tr034",
+    "slice": "hybrid_full_spectrum",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.657,
+    "wall": 12.549,
+    "loop_atoms": 15
+  },
+  {
+    "id": "tr035",
+    "slice": "hybrid_full_spectrum",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.695,
+    "wall": 12.837,
+    "loop_atoms": 62
+  },
+  {
+    "id": "tr036",
+    "slice": "large_count_counting",
+    "status": "no_answer",
+    "log2_count": null,
+    "cpu": 10.74,
+    "wall": 12.331,
     "loop_atoms": 13
   }
 ]

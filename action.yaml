@@ -5,4 +5,4 @@ action: submit
 gpus: 0
 test: false
 milestone: secondary_claims
-notes: "Resume hardening job after SLURM preemption: benchmarks frozen, reference test done; runs reference train, variants, shortcuts, reference repeat (resumable phases)."
+notes: "Final job: scripts/reproduce.sh end to end from final code (train 37 + hidden test 27, third reference test run) and better/weaker variants on the enlarged train split; validate.py."

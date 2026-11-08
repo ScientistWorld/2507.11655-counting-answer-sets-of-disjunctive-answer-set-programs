@@ -8,17 +8,17 @@
       "results": {
         "clingo_enumeration": {
           "max_log2_count_solved": 20.553314,
-          "solved_instances": 10,
+          "solved_instances": 12,
           "wrong_count_instances": 0
         },
         "hybrid_sharpasp_sr": {
-          "max_log2_count_solved": 28.916895,
-          "solved_instances": 11,
+          "max_log2_count_solved": 26.85443,
+          "solved_instances": 14,
           "wrong_count_instances": 0
         },
         "sharpasp_sr": {
-          "max_log2_count_solved": 28.916895,
-          "solved_instances": 9,
+          "max_log2_count_solved": 26.85443,
+          "solved_instances": 12,
           "wrong_count_instances": 0
         }
       }
@@ -31,21 +31,21 @@
           "wrong_count_instances": 0
         },
         "hybrid_sharpasp_sr": {
-          "max_log2_count_solved": 28.895333,
-          "solved_instances": 7,
+          "max_log2_count_solved": 28.916895,
+          "solved_instances": 9,
           "wrong_count_instances": 0
         },
         "sharpasp_sr": {
-          "max_log2_count_solved": 28.895333,
-          "solved_instances": 7,
+          "max_log2_count_solved": 28.916895,
+          "solved_instances": 9,
           "wrong_count_instances": 0
         }
       }
     }
   },
   "instances_per_experiment": {
-    "hybrid_full_spectrum": 16,
-    "large_count_counting": 14
+    "hybrid_full_spectrum": 20,
+    "large_count_counting": 17
   },
   "slice": "train"
 }

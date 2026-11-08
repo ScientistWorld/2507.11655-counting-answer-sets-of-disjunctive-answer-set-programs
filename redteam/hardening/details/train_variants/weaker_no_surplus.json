@@ -4,224 +4,224 @@
     "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.343,
-    "wall": 0.391,
-    "loop_atoms": 13
+    "cpu": 0.345,
+    "wall": 0.682,
+    "loop_atoms": 77
   },
   {
     "id": "tr001",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.33,
-    "wall": 0.368,
-    "loop_atoms": 13
+    "cpu": 0.81,
+    "wall": 1.287,
+    "loop_atoms": 117
   },
   {
     "id": "tr002",
     "slice": "hybrid_full_spectrum",
-    "status": "solved",
-    "log2_count": 20.553314299910458,
-    "cpu": 0.394,
-    "wall": 0.492,
-    "loop_atoms": 82
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.502,
+    "wall": 1.058,
+    "loop_atoms": 54
   },
   {
     "id": "tr003",
     "slice": "hybrid_full_spectrum",
     "status": "solved",
-    "log2_count": 12.777255315191923,
-    "cpu": 0.601,
-    "wall": 0.725,
-    "loop_atoms": 62
+    "log2_count": 7.774787059601174,
+    "cpu": 0.223,
+    "wall": 0.3,
+    "loop_atoms": 30
   },
   {
     "id": "tr004",
     "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.375,
-    "wall": 0.425,
+    "cpu": 0.218,
+    "wall": 0.337,
     "loop_atoms": 13
   },
   {
     "id": "tr005",
-    "slice": "hybrid_full_spectrum",
+    "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.858,
-    "wall": 1.031,
-    "loop_atoms": 117
+    "cpu": 0.221,
+    "wall": 0.374,
+    "loop_atoms": 11
   },
   {
     "id": "tr006",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.332,
-    "wall": 0.368,
-    "loop_atoms": 15
+    "cpu": 0.263,
+    "wall": 0.392,
+    "loop_atoms": 13
   },
   {
     "id": "tr007",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.324,
-    "wall": 0.35,
-    "loop_atoms": 13
+    "cpu": 0.715,
+    "wall": 1.426,
+    "loop_atoms": 71
   },
   {
     "id": "tr008",
     "slice": "hybrid_full_spectrum",
     "status": "solved",
-    "log2_count": 6.339850002884624,
-    "cpu": 0.321,
-    "wall": 0.364,
-    "loop_atoms": 19
+    "log2_count": 14.383839268854455,
+    "cpu": 0.52,
+    "wall": 0.705,
+    "loop_atoms": 87
   },
   {
     "id": "tr009",
     "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.325,
-    "wall": 0.371,
-    "loop_atoms": 13
+    "cpu": 0.214,
+    "wall": 0.284,
+    "loop_atoms": 15
   },
   {
     "id": "tr010",
-    "slice": "large_count_counting",
-    "status": "wrong",
-    "log2_count": null,
-    "cpu": 0.322,
-    "wall": 0.364,
-    "loop_atoms": 11
-  },
-  {
-    "id": "tr011",
     "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.283,
-    "wall": 0.331,
+    "cpu": 0.223,
+    "wall": 0.318,
+    "loop_atoms": 13
+  },
+  {
+    "id": "tr011",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.225,
+    "wall": 0.285,
     "loop_atoms": 11
   },
   {
     "id": "tr012",
-    "slice": "hybrid_full_spectrum",
-    "status": "solved",
-    "log2_count": 16.152185796244105,
-    "cpu": 0.699,
-    "wall": 0.755,
-    "loop_atoms": 111
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.23,
+    "wall": 0.309,
+    "loop_atoms": 13
   },
   {
     "id": "tr013",
     "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.287,
-    "wall": 0.341,
-    "loop_atoms": 13
+    "cpu": 0.201,
+    "wall": 0.295,
+    "loop_atoms": 11
   },
   {
     "id": "tr014",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.256,
-    "wall": 0.295,
+    "cpu": 0.199,
+    "wall": 0.312,
     "loop_atoms": 13
   },
   {
     "id": "tr015",
-    "slice": "large_count_counting",
-    "status": "wrong",
-    "log2_count": null,
-    "cpu": 0.298,
-    "wall": 0.36,
-    "loop_atoms": 13
+    "slice": "hybrid_full_spectrum",
+    "status": "solved",
+    "log2_count": 13.811374693509942,
+    "cpu": 0.207,
+    "wall": 0.28,
+    "loop_atoms": 60
   },
   {
     "id": "tr016",
     "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.807,
-    "wall": 0.937,
+    "cpu": 0.624,
+    "wall": 0.795,
     "loop_atoms": 153
   },
   {
     "id": "tr017",
-    "slice": "hybrid_full_spectrum",
-    "status": "wrong",
-    "log2_count": null,
-    "cpu": 0.428,
-    "wall": 0.519,
-    "loop_atoms": 77
-  },
-  {
-    "id": "tr018",
-    "slice": "hybrid_full_spectrum",
-    "status": "solved",
-    "log2_count": 13.811374693509942,
-    "cpu": 0.32,
-    "wall": 0.408,
-    "loop_atoms": 60
-  },
-  {
-    "id": "tr019",
     "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.299,
-    "wall": 0.39,
+    "cpu": 0.206,
+    "wall": 0.509,
+    "loop_atoms": 11
+  },
+  {
+    "id": "tr018",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.219,
+    "wall": 0.324,
     "loop_atoms": 13
   },
   {
-    "id": "tr020",
+    "id": "tr019",
     "slice": "hybrid_full_spectrum",
+    "status": "solved",
+    "log2_count": 6.339850002884624,
+    "cpu": 0.222,
+    "wall": 0.322,
+    "loop_atoms": 19
+  },
+  {
+    "id": "tr020",
+    "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.327,
-    "wall": 0.414,
+    "cpu": 0.253,
+    "wall": 0.519,
     "loop_atoms": 13
   },
   {
     "id": "tr021",
     "slice": "hybrid_full_spectrum",
-    "status": "wrong",
-    "log2_count": null,
-    "cpu": 0.611,
-    "wall": 0.724,
-    "loop_atoms": 54
+    "status": "solved",
+    "log2_count": 20.553314299910458,
+    "cpu": 0.284,
+    "wall": 0.327,
+    "loop_atoms": 82
   },
   {
     "id": "tr022",
-    "slice": "hybrid_full_spectrum",
-    "status": "solved",
-    "log2_count": 14.383839268854455,
-    "cpu": 0.572,
-    "wall": 0.646,
-    "loop_atoms": 87
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.26,
+    "wall": 0.877,
+    "loop_atoms": 13
   },
   {
     "id": "tr023",
     "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.342,
-    "wall": 0.414,
+    "cpu": 0.335,
+    "wall": 1.148,
     "loop_atoms": 11
   },
   {
     "id": "tr024",
-    "slice": "large_count_counting",
+    "slice": "hybrid_full_spectrum",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.294,
-    "wall": 0.361,
+    "cpu": 0.216,
+    "wall": 0.288,
     "loop_atoms": 11
   },
   {
@@ -229,44 +229,107 @@
     "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.331,
-    "wall": 0.405,
+    "cpu": 0.286,
+    "wall": 0.813,
     "loop_atoms": 13
   },
   {
     "id": "tr026",
-    "slice": "hybrid_full_spectrum",
-    "status": "solved",
-    "log2_count": 12.557463701597824,
-    "cpu": 0.646,
-    "wall": 0.734,
-    "loop_atoms": 95
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.311,
+    "wall": 0.47,
+    "loop_atoms": 13
   },
   {
     "id": "tr027",
     "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.268,
-    "wall": 0.334,
-    "loop_atoms": 13
+    "cpu": 0.323,
+    "wall": 0.423,
+    "loop_atoms": 15
   },
   {
     "id": "tr028",
     "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.284,
-    "wall": 0.337,
-    "loop_atoms": 11
+    "cpu": 0.31,
+    "wall": 0.409,
+    "loop_atoms": 13
   },
   {
     "id": "tr029",
     "slice": "large_count_counting",
     "status": "wrong",
     "log2_count": null,
-    "cpu": 0.286,
-    "wall": 0.398,
+    "cpu": 0.295,
+    "wall": 0.4,
+    "loop_atoms": 13
+  },
+  {
+    "id": "tr030",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.3,
+    "wall": 0.397,
+    "loop_atoms": 13
+  },
+  {
+    "id": "tr031",
+    "slice": "hybrid_full_spectrum",
+    "status": "solved",
+    "log2_count": 16.152185796244105,
+    "cpu": 0.641,
+    "wall": 0.81,
+    "loop_atoms": 111
+  },
+  {
+    "id": "tr032",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.216,
+    "wall": 0.278,
+    "loop_atoms": 13
+  },
+  {
+    "id": "tr033",
+    "slice": "hybrid_full_spectrum",
+    "status": "solved",
+    "log2_count": 12.557463701597824,
+    "cpu": 0.621,
+    "wall": 0.815,
+    "loop_atoms": 95
+  },
+  {
+    "id": "tr034",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.222,
+    "wall": 0.276,
+    "loop_atoms": 15
+  },
+  {
+    "id": "tr035",
+    "slice": "hybrid_full_spectrum",
+    "status": "solved",
+    "log2_count": 12.777255315191923,
+    "cpu": 0.567,
+    "wall": 0.661,
+    "loop_atoms": 62
+  },
+  {
+    "id": "tr036",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.212,
+    "wall": 0.252,
     "loop_atoms": 13
   }
 ]
