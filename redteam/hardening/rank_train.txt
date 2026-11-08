@@ -1,0 +1,9 @@
+better_hybrid_adaptive               delta=  +0.700  hybrid_full_spectrum=+0.700  large_count_counting=+0.000
+better_hybrid_adaptive_onecopy       delta=  +4.541  hybrid_full_spectrum=+1.814  large_count_counting=+2.727
+better_hybrid_onecopy                delta=  +3.841  hybrid_full_spectrum=+1.114  large_count_counting=+2.727
+better_sharpasp_sr_onecopy           delta=  +3.141  hybrid_full_spectrum=+0.414  large_count_counting=+2.727
+clingo_enumeration                   delta=  -5.054  hybrid_full_spectrum=-0.744  large_count_counting=-4.310
+hybrid_sharpasp_sr                   delta=  +0.000  hybrid_full_spectrum=+0.000  large_count_counting=+0.000
+sharpasp_sr                          delta=  -0.700  hybrid_full_spectrum=-0.700  large_count_counting=+0.000
+weaker_no_surplus                    delta= -21.248  hybrid_full_spectrum=-9.288  large_count_counting=-11.960
+weaker_python_backend                delta=  -8.252  hybrid_full_spectrum=-3.941  large_count_counting=-4.310

@@ -80,7 +80,19 @@ Other changes:
 - **Same interface.** Both evaluators score through the same counter interface with the same budget and metrics.
 - **Honest methods score alike on both splits:**
 
-TRAIN_TABLE_PLACEHOLDER
+| Counter | large-count solved, train (of 17) / test (of 14) | full-spectrum solved, train (of 20) / test (of 13) | Δ train | Δ test |
+|---|---:|---:|---:|---:|
+| sharpasp_sr | 9 / 7 | 12 / 9 | -0.700 | -0.350 |
+| hybrid_sharpasp_sr | 9 / 7 | 14 / 10 | +0.000 | +0.000 |
+| clingo_enumeration | 0 / 0 | 12 / 7 | -5.054 | -4.573 |
+| better_sharpasp_sr_onecopy | 15 / 12 | 15 / 10 | +3.141 | +2.306 |
+| better_hybrid_onecopy | 15 / 12 | 17 / 11 | +3.841 | +2.656 |
+| better_hybrid_adaptive | 9 / 7 | 16 / 11 | +0.700 | +0.350 |
+| better_hybrid_adaptive_onecopy | 15 / 12 | 19 / 12 | +4.541 | +3.006 |
+| weaker_no_surplus | 0 / 0 | 0 / 0 | -21.248 | -16.928 |
+| weaker_python_backend | 0 / 0 | 3 / 2 | -8.252 | -6.367 |
+
+  Weaker variants fail on both splits (no-surplus: wrong counts on every non-tight program; python backend: 0 large-count solves). The variant ordering matches on train and test.
 
 - **Overfitting to train loses on test.** A counter that memorizes the visible train answers solves 0 test programs (`train_lookup`).
 

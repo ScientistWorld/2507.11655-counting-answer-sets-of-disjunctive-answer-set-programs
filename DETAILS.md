@@ -469,6 +469,13 @@ The evaluators never import `method/` and never read anything a counter writes o
 
 ---
 
+### Iteration 11: claude-opus-5.5 (hardener)
+
+### [2026-11-08 03:40] - secondary_claims
+- Hardening (iteration 11): rebuilt the test. Counters are registered via `checkpoints/<name>/counter.json` and run by the evaluators on 27 hidden programs (`eval/test/`, secret seed, salted answer digests) and 37 visible train programs under a fixed 10 CPU s budget; a program counts only when the printed count equals independently computed ground truth; any wrong/impossible count fails the run.
+- Reference sharpASP-sR now uses GANAK (the paper's projected counter); baseline is clingo enumeration under the same budget; hybrid follows the paper's 10^4 threshold.
+- Hidden test: large counts sharpASP-sR 7/14 vs enumeration 0/14; full spectrum hybrid 10/13 > sharpASP-sR 9/13 > enumeration 7/13; three runs identical. Better variants (one-copy surplus encoding, adaptive switching) score +0.35 to +3.0 above the reference; all REDTEAM shortcuts and weaker variants score below it. Details in `HARDENING.md`.
+
 # Reproduction Milestones
 
 **Current: secondary_claims**

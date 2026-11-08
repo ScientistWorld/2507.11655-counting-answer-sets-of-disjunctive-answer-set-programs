@@ -233,3 +233,5 @@ core.[0-9]*
 # Benchmark build caches (ground truth / calibration scratch; never shipped)
 data/train/.build_cache/
 eval/test/.build_cache/
+# Harness session config (never commit)
+.claude.json
