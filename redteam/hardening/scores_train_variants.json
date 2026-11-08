@@ -1,0 +1,81 @@
+{
+  "budget": {
+    "cpu_seconds_per_program": 10.0,
+    "wall_seconds_per_program": 20.0
+  },
+  "experiments": {
+    "hybrid_full_spectrum": {
+      "results": {
+        "better_hybrid_adaptive": {
+          "max_log2_count_solved": 28.916895,
+          "solved_instances": 13,
+          "wrong_count_instances": 0
+        },
+        "better_hybrid_adaptive_onecopy": {
+          "max_log2_count_solved": 28.916895,
+          "solved_instances": 14,
+          "wrong_count_instances": 0
+        },
+        "better_hybrid_onecopy": {
+          "max_log2_count_solved": 28.916895,
+          "solved_instances": 13,
+          "wrong_count_instances": 0
+        },
+        "better_sharpasp_sr_onecopy": {
+          "max_log2_count_solved": 28.916895,
+          "solved_instances": 11,
+          "wrong_count_instances": 0
+        },
+        "weaker_no_surplus": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 9
+        },
+        "weaker_python_backend": {
+          "max_log2_count_solved": 13.811375,
+          "solved_instances": 2,
+          "wrong_count_instances": 0
+        }
+      }
+    },
+    "large_count_counting": {
+      "results": {
+        "better_hybrid_adaptive": {
+          "max_log2_count_solved": 28.895333,
+          "solved_instances": 7,
+          "wrong_count_instances": 0
+        },
+        "better_hybrid_adaptive_onecopy": {
+          "max_log2_count_solved": 31.929475,
+          "solved_instances": 12,
+          "wrong_count_instances": 0
+        },
+        "better_hybrid_onecopy": {
+          "max_log2_count_solved": 31.929475,
+          "solved_instances": 12,
+          "wrong_count_instances": 0
+        },
+        "better_sharpasp_sr_onecopy": {
+          "max_log2_count_solved": 31.929475,
+          "solved_instances": 12,
+          "wrong_count_instances": 0
+        },
+        "weaker_no_surplus": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 14
+        },
+        "weaker_python_backend": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        }
+      }
+    }
+  },
+  "instances_per_experiment": {
+    "hybrid_full_spectrum": 16,
+    "large_count_counting": 14
+  },
+  "slice": "train"
+}

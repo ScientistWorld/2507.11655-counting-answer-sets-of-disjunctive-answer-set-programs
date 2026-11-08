@@ -1,0 +1,245 @@
+[
+  {
+    "id": "te000",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.143,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te001",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.135,
+    "wall": 0.141,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te002",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.141,
+    "loop_atoms": 91
+  },
+  {
+    "id": "te003",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.143,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te004",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.137,
+    "wall": 0.145,
+    "loop_atoms": 11
+  },
+  {
+    "id": "te005",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.135,
+    "wall": 0.144,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te006",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.141,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te007",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.141,
+    "loop_atoms": 11
+  },
+  {
+    "id": "te008",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.135,
+    "wall": 0.142,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te009",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.135,
+    "wall": 0.141,
+    "loop_atoms": 115
+  },
+  {
+    "id": "te010",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.135,
+    "wall": 0.144,
+    "loop_atoms": 65
+  },
+  {
+    "id": "te011",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.143,
+    "loop_atoms": 50
+  },
+  {
+    "id": "te012",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.135,
+    "wall": 0.141,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te013",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.142,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te014",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.159,
+    "wall": 0.175,
+    "loop_atoms": 11
+  },
+  {
+    "id": "te015",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.135,
+    "wall": 0.153,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te016",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.136,
+    "wall": 0.167,
+    "loop_atoms": 101
+  },
+  {
+    "id": "te017",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.135,
+    "wall": 0.154,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te018",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.134,
+    "wall": 0.141,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te019",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.154,
+    "wall": 0.176,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te020",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.142,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te021",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.141,
+    "loop_atoms": 15
+  },
+  {
+    "id": "te022",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.134,
+    "wall": 0.142,
+    "loop_atoms": 15
+  },
+  {
+    "id": "te023",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.142,
+    "loop_atoms": 105
+  },
+  {
+    "id": "te024",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.132,
+    "wall": 0.139,
+    "loop_atoms": 13
+  },
+  {
+    "id": "te025",
+    "slice": "large_count_counting",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.132,
+    "wall": 0.14,
+    "loop_atoms": 15
+  },
+  {
+    "id": "te026",
+    "slice": "hybrid_full_spectrum",
+    "status": "wrong",
+    "log2_count": null,
+    "cpu": 0.133,
+    "wall": 0.141,
+    "loop_atoms": 33
+  }
+]

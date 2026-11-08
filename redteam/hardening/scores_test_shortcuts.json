@@ -1,0 +1,151 @@
+{
+  "budget": {
+    "cpu_seconds_per_program": 10.0,
+    "wall_seconds_per_program": 20.0
+  },
+  "experiments": {
+    "hybrid_full_spectrum": {
+      "results": {
+        "shortcut_constant_2pow20": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 13
+        },
+        "shortcut_constant_huge": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 13
+        },
+        "shortcut_constant_zero": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 13
+        },
+        "shortcut_empty": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        },
+        "shortcut_fake_reports": {
+          "max_log2_count_solved": 29.940672,
+          "solved_instances": 9,
+          "wrong_count_instances": 0
+        },
+        "shortcut_guess_on_timeout": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 4
+        },
+        "shortcut_negative": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 13
+        },
+        "shortcut_null": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        },
+        "shortcut_read_hidden_answers": {
+          "max_log2_count_solved": 4.321928,
+          "solved_instances": 1,
+          "wrong_count_instances": 0
+        },
+        "shortcut_structure_guess": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 13
+        },
+        "shortcut_train_lookup": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        },
+        "shortcut_train_lookup_guess": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 13
+        },
+        "shortcut_write_scores": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 13
+        }
+      }
+    },
+    "large_count_counting": {
+      "results": {
+        "shortcut_constant_2pow20": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 14
+        },
+        "shortcut_constant_huge": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 14
+        },
+        "shortcut_constant_zero": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 14
+        },
+        "shortcut_empty": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        },
+        "shortcut_fake_reports": {
+          "max_log2_count_solved": 29.774925,
+          "solved_instances": 7,
+          "wrong_count_instances": 0
+        },
+        "shortcut_guess_on_timeout": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 7
+        },
+        "shortcut_negative": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 14
+        },
+        "shortcut_null": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        },
+        "shortcut_read_hidden_answers": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        },
+        "shortcut_structure_guess": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 14
+        },
+        "shortcut_train_lookup": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        },
+        "shortcut_train_lookup_guess": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 14
+        },
+        "shortcut_write_scores": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 14
+        }
+      }
+    }
+  },
+  "instances_per_experiment": {
+    "hybrid_full_spectrum": 13,
+    "large_count_counting": 14
+  },
+  "slice": "test"
+}

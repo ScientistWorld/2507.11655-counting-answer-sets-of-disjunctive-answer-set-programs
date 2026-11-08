@@ -1,0 +1,51 @@
+{
+  "budget": {
+    "cpu_seconds_per_program": 10.0,
+    "wall_seconds_per_program": 20.0
+  },
+  "experiments": {
+    "hybrid_full_spectrum": {
+      "results": {
+        "clingo_enumeration": {
+          "max_log2_count_solved": 14.937282,
+          "solved_instances": 7,
+          "wrong_count_instances": 0
+        },
+        "hybrid_sharpasp_sr": {
+          "max_log2_count_solved": 29.940672,
+          "solved_instances": 10,
+          "wrong_count_instances": 0
+        },
+        "sharpasp_sr": {
+          "max_log2_count_solved": 29.940672,
+          "solved_instances": 9,
+          "wrong_count_instances": 0
+        }
+      }
+    },
+    "large_count_counting": {
+      "results": {
+        "clingo_enumeration": {
+          "max_log2_count_solved": 0.0,
+          "solved_instances": 0,
+          "wrong_count_instances": 0
+        },
+        "hybrid_sharpasp_sr": {
+          "max_log2_count_solved": 29.774925,
+          "solved_instances": 7,
+          "wrong_count_instances": 0
+        },
+        "sharpasp_sr": {
+          "max_log2_count_solved": 29.774925,
+          "solved_instances": 7,
+          "wrong_count_instances": 0
+        }
+      }
+    }
+  },
+  "instances_per_experiment": {
+    "hybrid_full_spectrum": 13,
+    "large_count_counting": 14
+  },
+  "slice": "test"
+}
