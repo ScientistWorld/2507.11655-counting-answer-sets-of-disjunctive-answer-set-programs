@@ -1,8 +1,6 @@
 # Once you set action to 'submit' or 'done', STOP immediately.
 # Do NOT sleep, poll, or wait for jobs. The system reads this file
 # only after your turn ends.
-action: submit
-gpus: 0
-test: false
+action: done
 milestone: secondary_claims
-notes: "Final job: scripts/reproduce.sh end to end from final code (train 37 + hidden test 27, third reference test run) and better/weaker variants on the enlarged train split; validate.py."
+notes: "Hardened: counters run on 27 hidden programs (fixed 10 CPU s budget, independent ground truth, salted digests, wrong count fails run); GANAK-backed reference 7/14 + 10/13, better variants +0.35..+3.0, all shortcuts/weaker below; 3 identical runs; validate passes. See HARDENING.md."
