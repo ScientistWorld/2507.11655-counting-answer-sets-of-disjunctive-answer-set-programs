@@ -6,55 +6,55 @@
       "id": "tr000",
       "path": "data/train/instances/tr000.lp",
       "slice": "hybrid_full_spectrum",
-      "family": "random",
-      "count": "15103",
-      "loop_atoms": 55,
-      "rules": 170
+      "family": "qbf",
+      "count": "252141048",
+      "loop_atoms": 13,
+      "rules": 89
     },
     {
       "id": "tr001",
       "path": "data/train/instances/tr001.lp",
-      "slice": "hybrid_full_spectrum",
+      "slice": "large_count_counting",
       "family": "qbf",
-      "count": "201603520",
+      "count": "87044484",
       "loop_atoms": 13,
-      "rules": 89
+      "rules": 97
     },
     {
       "id": "tr002",
       "path": "data/train/instances/tr002.lp",
       "slice": "hybrid_full_spectrum",
       "family": "random",
-      "count": "6028",
-      "loop_atoms": 95,
-      "rules": 288
+      "count": "1538736",
+      "loop_atoms": 82,
+      "rules": 240
     },
     {
       "id": "tr003",
       "path": "data/train/instances/tr003.lp",
       "slice": "hybrid_full_spectrum",
       "family": "random",
-      "count": "46198",
-      "loop_atoms": 109,
-      "rules": 330
+      "count": "7020",
+      "loop_atoms": 62,
+      "rules": 162
     },
     {
       "id": "tr004",
       "path": "data/train/instances/tr004.lp",
       "slice": "large_count_counting",
       "family": "qbf",
-      "count": "80239008",
+      "count": "18355740",
       "loop_atoms": 13,
-      "rules": 97
+      "rules": 95
     },
     {
       "id": "tr005",
       "path": "data/train/instances/tr005.lp",
       "slice": "hybrid_full_spectrum",
-      "family": "qbf",
-      "count": "252141048",
-      "loop_atoms": 13,
-      "rules": 89
+      "family": "random",
+      "count": "74660",
+      "loop_atoms": 117,
+      "rules": 330
     },
     {
       "id": "tr006",
@@ -68,105 +68,6 @@
     {
       "id": "tr007",
       "path": "data/train/instances/tr007.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "random",
-      "count": "3366",
-      "loop_atoms": 71,
-      "rules": 198
-    },
-    {
-      "id": "tr008",
-      "path": "data/train/instances/tr008.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "qbf",
-      "count": "246991328",
-      "loop_atoms": 13,
-      "rules": 89
-    },
-    {
-      "id": "tr009",
-      "path": "data/train/instances/tr009.lp",
-      "slice": "large_count_counting",
-      "family": "qbf",
-      "count": "859652272",
-      "loop_atoms": 13,
-      "rules": 104
-    },
-    {
-      "id": "tr010",
-      "path": "data/train/instances/tr010.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "random",
-      "count": "72827",
-      "loop_atoms": 111,
-      "rules": 330
-    },
-    {
-      "id": "tr011",
-      "path": "data/train/instances/tr011.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "random",
-      "count": "9504392",
-      "loop_atoms": 77,
-      "rules": 224
-    },
-    {
-      "id": "tr012",
-      "path": "data/train/instances/tr012.lp",
-      "slice": "large_count_counting",
-      "family": "qbf",
-      "count": "65650073088",
-      "loop_atoms": 15,
-      "rules": 114
-    },
-    {
-      "id": "tr013",
-      "path": "data/train/instances/tr013.lp",
-      "slice": "large_count_counting",
-      "family": "qbf",
-      "count": "87044484",
-      "loop_atoms": 13,
-      "rules": 97
-    },
-    {
-      "id": "tr014",
-      "path": "data/train/instances/tr014.lp",
-      "slice": "large_count_counting",
-      "family": "qbf",
-      "count": "38025624",
-      "loop_atoms": 13,
-      "rules": 97
-    },
-    {
-      "id": "tr015",
-      "path": "data/train/instances/tr015.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "qbf",
-      "count": "0",
-      "loop_atoms": 9,
-      "rules": 57
-    },
-    {
-      "id": "tr016",
-      "path": "data/train/instances/tr016.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "qbf",
-      "count": "612688",
-      "loop_atoms": 11,
-      "rules": 77
-    },
-    {
-      "id": "tr017",
-      "path": "data/train/instances/tr017.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "random",
-      "count": "74660",
-      "loop_atoms": 117,
-      "rules": 330
-    },
-    {
-      "id": "tr018",
-      "path": "data/train/instances/tr018.lp",
       "slice": "large_count_counting",
       "family": "qbf",
       "count": "178468600",
@@ -174,53 +75,107 @@
       "rules": 104
     },
     {
-      "id": "tr019",
-      "path": "data/train/instances/tr019.lp",
+      "id": "tr008",
+      "path": "data/train/instances/tr008.lp",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "count": "81",
+      "loop_atoms": 19,
+      "rules": 72
+    },
+    {
+      "id": "tr009",
+      "path": "data/train/instances/tr009.lp",
       "slice": "hybrid_full_spectrum",
       "family": "qbf",
-      "count": "12254144",
-      "loop_atoms": 11,
-      "rules": 83
+      "count": "38025624",
+      "loop_atoms": 13,
+      "rules": 97
     },
     {
-      "id": "tr020",
-      "path": "data/train/instances/tr020.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "random",
-      "count": "1604",
-      "loop_atoms": 69,
-      "rules": 198
-    },
-    {
-      "id": "tr021",
-      "path": "data/train/instances/tr021.lp",
-      "slice": "hybrid_full_spectrum",
-      "family": "random",
-      "count": "21378",
-      "loop_atoms": 87,
-      "rules": 288
-    },
-    {
-      "id": "tr022",
-      "path": "data/train/instances/tr022.lp",
+      "id": "tr010",
+      "path": "data/train/instances/tr010.lp",
       "slice": "large_count_counting",
       "family": "qbf",
-      "count": "4090060160",
-      "loop_atoms": 13,
-      "rules": 99
+      "count": "31267112",
+      "loop_atoms": 11,
+      "rules": 78
     },
     {
-      "id": "tr023",
-      "path": "data/train/instances/tr023.lp",
+      "id": "tr011",
+      "path": "data/train/instances/tr011.lp",
       "slice": "hybrid_full_spectrum",
       "family": "qbf",
-      "count": "66265150080",
-      "loop_atoms": 15,
-      "rules": 114
+      "count": "29661696",
+      "loop_atoms": 11,
+      "rules": 78
     },
     {
-      "id": "tr024",
-      "path": "data/train/instances/tr024.lp",
+      "id": "tr012",
+      "path": "data/train/instances/tr012.lp",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "count": "72827",
+      "loop_atoms": 111,
+      "rules": 330
+    },
+    {
+      "id": "tr013",
+      "path": "data/train/instances/tr013.lp",
+      "slice": "hybrid_full_spectrum",
+      "family": "qbf",
+      "count": "506818832",
+      "loop_atoms": 13,
+      "rules": 91
+    },
+    {
+      "id": "tr014",
+      "path": "data/train/instances/tr014.lp",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "count": "127558816",
+      "loop_atoms": 13,
+      "rules": 87
+    },
+    {
+      "id": "tr015",
+      "path": "data/train/instances/tr015.lp",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "count": "234493056",
+      "loop_atoms": 13,
+      "rules": 104
+    },
+    {
+      "id": "tr016",
+      "path": "data/train/instances/tr016.lp",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "count": "847656",
+      "loop_atoms": 153,
+      "rules": 432
+    },
+    {
+      "id": "tr017",
+      "path": "data/train/instances/tr017.lp",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "count": "9504392",
+      "loop_atoms": 77,
+      "rules": 224
+    },
+    {
+      "id": "tr018",
+      "path": "data/train/instances/tr018.lp",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "count": "14376",
+      "loop_atoms": 60,
+      "rules": 170
+    },
+    {
+      "id": "tr019",
+      "path": "data/train/instances/tr019.lp",
       "slice": "large_count_counting",
       "family": "qbf",
       "count": "238518048",
@@ -228,40 +183,94 @@
       "rules": 104
     },
     {
-      "id": "tr025",
-      "path": "data/train/instances/tr025.lp",
+      "id": "tr020",
+      "path": "data/train/instances/tr020.lp",
+      "slice": "hybrid_full_spectrum",
+      "family": "qbf",
+      "count": "80239008",
+      "loop_atoms": 13,
+      "rules": 97
+    },
+    {
+      "id": "tr021",
+      "path": "data/train/instances/tr021.lp",
       "slice": "hybrid_full_spectrum",
       "family": "random",
-      "count": "7020",
-      "loop_atoms": 62,
+      "count": "1506",
+      "loop_atoms": 54,
       "rules": 162
+    },
+    {
+      "id": "tr022",
+      "path": "data/train/instances/tr022.lp",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "count": "21378",
+      "loop_atoms": 87,
+      "rules": 288
+    },
+    {
+      "id": "tr023",
+      "path": "data/train/instances/tr023.lp",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "count": "12254144",
+      "loop_atoms": 11,
+      "rules": 83
+    },
+    {
+      "id": "tr024",
+      "path": "data/train/instances/tr024.lp",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "count": "28050944",
+      "loop_atoms": 11,
+      "rules": 78
+    },
+    {
+      "id": "tr025",
+      "path": "data/train/instances/tr025.lp",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "count": "499300480",
+      "loop_atoms": 13,
+      "rules": 91
     },
     {
       "id": "tr026",
       "path": "data/train/instances/tr026.lp",
       "slice": "hybrid_full_spectrum",
-      "family": "qbf",
-      "count": "234493056",
-      "loop_atoms": 13,
-      "rules": 104
+      "family": "random",
+      "count": "6028",
+      "loop_atoms": 95,
+      "rules": 288
     },
     {
       "id": "tr027",
       "path": "data/train/instances/tr027.lp",
       "slice": "large_count_counting",
       "family": "qbf",
-      "count": "18355740",
+      "count": "201603520",
       "loop_atoms": 13,
-      "rules": 95
+      "rules": 89
     },
     {
       "id": "tr028",
       "path": "data/train/instances/tr028.lp",
       "slice": "large_count_counting",
       "family": "qbf",
-      "count": "64273011968",
-      "loop_atoms": 15,
-      "rules": 114
+      "count": "13803712",
+      "loop_atoms": 11,
+      "rules": 76
+    },
+    {
+      "id": "tr029",
+      "path": "data/train/instances/tr029.lp",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "count": "4090060160",
+      "loop_atoms": 13,
+      "rules": 99
     }
   ]
 }

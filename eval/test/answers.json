@@ -1,0 +1,224 @@
+{
+  "split": "test",
+  "cpu_budget_seconds": 10.0,
+  "salt": "3a127d571dfa8e3ecc9ac5e866255d80",
+  "iterations": 400000,
+  "instances": [
+    {
+      "id": "te000",
+      "slice": "hybrid_full_spectrum",
+      "family": "qbf",
+      "digest": "1643125eb859ac3b637c2f4a0c31d109ccaf83823c9316467ce638a2c127b996",
+      "loop_atoms": 13,
+      "rules": 94
+    },
+    {
+      "id": "te001",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "4316bc7700e97aecd33340d4873e60e8485145c87805d79e38a8afe93d81b6a8",
+      "loop_atoms": 13,
+      "rules": 87
+    },
+    {
+      "id": "te002",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "digest": "2c0fd9db08d59ca0a6dc85f6c06a0eeab8a29a376b7640e05005e00e9f53eb3f",
+      "loop_atoms": 91,
+      "rules": 288
+    },
+    {
+      "id": "te003",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "d19897cf8b1287ece994c906fade71831f54750ca713db5ffebe804f687ab09f",
+      "loop_atoms": 13,
+      "rules": 97
+    },
+    {
+      "id": "te004",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "95a0387fe15548acc1f0a24b168b1bc86fd9ccf58282bf43f670138b984c6023",
+      "loop_atoms": 11,
+      "rules": 76
+    },
+    {
+      "id": "te005",
+      "slice": "hybrid_full_spectrum",
+      "family": "qbf",
+      "digest": "d333a8ff01cdbb0c53de7098c8d52fe531dc9a615b6c8304a345af5cceb3160c",
+      "loop_atoms": 13,
+      "rules": 104
+    },
+    {
+      "id": "te006",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "bba5b9db071e2181430bcf19f4a95a97437f76df89bbec2e370381d88a4d40ce",
+      "loop_atoms": 13,
+      "rules": 95
+    },
+    {
+      "id": "te007",
+      "slice": "hybrid_full_spectrum",
+      "family": "qbf",
+      "digest": "5fa757c20ee58189f3fd1b4e00878019eddaf6c5516de206a46be4b988cd0cd0",
+      "loop_atoms": 11,
+      "rules": 76
+    },
+    {
+      "id": "te008",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "2a6d6eff401976b1c6d151718d6f322ca8e9886b7da9c9ef86ef099961218eec",
+      "loop_atoms": 13,
+      "rules": 104
+    },
+    {
+      "id": "te009",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "digest": "ab07043ad2f5e0570e7318626166f1403e2f8759339b2609c98ec29b435313a1",
+      "loop_atoms": 115,
+      "rules": 330
+    },
+    {
+      "id": "te010",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "digest": "9f4ad968c499129a11b084569f2cb8ab47268118b2465b48602573f158860241",
+      "loop_atoms": 65,
+      "rules": 162
+    },
+    {
+      "id": "te011",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "digest": "6dfdcb65be1ecc2741eb97f31395bdf4237c2b30bc3bbe68af8f01afc070962c",
+      "loop_atoms": 50,
+      "rules": 132
+    },
+    {
+      "id": "te012",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "db96e8768fb6a18bdde2e8e953fa89e3d4b8212865f7c41ad4ecc6d16458f41e",
+      "loop_atoms": 13,
+      "rules": 89
+    },
+    {
+      "id": "te013",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "6fb98b11c8ac064c605f12fe701b5c41c6816eb55a89715dc2bef8f97e9f8276",
+      "loop_atoms": 13,
+      "rules": 85
+    },
+    {
+      "id": "te014",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "a0b86fa19481bcdf1360128fb33ec0e2150d37eafffc7801054f40dee7d0ead0",
+      "loop_atoms": 11,
+      "rules": 78
+    },
+    {
+      "id": "te015",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "fd66c2817c2086ccf8c59dec674029f1c7e9bd606219ff81fd55dd8165311fd4",
+      "loop_atoms": 13,
+      "rules": 85
+    },
+    {
+      "id": "te016",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "digest": "0cac4fe6dfdf7cbb95fb1a83a9009bb1b85df72da4943997937acb2f586bb916",
+      "loop_atoms": 101,
+      "rules": 288
+    },
+    {
+      "id": "te017",
+      "slice": "hybrid_full_spectrum",
+      "family": "qbf",
+      "digest": "3c9595c878eba60a081c65959bf65979231e0630ba50c5c8aa20fae35f412323",
+      "loop_atoms": 13,
+      "rules": 104
+    },
+    {
+      "id": "te018",
+      "slice": "hybrid_full_spectrum",
+      "family": "qbf",
+      "digest": "0e33c5b452298c39a7726bce0d1961ad25e7ec0a140d83cd2b01a47a43510576",
+      "loop_atoms": 13,
+      "rules": 87
+    },
+    {
+      "id": "te019",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "35598da17ebc6b46f754acfed8aae508f4f5bc5f32f502014a629c8f31487916",
+      "loop_atoms": 13,
+      "rules": 104
+    },
+    {
+      "id": "te020",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "343884d407cc691270476de22eefaed1245daf2dcb3c57104099551224fe6819",
+      "loop_atoms": 13,
+      "rules": 94
+    },
+    {
+      "id": "te021",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "0a1fe1105bebb6a9f8433b83eceede6710a34ad34c48cebf7ed0b90504fb03d8",
+      "loop_atoms": 15,
+      "rules": 114
+    },
+    {
+      "id": "te022",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "1b5ee4f5495f1be7b21e1d21821a38b78c1f1e764fa859d58172fd0935f61cec",
+      "loop_atoms": 15,
+      "rules": 114
+    },
+    {
+      "id": "te023",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "digest": "cbd41d284d57a376c7d0c04201ba646f75942826dc4736e877feab1109c4c82b",
+      "loop_atoms": 105,
+      "rules": 330
+    },
+    {
+      "id": "te024",
+      "slice": "hybrid_full_spectrum",
+      "family": "qbf",
+      "digest": "1e1ca849f2755dd322d7808ad82e7e9bb734a30ed6b410cf913658cde506b6ba",
+      "loop_atoms": 13,
+      "rules": 91
+    },
+    {
+      "id": "te025",
+      "slice": "large_count_counting",
+      "family": "qbf",
+      "digest": "6b5cbbb7081f299d0152ef0cb39259382fc5cc99cfce2344ee1a52945bd2226b",
+      "loop_atoms": 15,
+      "rules": 114
+    },
+    {
+      "id": "te026",
+      "slice": "hybrid_full_spectrum",
+      "family": "random",
+      "digest": "b760b38423cc8944e6a0a6fea920eae01fb915e3035e37ba1f30ad92bd7c7ae0",
+      "loop_atoms": 33,
+      "rules": 96
+    }
+  ]
+}

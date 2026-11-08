@@ -324,6 +324,330 @@
         }
       }
     },
+    "qbf-14-0": {
+      "gt_cpu": 0.016,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.45,
+          "solved": true
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.637,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.556,
+          "solved": true
+        }
+      }
+    },
+    "qbf-14-1": {
+      "gt_cpu": 0.022,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 24.461,
+          "solved": true
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.921,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.855,
+          "solved": true
+        }
+      }
+    },
+    "qbf-14-2": {
+      "gt_cpu": 0.017,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.399,
+          "solved": true
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.652,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.569,
+          "solved": true
+        }
+      }
+    },
+    "qbf-15-0": {
+      "gt_cpu": 0.021,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.988,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.785,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.704,
+          "solved": true
+        }
+      }
+    },
+    "qbf-15-1": {
+      "gt_cpu": 0.021,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.996,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.9,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.805,
+          "solved": true
+        }
+      }
+    },
+    "qbf-15-2": {
+      "gt_cpu": 0.017,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.992,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.649,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.565,
+          "solved": true
+        }
+      }
+    },
+    "qbf-16-0": {
+      "gt_cpu": 0.018,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.986,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.761,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.662,
+          "solved": true
+        }
+      }
+    },
+    "qbf-16-1": {
+      "gt_cpu": 0.017,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.997,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.773,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.692,
+          "solved": true
+        }
+      }
+    },
+    "qbf-16-2": {
+      "gt_cpu": 0.02,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.988,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.979,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.909,
+          "solved": true
+        }
+      }
+    },
+    "qbf-17-0": {
+      "gt_cpu": 0.022,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.995,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 0.978,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 0.904,
+          "solved": true
+        }
+      }
+    },
+    "qbf-17-1": {
+      "gt_cpu": 0.035,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 25.994,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 2.076,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 1.981,
+          "solved": true
+        }
+      }
+    },
+    "qbf-17-2": {
+      "gt_cpu": 0.222,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 26.0,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 1.163,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 1.072,
+          "solved": true
+        }
+      }
+    },
+    "qbf-18-0": {
+      "gt_cpu": 0.04,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 4.794,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 4.699,
+          "solved": true
+        }
+      }
+    },
+    "qbf-18-1": {
+      "gt_cpu": 0.028,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 2.292,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 2.207,
+          "solved": true
+        }
+      }
+    },
+    "qbf-18-2": {
+      "gt_cpu": 0.025,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 1.285,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 1.203,
+          "solved": true
+        }
+      }
+    },
+    "qbf-19-0": {
+      "gt_cpu": 0.024,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 1.231,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 1.145,
+          "solved": true
+        }
+      }
+    },
+    "qbf-19-1": {
+      "gt_cpu": 0.028,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 2.89,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 2.808,
+          "solved": true
+        }
+      }
+    },
+    "qbf-19-2": {
+      "gt_cpu": 0.051,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 10.183,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 10.117,
+          "solved": true
+        }
+      }
+    },
     "qbf-2-0": {
       "gt_cpu": 0.273,
       "gt_source": "qbf_independent_projected_count",
@@ -374,6 +698,60 @@
         },
         "sharpasp_sr": {
           "cpu": 0.717,
+          "solved": true
+        }
+      }
+    },
+    "qbf-20-0": {
+      "gt_cpu": 0.031,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 24.522,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 24.473,
+          "solved": true
+        }
+      }
+    },
+    "qbf-20-1": {
+      "gt_cpu": 0.055,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 10.739,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 10.593,
+          "solved": true
+        }
+      }
+    },
+    "qbf-20-2": {
+      "gt_cpu": 0.059,
+      "gt_source": "qbf_independent_projected_count",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": null,
+          "solved": false
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 4.397,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 4.348,
           "solved": true
         }
       }
@@ -918,6 +1296,60 @@
         }
       }
     },
+    "random-11-0": {
+      "gt_cpu": 4.287,
+      "gt_source": "clingo_enumeration",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 4.287,
+          "solved": true
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 25.687,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 25.042,
+          "solved": true
+        }
+      }
+    },
+    "random-11-1": {
+      "gt_cpu": 12.275,
+      "gt_source": "clingo_enumeration",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 12.275,
+          "solved": true
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": 1.097,
+          "solved": true
+        },
+        "sharpasp_sr": {
+          "cpu": 1.035,
+          "solved": true
+        }
+      }
+    },
+    "random-11-2": {
+      "gt_cpu": 2.778,
+      "gt_source": "clingo_enumeration",
+      "runs": {
+        "clingo_enumeration": {
+          "cpu": 2.778,
+          "solved": true
+        },
+        "hybrid_sharpasp_sr": {
+          "cpu": null,
+          "solved": false
+        },
+        "sharpasp_sr": {
+          "cpu": 26.358,
+          "solved": false
+        }
+      }
+    },
     "random-2-0": {
       "gt_cpu": 0.254,
       "gt_source": "clingo_enumeration",
@@ -1351,9 +1783,9 @@
       }
     }
   },
-  "candidates": 75,
+  "candidates": 99,
   "cpu_budget_seconds": 10.0,
-  "eligible": 56,
+  "eligible": 70,
   "margin": 2.5,
   "mismatches": {},
   "reasons": {
@@ -1375,9 +1807,30 @@
     "qbf-13-0": "ok",
     "qbf-13-1": "ok",
     "qbf-13-2": "ok",
+    "qbf-14-0": "borderline clingo_enumeration cpu=25.45",
+    "qbf-14-1": "borderline clingo_enumeration cpu=24.461",
+    "qbf-14-2": "borderline clingo_enumeration cpu=25.399",
+    "qbf-15-0": "ok",
+    "qbf-15-1": "ok",
+    "qbf-15-2": "ok",
+    "qbf-16-0": "ok",
+    "qbf-16-1": "ok",
+    "qbf-16-2": "ok",
+    "qbf-17-0": "ok",
+    "qbf-17-1": "ok",
+    "qbf-17-2": "ok",
+    "qbf-18-0": "borderline sharpasp_sr cpu=4.699",
+    "qbf-18-1": "ok",
+    "qbf-18-2": "ok",
+    "qbf-19-0": "ok",
+    "qbf-19-1": "ok",
+    "qbf-19-2": "borderline sharpasp_sr cpu=10.117",
     "qbf-2-0": "ok",
     "qbf-2-1": "ok",
     "qbf-2-2": "ok",
+    "qbf-20-0": "borderline sharpasp_sr cpu=24.473",
+    "qbf-20-1": "borderline sharpasp_sr cpu=10.593",
+    "qbf-20-2": "borderline sharpasp_sr cpu=4.348",
     "qbf-3-0": "ok",
     "qbf-3-1": "borderline clingo_enumeration cpu=4.556",
     "qbf-3-2": "borderline clingo_enumeration cpu=4.522",
@@ -1408,6 +1861,9 @@
     "random-10-0": "borderline clingo_enumeration cpu=9.398",
     "random-10-1": "ok",
     "random-10-2": "ok",
+    "random-11-0": "borderline clingo_enumeration cpu=4.287",
+    "random-11-1": "borderline clingo_enumeration cpu=12.275",
+    "random-11-2": "ok",
     "random-2-0": "ok",
     "random-2-1": "ok",
     "random-2-2": "ok",
@@ -1439,19 +1895,13 @@
         "band": "small",
         "direct_solved": true,
         "family": "random",
-        "key": "random-3-2"
+        "key": "random-0-0"
       },
       {
         "band": "small",
         "direct_solved": true,
         "family": "random",
-        "key": "random-3-1"
-      },
-      {
-        "band": "small",
-        "direct_solved": false,
-        "family": "random",
-        "key": "random-2-1"
+        "key": "random-2-2"
       },
       {
         "band": "small",
@@ -1461,9 +1911,21 @@
       },
       {
         "band": "small",
+        "direct_solved": false,
+        "family": "random",
+        "key": "random-2-1"
+      },
+      {
+        "band": "mid",
         "direct_solved": true,
-        "family": "qbf",
-        "key": "qbf-0-0"
+        "family": "random",
+        "key": "random-7-1"
+      },
+      {
+        "band": "mid",
+        "direct_solved": true,
+        "family": "random",
+        "key": "random-9-1"
       },
       {
         "band": "mid",
@@ -1473,15 +1935,9 @@
       },
       {
         "band": "mid",
-        "direct_solved": true,
+        "direct_solved": false,
         "family": "random",
-        "key": "random-6-2"
-      },
-      {
-        "band": "mid",
-        "direct_solved": true,
-        "family": "random",
-        "key": "random-9-0"
+        "key": "random-11-2"
       },
       {
         "band": "mid",
@@ -1496,12 +1952,6 @@
         "key": "random-5-1"
       },
       {
-        "band": "mid",
-        "direct_solved": true,
-        "family": "qbf",
-        "key": "qbf-3-0"
-      },
-      {
         "band": "large",
         "direct_solved": true,
         "family": "random",
@@ -1511,7 +1961,7 @@
         "band": "large",
         "direct_solved": true,
         "family": "qbf",
-        "key": "qbf-11-2"
+        "key": "qbf-19-1"
       },
       {
         "band": "large",
@@ -1523,63 +1973,7 @@
         "band": "large",
         "direct_solved": true,
         "family": "qbf",
-        "key": "qbf-4-2"
-      },
-      {
-        "band": "large",
-        "direct_solved": true,
-        "family": "qbf",
-        "key": "qbf-11-0"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-7-2"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-13-2"
-      }
-    ],
-    "large_count_counting": [
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-9-2"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-5-0"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-7-1"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-12-0"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-8-0"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-13-0"
+        "key": "qbf-16-2"
       },
       {
         "band": "large",
@@ -1591,25 +1985,93 @@
         "band": "large",
         "direct_solved": false,
         "family": "qbf",
-        "key": "qbf-6-1"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
-        "key": "qbf-13-1"
-      },
-      {
-        "band": "large",
-        "direct_solved": false,
-        "family": "qbf",
         "key": "qbf-6-0"
+      }
+    ],
+    "large_count_counting": [
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-11-2"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-16-0"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-18-2"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-15-2"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-19-0"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-4-2"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-16-1"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-9-2"
       },
       {
         "band": "large",
         "direct_solved": false,
         "family": "qbf",
         "key": "qbf-7-0"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-6-1"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-12-0"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-7-1"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-7-2"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-5-0"
       }
     ]
   },
