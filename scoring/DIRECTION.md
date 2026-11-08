@@ -1,13 +1,13 @@
 # Research Direction
 
 ## Research Problem
-Improve practical exact counting for answer sets of ground disjunctive ASP programs, especially non-tight programs where stable-model minimality creates surplus classical models and answer-set enumeration scales poorly.
+Improve practical exact counting of answer sets of ground disjunctive ASP programs, especially non-tight programs where stable-model minimality creates surplus classical models and answer-set enumeration scales poorly with the number of answer sets.
 
 ## Core Contribution
-Work should stay within exact counting for disjunctive ASP and should preserve stable-model semantics. Improvements should target reductions, encodings, projected counting, decomposition, or hybrid exact counting strategies.
+Work should stay within exact counting for disjunctive ASP and preserve stable-model semantics. Good targets: programs with very large counts that current counters cannot finish under the budget, and programs with many loop atoms where formula-based counting struggles.
 
 ## Approach Scope
-It is in scope to change the CNF encoding, use a stronger projected model counter, add decomposition, improve loop-atom handling, or design better exact hybrid switching rules.
+In scope: better reductions or encodings to (projected) model counting, preprocessing and simplification of programs or formulas, decomposition, better use of model counters, smarter combinations of enumeration and counting, and new exact algorithms.
 
 ## Out of Bounds
-Do not switch to approximate counting for the primary exact score. Do not replace the problem with normal-program counting only. Do not evaluate only tight programs, because tight programs remove the key non-tight minimality challenge.
+Approximate counting; changing the budget, programs, ground truth or evaluators; reading hidden test files; hardcoded answers; generator-specific decoders that bypass general answer-set counting; restricting to tight or normal programs only.

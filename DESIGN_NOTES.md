@@ -1,3 +1,5 @@
+> **Superseded (iteration 11, hardening).** This file records an earlier iteration of the gym. The evaluation it describes (six visible `choices_*` programs, `results.json` artifacts, self-reported structural metrics, in-repo Python counter) was replaced: counters are now run by the evaluators on hidden programs under a fixed budget, with GANAK as the reference backend. See `HARDENING.md` and `briefing/evaluation.md` for the current gym.
+
 # Design Notes
 
 ## Checks Performed

@@ -1,7 +1,9 @@
 # Experiment Overview
 
-## scaled_disjunctive_counting
-Tests whether an exact counter can handle non-tight disjunctive ASP instances with growing answer-set counts while preserving exact agreement with known counts. The comparison includes a capped enumeration reference to expose the central scaling issue: exact enumeration is fine for small answer-set counts but stops being a useful strategy as counts grow. The tracked scale now reaches `2^20` answer sets.
+Both experiments run every registered counter on hidden ground disjunctive ASP programs under the same fixed budget (10 CPU seconds per program) and credit a program only when the printed count equals the independently computed exact count. Any wrong or impossible count fails the run.
 
-## scaled_hybrid_counting
-Tests whether a hybrid exact counter can use enumeration for small-count instances and still solve larger-count instances by falling back to a stronger exact counter. The experiment measures both final exactness and how many instances are handled before the fallback is needed.
+## large_count_counting
+Establishes whether an exact counter can handle non-tight disjunctive programs whose answer-set counts (at least 2^23, up to about 2^36 here) are far beyond what one-by-one enumeration reaches under the budget. Enumeration solves none of these programs; the reference counter solves about half; programs it cannot solve remain, so stronger exact counters can score higher. Also reports the largest exactly-solved count.
+
+## hybrid_full_spectrum
+Establishes whether one counter works across the whole spectrum of answer-set counts (from a handful to hundreds of millions), mostly on programs with many loop atoms. Some programs are easy to enumerate but hard for formula-based counting, others are the reverse, so the set rewards counters that do not fail on either side. Enumeration alone, the reference exact counter alone, and the reference hybrid each leave programs unsolved.

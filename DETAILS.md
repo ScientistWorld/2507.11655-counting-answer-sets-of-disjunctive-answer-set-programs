@@ -21,15 +21,15 @@ The paper targets exact answer-set counting for non-tight disjunctive ASP progra
 
 ## Research Question
 
-Count the number of answer sets of a finite ground disjunctive Answer Set Programming (ASP) program exactly. The challenge is to handle non-tight programs where stable-model minimality matters and where plain answer-set enumeration becomes infeasible when the number of answer sets is large.
+Count the number of answer sets of a finite ground disjunctive Answer Set Programming (ASP) program exactly. The hard case is non-tight programs (positive cycles among atoms), where stable-model minimality matters: classical models of the program's completion can outnumber its answer sets, and enumerating answer sets one by one becomes infeasible when there are many of them.
 
 ## Why It Matters
 
-Exact answer-set counts are used in probabilistic reasoning, network reliability, answer-set navigation, and other ASP applications. Disjunctive programs are more expressive than normal programs, but practical exact counters for them are limited.
+Exact answer-set counts are used in probabilistic reasoning, network reliability, answer-set navigation, and other ASP applications. Disjunctive programs are more expressive than normal programs (answer-set checking is co-NP-hard, counting is #·co-NP-complete), and practical exact counters for them are scarce.
 
 ## Success Criteria
 
-Successful systems must return exact counts, agree with enumeration on small instances, and scale to instances with many answer sets under fixed resource limits. Evaluation should also track structural difficulty, especially positive cycles, so improvements cannot be achieved by silently ignoring the hard non-tight cases.
+A counter succeeds on a program when it prints the exact number of answer sets within a fixed per-program resource budget. Wrong counts are not partially credited: exactness is a hard constraint, and any wrong or impossible count invalidates a run. Better counters solve more programs under the same budget, including programs whose counts are far beyond what enumeration can reach and programs with many cyclic (loop) atoms.
 
 ---
 
@@ -41,39 +41,77 @@ The paper introduces sharpASP-sR, an exact counter for disjunctive ASP programs 
 
 ## Approach
 
-For a program `P`, the method builds Clark completion `Comp(P)` and counts its models as an overcount. It then constructs a surplus formula using two copies of the loop atoms in the positive dependency graph. The surplus formula captures models of the completion that are not answer sets, and projected model counting counts each original interpretation once. The final answer-set count is:
+For a program `P`, the method builds Clark completion `Comp(P)` and counts its models as an overcount. It then constructs a surplus formula `phi2` using two copies (`x'`, `x*`) of every loop atom of the positive dependency graph; `phi2`'s models projected onto the program atoms are exactly the completion models that are not answer sets. The final answer-set count is:
 
-`|AS(P)| = #Comp(P) - #exists_{copy variables} phi2`.
+`|AS(P)| = #Comp(P) - #exists_{CV' u CV*} phi2`.
 
-This reproduction implements the same reduction and uses a small exact in-repo projected counter for the scaled benchmark rather than GANAK.
+This reproduction implements that reduction (`method/sharpasp_sr/reduction.py`) and, like the paper's prototype, uses GANAK (v2.8.0, exact mode `--prob 0`) as the (projected) model counter (`method/sharpasp_sr/ganak.py`). Counter interface: `method/count.py --mode direct|hybrid PROGRAM.lp`. The hybrid mode follows the paper: clingo enumeration up to 10^4 answer sets, then sharpASP-sR.
 
 ## Main Claims
 
-Primary claim: the subtractive projected-counting approach is exact and scales better than enumeration on disjunctive programs with large answer-set counts.
+Primary claim: the subtractive projected-counting approach is exact and solves more programs than enumeration, in particular programs with large answer-set counts.
 
-Secondary claims: a hybrid strategy that enumerates only small-count cases and falls back to sharpASP-sR solves more instances, and sharpASP-sR performance is sensitive to the number of loop atoms.
+Secondary claims: a hybrid that enumerates small-count cases and falls back to sharpASP-sR solves more than either component; sharpASP-sR's performance degrades as the number of loop atoms grows.
 
 ---
 
 # Evaluation
 
-## Metrics
+## What is measured
 
-- `solved_instances`: number of benchmark instances for which an exact count is returned.
-- `exact_count_accuracy`: fraction of scaled benchmark instances whose returned count equals the known exact count.
-- `max_log2_count_solved`: largest solved answer-set count, reported as base-2 logarithm.
-- `par2`: paper-reported timeout-penalized runtime. It is retained only as historical context in `reference.json`; it is not assigned scoring weight because wall-clock speed is hardware dependent.
-- Structural constraint diagnostics: average number of loop atoms and `avg_auxiliary_to_core_clause_ratio`, a method-agnostic encoding-size ratio for methods that report structural fields.
+Counters are evaluated by **running them** on ground disjunctive ASP programs. Each program has an exact answer-set count computed independently of any counter under evaluation (exhaustive enumeration with a long budget, or an independent propositional formulation for programs with very many answer sets). A counter solves a program when it prints that exact count within the budget.
 
-## Baselines and Targets
+- **Budget:** 10 CPU seconds per program (the counter process plus every child process it waits for), hard wall-clock kill at 20 seconds. The same budget applies to every counter, including the baselines. The paper used 5000 s and 8 GB per instance; the programs here are scaled down accordingly.
+- **Programs:** two families modelled on the paper's benchmark suite: existential-universal 2QBF problems in the standard disjunctive saturation encoding, and random non-tight disjunctive programs (with default negation, or positive programs with integrity constraints). Atom names are randomized and rules shuffled. Programs on which the reference counters finish close to the budget were excluded, so outcomes do not hinge on small timing differences.
+- **Splits:** visible train programs in `data/train/` (with exact counts in `data/train/manifest.json`); hidden test programs in `eval/test/` (not available during development; same families, same budget, a different random draw).
 
-The paper compares exact counting systems on 1125 non-tight disjunctive instances. The headline target is higher solved count than enumeration-based systems while preserving exactness. This workspace includes a scaled enumeration baseline with an answer-set cap, mirroring the observation that enumeration degrades when counts grow.
+## Experiments (slices) and metrics
 
-The paper also evaluates a hybrid strategy that enumerates answer sets up to a threshold and invokes an exact fallback counter only when enumeration exceeds that threshold. This workspace reproduces that secondary claim on the scaled benchmark with a cap of 1000.
+| Experiment | Programs | What it probes |
+|---|---|---|
+| `large_count_counting` | at least 2^23 answer sets | counting far beyond what enumeration reaches under the budget |
+| `hybrid_full_spectrum` | small, mid and large counts, mostly many loop atoms | a counter that must work across the whole count spectrum |
 
-## Evaluation Protocol
+Metrics per experiment (all computed by the evaluator from the printed counts):
 
-Run `scripts/reproduce.sh` to generate the scaled benchmark, run the capped enumeration baseline, run an exact counter, and write `scoring/scores.json`. The scaled benchmark ranges from a small non-tight program through independent-choice extensions with up to `2^20` answer sets. Future methods should write the same result artifact format under `checkpoints/<method>/results.json` and then call `scripts/evaluate.sh`. Evaluation code must not import from `method/`.
+- `solved_instances` (primary): programs whose exact count was printed within budget.
+- `max_log2_count_solved`: log2 of the largest exactly-solved count.
+- `wrong_count_instances` (constraint): programs answered within budget with a wrong count or an impossible value (negative, fractional, nan/inf). **Any wrong or impossible count on a split fails the whole run on that split: its `solved_instances` and `max_log2_count_solved` are set to 0 in every experiment.** Printing nothing (or exiting non-zero) is "no answer" and is not penalized beyond not solving the program.
+
+Rank: for each experiment, sum of `coefficient x (your value - reference value)` over its metrics (coefficients in `scoring/reference.json`: 1.0, 0.02, -1.0), weighted by the experiment weight (0.45 and 0.35).
+
+## Counter interface
+
+Register a counter by writing `checkpoints/<name>/counter.json`:
+
+```json
+{"command": ["python", "path/to/your_counter.py", "--any", "flags"]}
+```
+
+The evaluator appends the path of one ground program (a temporary copy) and runs the command from `/home/user` with `PYTHONPATH=/home/user`. Print the exact number of answer sets as the **last non-empty stdout line** (a plain non-negative integer) and exit 0. A leading `python` is replaced by the evaluator's interpreter.
+
+Program syntax (ground rules only): `a | b :- c, not d.` (disjunctive head, positive and default-negated body literals), facts `a.` / `a | b.`, and integrity constraints `:- a, not b.`. `data/asp.py` has a parser and a brute-force reference for tiny programs.
+
+Available tools in the container: clingo 5.8.3 (Python package) and the GANAK v2.8.0 exact projected model counter (`data/downloads/ganak`, fetched by `scripts/download.sh`; use `--prob 0` for deterministic exact counts).
+
+## Baselines and reference counters (registered by `scripts/baseline.sh` and `scripts/method.sh`)
+
+- `clingo_enumeration`: enumerates every answer set with clingo under the budget (the paper's enumeration baseline).
+- `sharpasp_sr`: the paper's exact counter.
+- `hybrid_sharpasp_sr`: the paper's hybrid: enumerate up to 10^4 answer sets, otherwise fall back to the exact counter.
+
+## Protocol
+
+```bash
+bash scripts/download.sh          # once, with internet (GANAK binary)
+bash scripts/baseline.sh          # registers clingo_enumeration, scores train
+bash scripts/method.sh            # registers the reference counters, scores train
+bash scripts/evaluate.sh          # scores every registered counter on train -> scoring/scores.json
+bash scripts/evaluate_train.sh    # same, -> scoring/scores_train.json
+bash scripts/evaluate_test.sh     # hidden test (graders) -> scoring/scores_test.json
+```
+
+The evaluators never import `method/` and never read anything a counter writes other than its printed count.
 
 ---
 

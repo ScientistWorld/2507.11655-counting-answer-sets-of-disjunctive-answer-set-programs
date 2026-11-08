@@ -1905,6 +1905,12 @@
       },
       {
         "band": "small",
+        "direct_solved": true,
+        "family": "random",
+        "key": "random-8-2"
+      },
+      {
+        "band": "small",
         "direct_solved": false,
         "family": "random",
         "key": "random-5-2"
@@ -1935,6 +1941,12 @@
       },
       {
         "band": "mid",
+        "direct_solved": true,
+        "family": "random",
+        "key": "random-9-2"
+      },
+      {
+        "band": "mid",
         "direct_solved": false,
         "family": "random",
         "key": "random-11-2"
@@ -1961,31 +1973,43 @@
         "band": "large",
         "direct_solved": true,
         "family": "qbf",
-        "key": "qbf-19-1"
-      },
-      {
-        "band": "large",
-        "direct_solved": true,
-        "family": "qbf",
-        "key": "qbf-11-1"
-      },
-      {
-        "band": "large",
-        "direct_solved": true,
-        "family": "qbf",
         "key": "qbf-16-2"
       },
       {
         "band": "large",
-        "direct_solved": false,
+        "direct_solved": true,
         "family": "qbf",
-        "key": "qbf-6-2"
+        "key": "qbf-17-0"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-18-1"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-15-0"
       },
       {
         "band": "large",
         "direct_solved": false,
         "family": "qbf",
         "key": "qbf-6-0"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-13-0"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-13-1"
       }
     ],
     "large_count_counting": [
@@ -2033,6 +2057,18 @@
       },
       {
         "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-19-1"
+      },
+      {
+        "band": "large",
+        "direct_solved": true,
+        "family": "qbf",
+        "key": "qbf-11-1"
+      },
+      {
+        "band": "large",
         "direct_solved": false,
         "family": "qbf",
         "key": "qbf-9-2"
@@ -2072,6 +2108,12 @@
         "direct_solved": false,
         "family": "qbf",
         "key": "qbf-5-0"
+      },
+      {
+        "band": "large",
+        "direct_solved": false,
+        "family": "qbf",
+        "key": "qbf-6-2"
       }
     ]
   },

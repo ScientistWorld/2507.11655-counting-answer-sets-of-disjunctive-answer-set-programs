@@ -31,13 +31,13 @@
         "sharpasp_sr": {
           "type": "proposed",
           "solved_instances": 7,
-          "max_log2_count_solved": 30.0,
+          "max_log2_count_solved": 29.774925,
           "wrong_count_instances": 0
         },
         "hybrid_sharpasp_sr": {
           "type": "baseline",
           "solved_instances": 7,
-          "max_log2_count_solved": 30.0,
+          "max_log2_count_solved": 29.774925,
           "wrong_count_instances": 0
         }
       },
@@ -67,20 +67,20 @@
       "results": {
         "clingo_enumeration": {
           "type": "baseline",
-          "solved_instances": 9,
-          "max_log2_count_solved": 20.0,
+          "solved_instances": 7,
+          "max_log2_count_solved": 14.937282,
           "wrong_count_instances": 0
         },
         "sharpasp_sr": {
           "type": "baseline",
-          "solved_instances": 10,
-          "max_log2_count_solved": 30.0,
+          "solved_instances": 9,
+          "max_log2_count_solved": 29.940672,
           "wrong_count_instances": 0
         },
         "hybrid_sharpasp_sr": {
           "type": "proposed",
-          "solved_instances": 12,
-          "max_log2_count_solved": 30.0,
+          "solved_instances": 10,
+          "max_log2_count_solved": 29.940672,
           "wrong_count_instances": 0
         }
       },

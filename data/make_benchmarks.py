@@ -90,10 +90,12 @@ RANDOM_GRID = [
 ]
 RANDOM_SEEDS = 3
 # per-slice quotas: (band, direct reference solves?) -> number of programs
+# The train split is drawn larger than the hidden test split (same strata, similar
+# solved / unsolved proportions) so that development has more programs to work with.
 QUOTAS = {
-    "hybrid_full_spectrum": {("small", True): 2, ("small", False): 3, ("mid", True): 3, ("mid", False): 3,
-                             ("large", True): 4, ("large", False): 2},
-    "large_count_counting": {("large", True): 7, ("large", False): 7},
+    "hybrid_full_spectrum": {("small", True): 3, ("small", False): 3, ("mid", True): 4, ("mid", False): 3,
+                             ("large", True): 5, ("large", False): 3},
+    "large_count_counting": {("large", True): 9, ("large", False): 8},
 }
 # allocation order: the primary slice gets the large band before the hybrid slice
 ALLOCATION_ORDER = [("hybrid_full_spectrum", "small"), ("hybrid_full_spectrum", "mid"),
